@@ -23,7 +23,7 @@ const routes = [
 
     {
         path: "/",
-        component: () => import("../layout/app"),
+        component: () => import("../layouts/application/app"),
         children: [
             {
                 path: "",
@@ -72,6 +72,25 @@ const routes = [
                 path: "/:match(.*)",
                 redirect: "/404",
             },
+        ],
+    },
+
+    {
+        path: "/panel/admin",
+        component: () => import("../layouts/panel/app"),
+        children: [
+            {
+                path: "dashboard",
+                name: "panel admin dashboard",
+                component: () => import("../views/panel/dashboard"),
+            },
+
+            // {
+            //     path: "about",
+            //     name: "about",
+            //     component: () => import("../views/application/about"),
+            // },
+
         ],
     },
 ];

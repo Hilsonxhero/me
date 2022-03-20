@@ -9,10 +9,10 @@
     </div>
 </template>
 <script>
-import Header from "./Header.vue";
-import Footer from "./Footer.vue";
+import Header from "@/layouts/application/Header.vue";
+import Footer from "@/layouts/application/Footer.vue";
 export default { components: { Header, Footer } };
 </script>
 <style lang="sass">
-@import "../assets/sass/style"
+@import "@/assets/sass/style"
 </style>

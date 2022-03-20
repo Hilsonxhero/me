@@ -1,102 +1,12 @@
 <template>
     <div class="">
-        <!-- Hero section with layer parallax gfx -->
-        <section class="position-relative overflow-hidden pb-4 mb-3 d-none">
-            <div class="container pt-lg-3">
-                <div class="row flex-lg-nowrap">
-                    <div
-                        class="col-lg-6 col-xl-5 text-center text-lg-start mt-xl-4"
-                    >
-                        <h1 class="display-4 pt-5 pb-2 pb-lg-3 mt-2 mt-lg-5">
-                            Task Management Assistant You Gonna Love
-                        </h1>
-                        <p class="fs-lg mb-4 mb-lg-5">
-                            We offer you a new generation of task management
-                            system. Plan, manage & track all your tasks in one
-                            flexible tool.
-                        </p>
-                        <a href="#" class="btn btn-primary btn-lg"
-                            >Get started for free</a
-                        >
-                        <div class="pt-5 mt-xl-5">
-                            <!-- <h6 class="pt-xl-3 pb-3 pb-lg-4">
-                                    Largest companies use our tool to work
-                                    efficiently
-                                </h6>
-                                <div
-                                    class="d-flex justify-content-center justify-content-lg-start mx-xl-n2"
-                                >
-                                    <a href="#" class="d-block me-2">
-                                        <img
-                                            src="assets/img/brands/07.svg"
-                                            width="135"
-                                            alt="Logo"
-                                        />
-                                    </a>
-                                    <a href="#" class="d-block me-2">
-                                        <img
-                                            src="assets/img/brands/04.svg"
-                                            width="135"
-                                            alt="Logo"
-                                        />
-                                    </a>
-                                    <a href="#" class="d-block me-2">
-                                        <img
-                                            src="assets/img/brands/02.svg"
-                                            width="135"
-                                            alt="Logo"
-                                        />
-                                    </a>
-                                    <a href="#" class="d-block me-2">
-                                        <img
-                                            src="assets/img/brands/05.svg"
-                                            width="135"
-                                            alt="Logo"
-                                        />
-                                    </a>
-                                </div> -->
-                        </div>
-                    </div>
 
-                    <!-- Layer parallax -->
-                    <div
-                        class="parallax mt-4 ms-4 me-lg-0 ms-lg-n5 ms-xl-n3 mt-lg-n4"
-                    >
-                        <div class="parallax-layer" data-depth="0.1">
-                            <img
-                                src="assets/img/layer01.png"
-                                width="1416"
-                                alt="Layer"
-                            />
-                        </div>
-                        <div class="parallax-layer zindex-2" data-depth="0.15">
-                            <img src="assets/img/layer02.png" alt="Layer" />
-                        </div>
-                        <div class="parallax-layer zindex-2" data-depth="0.35">
-                            <img src="assets/img/layer03.png" alt="Layer" />
-                        </div>
-                        <div class="parallax-layer zindex-2" data-depth="0.25">
-                            <img src="assets/img/layer04.png" alt="Layer" />
-                        </div>
-                        <div class="parallax-layer zindex-2" data-depth="0.4">
-                            <img src="assets/img/layer05.png" alt="Layer" />
-                        </div>
-                        <div class="parallax-layer zindex-2" data-depth="0.28">
-                            <img src="assets/img/layer06.png" alt="Layer" />
-                        </div>
-                        <div class="parallax-layer zindex-2" data-depth="0.35">
-                            <img src="assets/img/layer07.png" alt="Layer" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <section class="container-fluid position-relative px-0">
             <div class="row g-0">
                 <div class="col-xl-7 col-lg-6 pe-lg-5">
                     <div class="d-flex h-100 pe-xl-4">
-                        <!-- <video
+                        <video
                             class="w-100"
                             autoplay=""
                             muted=""
@@ -105,15 +15,15 @@
                             __idm_id__="2588673"
                         >
                             <source
-                                src="https://silicon.createx.studio/assets/img/landing/conference/hero-video.mp4"
+                                src="assets/videos/hero-video.mp4"
                                 type="video/mp4"
                             />
-                        </video> -->
+                        </video>
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-6 position-relative py-5">
                     <img
-                        src="https://silicon.createx.studio/assets/img/landing/conference/hero-bg.png"
+                        src="assets/img/hero-bg.png"
                         class="position-absolute top-50 translate-middle-y ms-lg-n4"
                         width="866"
                         alt="Background shapes"
@@ -138,12 +48,17 @@
                         <div
                             class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start py-4 py-lg-5"
                         >
-                            <a
+                            <!-- <a
                                 href="#"
                                 class="btn btn-primary shadow-primary btn-lg me-sm-3 me-xl-4 mb-3"
-                                >Buy access pass</a
+                                >About us</a
+                            > -->
+                            <router-link
+                                class="btn btn-primary shadow-primary btn-lg me-sm-3 me-xl-4 mb-3"
+                                :to="{ name: 'about' }"
+                                >About us</router-link
                             >
-                            <a
+                            <!-- <a
                                 href="#"
                                 class="btn btn-outline-primary btn-lg mb-3"
                             >
@@ -151,6 +66,15 @@
                                     class="bx bx-calendar-check fs-xl me-2 ms-n1"
                                 ></i>
                                 Add to calendar
+                            </a> -->
+
+                            <a
+                                target="_blank"
+                                class="btn btn-outline-primary btn-lg mb-3"
+                                href="https://github.com/hilsonxhero"
+                            >
+                                <i class="bx bxl-github fs-xl me-2 ms-n1"></i>
+                                Github
                             </a>
                         </div>
                         <div
@@ -454,7 +378,7 @@
                             <div
                                 class="col-sm-5 position-relative bg-position-center bg-repeat-0 bg-size-cover"
                                 style="
-                                    background-image: url(https://silicon.createx.studio/assets/img/landing/digital-agency/blog/02.jpg);
+                                    background-image: url(assets/img/02.jpg);
                                     min-height: 15rem;
                                 "
                             >

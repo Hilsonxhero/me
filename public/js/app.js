@@ -19644,7 +19644,7 @@ var routes = [// {
 }, {
   path: "/",
   component: function component() {
-    return __webpack_require__.e(/*! import() */ "resources_js_layout_app_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../layout/app */ "./resources/js/layout/app.vue"));
+    return __webpack_require__.e(/*! import() */ "resources_js_layouts_application_app_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../layouts/application/app */ "./resources/js/layouts/application/app.vue"));
   },
   children: [{
     path: "",
@@ -19692,6 +19692,23 @@ var routes = [// {
     path: "/:match(.*)",
     redirect: "/404"
   }]
+}, {
+  path: "/panel/admin",
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_layouts_panel_app_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../layouts/panel/app */ "./resources/js/layouts/panel/app.vue"));
+  },
+  children: [{
+    path: "dashboard",
+    name: "panel admin dashboard",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_panel_dashboard_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/panel/dashboard */ "./resources/js/views/panel/dashboard.vue"));
+    }
+  } // {
+  //     path: "about",
+  //     name: "about",
+  //     component: () => import("../views/application/about"),
+  // },
+  ]
 }];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createRouter)({
   history: (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createWebHistory)(),
@@ -40959,7 +40976,7 @@ function compileToFunction(template, options) {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_views_utility_404_vue":1,"resources_js_views_utility_500_vue":1,"resources_js_layout_app_vue":1,"resources_js_views_application_landing_vue":1,"resources_js_views_application_about_vue":1,"resources_js_views_application_contact_vue":1,"resources_js_views_application_portfolios_index_vue":1,"resources_js_views_application_portfolios_show_vue":1,"resources_js_views_application_articles_index_vue":1,"resources_js_views_application_articles_show_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_views_utility_404_vue":1,"resources_js_views_utility_500_vue":1,"resources_js_layouts_application_app_vue":1,"resources_js_views_application_landing_vue":1,"resources_js_views_application_about_vue":1,"resources_js_views_application_contact_vue":1,"resources_js_views_application_portfolios_index_vue":1,"resources_js_views_application_portfolios_show_vue":1,"resources_js_views_application_articles_index_vue":1,"resources_js_views_application_articles_show_vue":1,"resources_js_layouts_panel_app_vue":1,"resources_js_views_panel_dashboard_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

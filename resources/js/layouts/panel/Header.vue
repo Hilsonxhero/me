@@ -6,7 +6,7 @@
     >
         <div class="container px-3">
             <a href="index.html" class="navbar-brand pe-3">
-                <img src="assets/img/logo.svg" width="47" alt="Silicon" />
+                <img src="/assets/img/logo.svg" width="47" alt="Silicon" />
                 Silicon
             </a>
             <div id="navbarNav" class="offcanvas offcanvas-end">
@@ -54,7 +54,7 @@
                 </div>
                 <div class="offcanvas-footer border-top">
                     <a
-                        href="https://themes.getbootstrap.com/product/silicon-business-technology-template-ui-kit/"
+                        href=""
                         class="btn btn-primary w-100"
                         target="_blank"
                         rel="noopener"
@@ -96,14 +96,14 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a
-                href="https://themes.getbootstrap.com/product/silicon-business-technology-template-ui-kit/"
+                href=""
                 class="btn btn-primary btn-sm fs-sm rounded d-none d-lg-inline-flex"
                 target="_blank"
                 rel="noopener"
             >
                 <i class="bx bx-user-circle fs-5 lh-1 me-1"></i>
                 &nbsp;Sign in
-            </a>    
+            </a>
         </div>
     </header>
 </template>
