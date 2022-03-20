@@ -1,28 +1,622 @@
 <template>
-    <div class="grid items-center h-screen">
-        <div class="text-center">
-            <h1 class="tagline">
-                The <span class="accent">Hero Startkit</span><br />
-                vue 3 tailwind 3 laravel 9
-            </h1>
-        </div>
+    <div class="">
+        <!-- Hero section with layer parallax gfx -->
+        <section class="position-relative overflow-hidden pb-4 mb-3 d-none">
+            <div class="container pt-lg-3">
+                <div class="row flex-lg-nowrap">
+                    <div
+                        class="col-lg-6 col-xl-5 text-center text-lg-start mt-xl-4"
+                    >
+                        <h1 class="display-4 pt-5 pb-2 pb-lg-3 mt-2 mt-lg-5">
+                            Task Management Assistant You Gonna Love
+                        </h1>
+                        <p class="fs-lg mb-4 mb-lg-5">
+                            We offer you a new generation of task management
+                            system. Plan, manage & track all your tasks in one
+                            flexible tool.
+                        </p>
+                        <a href="#" class="btn btn-primary btn-lg"
+                            >Get started for free</a
+                        >
+                        <div class="pt-5 mt-xl-5">
+                            <!-- <h6 class="pt-xl-3 pb-3 pb-lg-4">
+                                    Largest companies use our tool to work
+                                    efficiently
+                                </h6>
+                                <div
+                                    class="d-flex justify-content-center justify-content-lg-start mx-xl-n2"
+                                >
+                                    <a href="#" class="d-block me-2">
+                                        <img
+                                            src="assets/img/brands/07.svg"
+                                            width="135"
+                                            alt="Logo"
+                                        />
+                                    </a>
+                                    <a href="#" class="d-block me-2">
+                                        <img
+                                            src="assets/img/brands/04.svg"
+                                            width="135"
+                                            alt="Logo"
+                                        />
+                                    </a>
+                                    <a href="#" class="d-block me-2">
+                                        <img
+                                            src="assets/img/brands/02.svg"
+                                            width="135"
+                                            alt="Logo"
+                                        />
+                                    </a>
+                                    <a href="#" class="d-block me-2">
+                                        <img
+                                            src="assets/img/brands/05.svg"
+                                            width="135"
+                                            alt="Logo"
+                                        />
+                                    </a>
+                                </div> -->
+                        </div>
+                    </div>
+
+                    <!-- Layer parallax -->
+                    <div
+                        class="parallax mt-4 ms-4 me-lg-0 ms-lg-n5 ms-xl-n3 mt-lg-n4"
+                    >
+                        <div class="parallax-layer" data-depth="0.1">
+                            <img
+                                src="assets/img/layer01.png"
+                                width="1416"
+                                alt="Layer"
+                            />
+                        </div>
+                        <div class="parallax-layer zindex-2" data-depth="0.15">
+                            <img src="assets/img/layer02.png" alt="Layer" />
+                        </div>
+                        <div class="parallax-layer zindex-2" data-depth="0.35">
+                            <img src="assets/img/layer03.png" alt="Layer" />
+                        </div>
+                        <div class="parallax-layer zindex-2" data-depth="0.25">
+                            <img src="assets/img/layer04.png" alt="Layer" />
+                        </div>
+                        <div class="parallax-layer zindex-2" data-depth="0.4">
+                            <img src="assets/img/layer05.png" alt="Layer" />
+                        </div>
+                        <div class="parallax-layer zindex-2" data-depth="0.28">
+                            <img src="assets/img/layer06.png" alt="Layer" />
+                        </div>
+                        <div class="parallax-layer zindex-2" data-depth="0.35">
+                            <img src="assets/img/layer07.png" alt="Layer" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="container-fluid position-relative px-0 "
+        >
+            <div class="row g-0">
+                <div class="col-xl-7 col-lg-6 pe-lg-5">
+                    <div class="d-flex h-100 pe-xl-4">
+                        <video
+                            class="w-100"
+                            autoplay=""
+                            muted=""
+                            loop=""
+                            style="object-fit: cover"
+                            __idm_id__="2588673"
+                        >
+                            <source
+                                src="https://silicon.createx.studio/assets/img/landing/conference/hero-video.mp4"
+                                type="video/mp4"
+                            />
+                        </video>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-6 position-relative py-5">
+                    <img
+                        src="https://silicon.createx.studio/assets/img/landing/conference/hero-bg.png"
+                        class="position-absolute top-50 translate-middle-y ms-lg-n4"
+                        width="866"
+                        alt="Background shapes"
+                    />
+                    <div
+                        class="position-relative zindex-5 text-center text-lg-start px-3 px-lg-0 py-xl-4 py-xxl-5 mt-lg-3 mx-auto mx-lg-0"
+                        style="max-width: 530px"
+                    >
+                        <h2 class="h3 text-primary">Oct 14-15, 2021</h2>
+                        <h1 class="display-1 pb-lg-3 mb-3">
+                            NY Digital Conference
+                        </h1>
+                        <div
+                            class="d-flex justify-content-center justify-content-lg-start text-start mb-2"
+                        >
+                            <i class="bx bx-map fs-4 text-primary me-2"></i>
+                            <div class="fs-xl">
+                                International Convention Centre,<br />New York,
+                                USA
+                            </div>
+                        </div>
+                        <div
+                            class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start py-4 py-lg-5"
+                        >
+                            <a
+                                href="#"
+                                class="btn btn-primary shadow-primary btn-lg me-sm-3 me-xl-4 mb-3"
+                                >Buy access pass</a
+                            >
+                            <a
+                                href="#"
+                                class="btn btn-outline-primary btn-lg mb-3"
+                            >
+                                <i
+                                    class="bx bx-calendar-check fs-xl me-2 ms-n1"
+                                ></i>
+                                Add to calendar
+                            </a>
+                        </div>
+                        <div
+                            class="d-flex align-items-center justify-content-center justify-content-lg-start text-start pb-2 pt-lg-2 pb-xl-0 pt-xl-5 mt-xxl-5"
+                        >
+
+                            <span class="fs-sm"
+                                ><span class="text-primary fw-semibold"
+                                    >400+</span
+                                >
+                                attendees are already with us</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="position-absolute d-none d-lg-block bottom-0 start-0 w-100 zindex-5 pb-xxl-5"
+            >
+                <div class="container pb-4 mb-3 mb-xxl-0">
+                    <a
+                        href="#speakers"
+                        class="d-table text-light opacity-80 text-decoration-none w-auto py-4"
+                        data-scroll=""
+                        data-scroll-offset="70"
+                    >
+                        <span class="d-flex align-items-center">
+                            Scroll for more
+                            <i class="bx bx-down-arrow-circle fs-3 ms-2"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features (Icon + Text) -->
+        <section class="container mt-5 pt-5">
+            <h2 class="h1 text-center pb-4 pb-lg-5">
+                Stay Organized &amp; Connected
+            </h2>
+            <div class="row">
+                <div
+                    class="col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4"
+                >
+                    <div
+                        class="d-inline-block bg-secondary rounded-circle p-3 mb-4"
+                    >
+                        <img src="assets/img/chat.svg" width="32" alt="Icon" />
+                    </div>
+                    <h3 class="h5 pb-1 mb-2">Task Comments</h3>
+                    <p class="fs-sm">
+                        Id mollis consectetur congue egestas egestas suspendisse
+                        blandit justo.
+                    </p>
+                </div>
+                <div
+                    class="col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4"
+                >
+                    <div
+                        class="d-inline-block bg-secondary rounded-circle p-3 mb-4"
+                    >
+                        <img
+                            src="assets/img/analytics.svg"
+                            width="32"
+                            alt="Icon"
+                        />
+                    </div>
+                    <h3 class="h5 pb-1 mb-2">Tasks Analytics</h3>
+                    <p class="fs-sm">
+                        Augue pulvinar justo, fermentum fames aliquamant
+                        accumsan vestibulum.
+                    </p>
+                </div>
+                <div
+                    class="col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4"
+                >
+                    <div
+                        class="d-inline-block bg-secondary rounded-circle p-3 mb-4"
+                    >
+                        <img src="assets/img/bell.svg" width="32" alt="Icon" />
+                    </div>
+                    <h3 class="h5 pb-1 mb-2">Notifications</h3>
+                    <p class="fs-sm">
+                        Mattis urna ultricies non amet, purus in auctor non.
+                        Odio vulputate ac nibh.
+                    </p>
+                </div>
+                <div
+                    class="col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4"
+                >
+                    <div
+                        class="d-inline-block bg-secondary rounded-circle p-3 mb-4"
+                    >
+                        <img src="assets/img/tasks.svg" width="32" alt="Icon" />
+                    </div>
+                    <h3 class="h5 pb-1 mb-2">Sections &amp; Subtasks</h3>
+                    <p class="fs-sm">
+                        A elementum, imperdiet enim, pretium etiam facilisi in
+                        aenean quam mauris.
+                    </p>
+                </div>
+                <div
+                    class="col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4"
+                >
+                    <div
+                        class="d-inline-block bg-secondary rounded-circle p-3 mb-4"
+                    >
+                        <img
+                            src="assets/img/calendar.svg"
+                            width="32"
+                            alt="Icon"
+                        />
+                    </div>
+                    <h3 class="h5 pb-1 mb-2">Progress Tracking</h3>
+                    <p class="fs-sm">
+                        Sit facilisis dolor arcu, fermentum vestibulum arcu
+                        elementum imperdiet eleifend.
+                    </p>
+                </div>
+                <div
+                    class="col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4"
+                >
+                    <div
+                        class="d-inline-block bg-secondary rounded-circle p-3 mb-4"
+                    >
+                        <img
+                            src="assets/img/add-group.svg"
+                            width="32"
+                            alt="Icon"
+                        />
+                    </div>
+                    <h3 class="h5 pb-1 mb-2">Multiple Assignees</h3>
+                    <p class="fs-sm">
+                        Faucibus cursus maecenas lorem cursus nibh. Sociis sit
+                        risus id. Sit facilisis dolor arcu.
+                    </p>
+                </div>
+                <div
+                    class="col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4"
+                >
+                    <div
+                        class="d-inline-block bg-secondary rounded-circle p-3 mb-4"
+                    >
+                        <img
+                            src="assets/img/headset.svg"
+                            width="32"
+                            alt="Icon"
+                        />
+                    </div>
+                    <h3 class="h5 pb-1 mb-2">Support 24/7</h3>
+                    <p class="fs-sm">
+                        Sapien sed massa sit erat pellentesque pellentesque
+                        nisl, elementum.
+                    </p>
+                </div>
+                <div
+                    class="col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4"
+                >
+                    <div
+                        class="d-inline-block bg-secondary rounded-circle p-3 mb-4"
+                    >
+                        <img
+                            src="assets/img/shield.svg"
+                            width="32"
+                            alt="Icon"
+                        />
+                    </div>
+                    <h3 class="h5 pb-1 mb-2">Data Security</h3>
+                    <p class="fs-sm">
+                        Aliquet felis facilisi sem nunc. Sapien fermentum,
+                        fringilla molestie lorem nec.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard -->
+        <section class="container pt-3 pt-md-4 pt-lg-5 pb-2 mt-lg-2 mt-xl-4">
+            <div class="row align-items-center">
+                <div
+                    class="col-md-7"
+                    data-jarallax-element="25"
+                    data-disable-parallax-down="lg"
+                >
+                    <img
+                        src="assets/img/dashboard.png"
+                        class="d-block mx-auto"
+                        width="746"
+                        alt="Image"
+                    />
+                </div>
+                <div
+                    class="col-md-5 col-xl-4 offset-xl-1 d-flex d-sm-block flex-column"
+                    data-jarallax-element="-25"
+                    data-disable-parallax-down="lg"
+                >
+                    <h2 class="pb-3 pt-2 pt-md-0">Manage Your Work</h2>
+                    <ul class="list-unstyled pb-2">
+                        <li class="d-flex align-items-center pb-1 mb-2">
+                            <i
+                                class="bx bx-check-circle text-primary fs-xl me-2"
+                            ></i>
+                            Powerful project management
+                        </li>
+                        <li class="d-flex align-items-center pb-1 mb-2">
+                            <i
+                                class="bx bx-check-circle text-primary fs-xl me-2"
+                            ></i>
+                            Transparent work management
+                        </li>
+                        <li class="d-flex align-items-center pb-1 mb-2">
+                            <i
+                                class="bx bx-check-circle text-primary fs-xl me-2"
+                            ></i>
+                            Manage work &amp; focus on the most important tasks
+                        </li>
+                        <li class="d-flex align-items-center pb-1 mb-2">
+                            <i
+                                class="bx bx-check-circle text-primary fs-xl me-2"
+                            ></i>
+                            Track your progress with interactive charts
+                        </li>
+                        <li class="d-flex align-items-center pb-1 mb-2">
+                            <i
+                                class="bx bx-check-circle text-primary fs-xl me-2"
+                            ></i>
+                            Easiest way to track time spent on tasks
+                        </li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">
+                        Learn more
+                        <i class="bx bx-right-arrow-alt fs-xl ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="container mb-1 mb-md-3 mb-lg-4 d-none">
+            <div class="bg-secondary rounded-3 overflow-hidden">
+                <div class="row align-items-center">
+                    <div class="col-xl-4 col-md-5 offset-lg-1">
+                        <div
+                            class="pt-5 pb-3 pb-md-5 px-4 px-lg-0 text-center text-md-start"
+                        >
+                            <p class="lead mb-3">Ready to get started?</p>
+                            <h2 class="h1 pb-3 pb-sm-4">
+                                Take Your
+                                <span class="text-primary">Business</span>
+                                to&nbsp;the Next Level
+                            </h2>
+                            <a href="#" class="btn btn-primary btn-lg"
+                                >Work with us</a
+                            >
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-7 offset-xl-1">
+                        <div
+                            class="position-relative d-flex flex-column align-items-center justify-content-center h-100"
+                        >
+                            <svg
+                                class="d-none d-md-block position-absolute top-50 start-0 translate-middle-y"
+                                width="868"
+                                height="868"
+                                style="min-width: 868px"
+                                viewBox="0 0 868 868"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <circle
+                                    opacity="0.15"
+                                    cx="434"
+                                    cy="434"
+                                    r="434"
+                                    fill="#6366F1"
+                                ></circle>
+                            </svg>
+                            <img
+                                src="assets/img/about/cta.png"
+                                class="position-relative zindex-3 mb-2 my-lg-4"
+                                width="382"
+                                alt="Illustration"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News slider -->
+        <section class="bg-secondary border-bottom border-light pt-4 pb-2 mt-5">
+            <div class="container">
+                <h2 class="h1 text-center pb-2">News &amp; Insights</h2>
+                <div class="position-relative mx-md-2 px-md-5">
+                    <button
+                        type="button"
+                        id="news-prev"
+                        class="btn btn-prev btn-icon btn-sm position-absolute top-50 start-0 translate-middle-y d-none d-md-inline-flex"
+                    >
+                        <i class="bx bx-chevron-left"></i>
+                    </button>
+                    <button
+                        type="button"
+                        id="news-next"
+                        class="btn btn-next btn-icon btn-sm position-absolute top-50 end-0 translate-middle-y d-none d-md-inline-flex"
+                    >
+                        <i class="bx bx-chevron-right"></i>
+                    </button>
+
+                    <carousel
+                        :options="{
+                            autoplay: {
+                                delay: 500,
+                            },
+                            slidesPerView: 3,
+                            navigation: {
+                                nextEl: `#news-next`,
+                                prevEl: `#news-prev`,
+                            },
+                            pagination: {
+                                el: `#news-pagination`,
+                            },
+                            breakpoints: {
+                                1200: {
+                                    slidesPerView: 3,
+                                },
+                                360: {
+                                    slidesPerView: 3,
+                                },
+                            },
+                        }"
+                    >
+                        <div
+                            class="swiper-slide h-auto py-3"
+                            v-for="(article, index) in 6"
+                            :key="index"
+                        >
+                            <article
+                                class="card p-md-3 p-2 border-0 shadow-sm card-hover-primary h-100 mx-2"
+                            >
+                                <div class="card-body pb-0">
+                                    <div
+                                        class="d-flex align-items-center justify-content-between mb-3"
+                                    >
+                                        <a
+                                            href="#"
+                                            class="badge fs-sm text-nav bg-secondary text-decoration-none position-relative zindex-2"
+                                            >Tech</a
+                                        >
+                                        <span class="fs-sm text-muted"
+                                            >1 day ago</span
+                                        >
+                                    </div>
+                                    <h3 class="h4">
+                                        <router-link
+                                            class="stretched-link"
+                                            :to="{
+                                                name: 'articles show',
+                                                params: { id: 2, slug: 'test' },
+                                            }"
+                                        >
+                                            How the Millennial Lifestyle Changes
+                                            as Service Prices Rise
+                                        </router-link>
+                                    </h3>
+                                    <p class="mb-0">
+                                        Sit facilisis dolor arcu, fermentum
+                                        vestibulum arcu elementum imperdiet.
+                                        Mauris duis eleifend faucibus amet
+                                        sagittis.
+                                    </p>
+                                </div>
+                                <div
+                                    class="card-footer d-flex align-items-center py-4 text-muted border-top-0"
+                                >
+                                    <div class="d-flex align-items-center me-3">
+                                        <i class="bx bx-like fs-lg me-1"></i>
+                                        <span class="fs-sm">2</span>
+                                    </div>
+                                    <div class="d-flex align-items-center me-3">
+                                        <i class="bx bx-comment fs-lg me-1"></i>
+                                        <span class="fs-sm">0</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <i
+                                            class="bx bx-share-alt fs-lg me-1"
+                                        ></i>
+                                        <span class="fs-sm">3</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </carousel>
+
+                    <div
+                        id="news-pagination"
+                        class="swiper-pagination position-relative mt-5"
+                    ></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Back to top button -->
+        <a href="#top" class="btn-scroll-top" data-scroll>
+            <span class="btn-scroll-top-tooltip text-muted fs-sm me-2"
+                >Top</span
+            >
+            <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+        </a>
     </div>
 </template>
 
-<style scoped>
-.tagline {
-    font-size: 76px;
-    line-height: 1.25;
-    font-weight: 900;
-    letter-spacing: -1.5px;
-    max-width: 960px;
-    margin: 0 auto;
-}
+<script>
+import { reactive } from "vue";
+// import Swiper core and required modules
+// import { Navigation, Pagination } from "swiper";
+// import { Swiper, SwiperSlide, useSwiper } from "swiper/vue";
 
-.accent {
-    background: -webkit-linear-gradient(315deg, #42d392 25%, #647eff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-</style>
+import "swiper/css";
+// import "swiper/css/navigation";
+// import "swiper/css/pagination";
+// import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
+// import 'swiper/css/swiper.css'
+
+import Carousel from "@/components/carousel";
+
+export default {
+    components: { Carousel },
+    // components: {
+    //     Swiper,
+    //     SwiperSlide,
+    // },
+
+    // directives: {
+    //     swiper: directive,
+    // },
+
+    data() {
+        return {
+            // swiperOptions: {
+            //     slidesPerView: 4,
+            //     breakpoints: {
+            //         1200: {
+            //             slidesPerView: 3,
+            //         },
+            //         360: {
+            //             slidesPerView: 3,
+            //         },
+            //     },
+            // },
+        };
+    },
+
+    computed: {
+        swiperOptions() {
+            return {
+                slidesPerView: 5,
+            };
+        },
+    },
+
+    mounted() {
+        console.log("Current Swiper instance object", this.swiper);
+    },
+};
+</script>
+
+<style scoped></style>

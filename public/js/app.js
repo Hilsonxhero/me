@@ -19629,10 +19629,64 @@ var routes = [{
   component: function component() {
     return __webpack_require__.e(/*! import() */ "resources_js_views_application_landing_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/application/landing */ "./resources/js/views/application/landing.vue"));
   }
+}, {
+  path: "/",
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_layout_app_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../layout/app */ "./resources/js/layout/app.vue"));
+  },
+  children: [{
+    path: "",
+    name: "home",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_application_landing_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/application/landing */ "./resources/js/views/application/landing.vue"));
+    }
+  }, {
+    path: "about",
+    name: "about",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_application_about_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/application/about */ "./resources/js/views/application/about.vue"));
+    }
+  }, {
+    path: "contact",
+    name: "contact",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_application_contact_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/application/contact */ "./resources/js/views/application/contact.vue"));
+    }
+  }, {
+    path: "portfolios",
+    name: "portfolios index",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_application_portfolios_index_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/application/portfolios/index */ "./resources/js/views/application/portfolios/index.vue"));
+    }
+  }, {
+    path: "portfolios/:id/:slug",
+    name: "portfolios show",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_application_portfolios_show_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/application/portfolios/show */ "./resources/js/views/application/portfolios/show.vue"));
+    }
+  }, {
+    path: "articles",
+    name: "articles index",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_application_articles_index_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/application/articles/index */ "./resources/js/views/application/articles/index.vue"));
+    }
+  }, {
+    path: "articles/:id/:slug",
+    name: "articles show",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_application_articles_show_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/application/articles/show */ "./resources/js/views/application/articles/show.vue"));
+    }
+  }]
 }];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createRouter)({
   history: (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createWebHistory)(),
-  routes: routes
+  routes: routes,
+  scrollBehavior: function scrollBehavior(to, from, savedPosition) {
+    // always scroll to top
+    return {
+      top: 0
+    };
+  }
 }));
 
 /***/ }),
@@ -36849,10 +36903,23 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
-/***/ "./resources/css/app.css":
-/*!*******************************!*\
-  !*** ./resources/css/app.css ***!
-  \*******************************/
+/***/ "./resources/sass/app.scss":
+/*!*********************************!*\
+  !*** ./resources/sass/app.scss ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/sass/custom.scss":
+/*!************************************!*\
+  !*** ./resources/sass/custom.scss ***!
+  \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -40877,7 +40944,7 @@ function compileToFunction(template, options) {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if (chunkId === "resources_js_views_application_landing_vue") return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_views_application_landing_vue":1,"resources_js_layout_app_vue":1,"resources_js_views_application_about_vue":1,"resources_js_views_application_contact_vue":1,"resources_js_views_application_portfolios_index_vue":1,"resources_js_views_application_portfolios_show_vue":1,"resources_js_views_application_articles_index_vue":1,"resources_js_views_application_articles_show_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
@@ -40989,7 +41056,8 @@ function compileToFunction(template, options) {
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
-/******/ 			"css/app": 0
+/******/ 			"css/app": 0,
+/******/ 			"css/custom": 0
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.j = (chunkId, promises) => {
@@ -41001,7 +41069,7 @@ function compileToFunction(template, options) {
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if("css/app" != chunkId) {
+/******/ 						if(!/^css\/(app|custom)$/.test(chunkId)) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
 /******/ 							promises.push(installedChunkData[2] = promise);
@@ -41076,8 +41144,9 @@ function compileToFunction(template, options) {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/custom"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/custom"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/custom"], () => (__webpack_require__("./resources/sass/custom.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

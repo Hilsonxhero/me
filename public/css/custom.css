@@ -1,0 +1,13 @@
+body {
+  padding-top: 4rem;
+}
+
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.background-fixed {
+  background-attachment: fixed;
+}

@@ -1,0 +1,15 @@
+body {
+    padding-top: 4rem;
+    // direction: rtl;
+    // text-align: right;
+}
+
+main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.background-fixed {
+    background-attachment: fixed;
+}
