@@ -162,11 +162,34 @@ var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   rel: "noopener"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "bx bx-cart fs-4 lh-1 me-1"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("  Buy now ")])], -1
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("  Sign in ")])], -1
 /* HOISTED */
 );
 
-var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"form-check form-switch mode-switch pe-lg-1 ms-auto me-4\" data-bs-toggle=\"mode\"><input type=\"checkbox\" class=\"form-check-input\" id=\"theme-mode\"><label class=\"form-check-label d-none d-sm-block\" for=\"theme-mode\">Light</label><label class=\"form-check-label d-none d-sm-block\" for=\"theme-mode\">Dark</label></div><button type=\"button\" class=\"navbar-toggler\" data-bs-toggle=\"offcanvas\" data-bs-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span class=\"navbar-toggler-icon\"></span></button><a href=\"https://themes.getbootstrap.com/product/silicon-business-technology-template-ui-kit/\" class=\"btn btn-primary btn-sm fs-sm rounded d-none d-lg-inline-flex\" target=\"_blank\" rel=\"noopener\"><i class=\"bx bx-cart fs-5 lh-1 me-1\"></i>  Buy now </a>", 3);
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "class": "navbar-toggler",
+  "data-bs-toggle": "offcanvas",
+  "data-bs-target": "#navbarNav",
+  "aria-controls": "navbarNav",
+  "aria-expanded": "false",
+  "aria-label": "Toggle navigation"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "navbar-toggler-icon"
+})], -1
+/* HOISTED */
+);
+
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "https://themes.getbootstrap.com/product/silicon-business-technology-template-ui-kit/",
+  "class": "btn btn-primary btn-sm fs-sm rounded d-none d-lg-inline-flex",
+  target: "_blank",
+  rel: "noopener"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "bx bx-user-circle fs-5 lh-1 me-1"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("  Sign in ")], -1
+/* HOISTED */
+);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
@@ -219,7 +242,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })])])]), _hoisted_16]), _hoisted_17])])], 2112
+  })])])]), _hoisted_16]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div\n                class=\"form-check form-switch mode-switch pe-lg-1 ms-auto me-4\"\n                data-bs-toggle=\"mode\"\n            >\n                <input\n                    type=\"checkbox\"\n                    class=\"form-check-input\"\n                    id=\"theme-mode\"\n                />\n                <label\n                    class=\"form-check-label d-none d-sm-block\"\n                    for=\"theme-mode\"\n                    >Light</label\n                >\n                <label\n                    class=\"form-check-label d-none d-sm-block\"\n                    for=\"theme-mode\"\n                    >Dark</label\n                >\n            </div> "), _hoisted_17, _hoisted_18])])], 2112
   /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
   );
 }

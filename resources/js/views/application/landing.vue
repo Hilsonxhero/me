@@ -92,13 +92,11 @@
             </div>
         </section>
 
-        <section
-            class="container-fluid position-relative px-0 "
-        >
+        <section class="container-fluid position-relative px-0">
             <div class="row g-0">
                 <div class="col-xl-7 col-lg-6 pe-lg-5">
                     <div class="d-flex h-100 pe-xl-4">
-                        <video
+                        <!-- <video
                             class="w-100"
                             autoplay=""
                             muted=""
@@ -110,7 +108,7 @@
                                 src="https://silicon.createx.studio/assets/img/landing/conference/hero-video.mp4"
                                 type="video/mp4"
                             />
-                        </video>
+                        </video> -->
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-6 position-relative py-5">
@@ -158,7 +156,6 @@
                         <div
                             class="d-flex align-items-center justify-content-center justify-content-lg-start text-start pb-2 pt-lg-2 pb-xl-0 pt-xl-5 mt-xxl-5"
                         >
-
                             <span class="fs-sm"
                                 ><span class="text-primary fw-semibold"
                                     >400+</span
@@ -441,6 +438,102 @@
             </div>
         </section>
 
+        <section class="container mb-5 py-lg-5">
+            <h2 class="h1 mb-4 pb-3 text-center">Latest Portfolios</h2>
+            <div class="row">
+                <div
+                    class="col-lg-6"
+                    v-for="(portfolio, index) in 6"
+                    :key="index"
+                >
+                    <!-- Article -->
+                    <article
+                        class="card border-0 shadow-sm overflow-hidden mb-4"
+                    >
+                        <div class="row g-0">
+                            <div
+                                class="col-sm-5 position-relative bg-position-center bg-repeat-0 bg-size-cover"
+                                style="
+                                    background-image: url(https://silicon.createx.studio/assets/img/landing/digital-agency/blog/02.jpg);
+                                    min-height: 15rem;
+                                "
+                            >
+                                <router-link
+                                    class="position-absolute top-0 start-0 w-100 h-100"
+                                    :to="{
+                                        name: 'portfolios show',
+                                        params: { id: 2, slug: 'test' },
+                                    }"
+                                >
+                                </router-link>
+                                <a
+                                    href="#"
+                                    class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3"
+                                    data-bs-toggle="tooltip"
+                                    data-bs-placement="left"
+                                    title=""
+                                    data-bs-original-title="Read later"
+                                >
+                                    <i class="bx bx-bookmark"></i>
+                                </a>
+                            </div>
+                            <div class="col-sm-7">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <a
+                                            href="#"
+                                            class="badge fs-sm text-nav bg-secondary text-decoration-none"
+                                            >Design</a
+                                        >
+                                        <span
+                                            class="fs-sm text-muted border-start ps-3 ms-3"
+                                            >1 day ago</span
+                                        >
+                                    </div>
+                                    <h3 class="h5">
+                                        <router-link
+                                            :to="{
+                                                name: 'portfolios show',
+                                                params: { id: 2, slug: 'test' },
+                                            }"
+                                        >
+                                            Brand analysis: second step to the
+                                            brand identity
+                                        </router-link>
+                                    </h3>
+                                    <hr class="my-4" />
+                                    <div
+                                        class="d-flex flex-wrap align-items-center justify-content-between"
+                                    >
+                                        <span
+                                            class="badge badge bg-light mb-2"
+                                            v-for="(tag, index) in 6"
+                                            :key="index"
+                                            >test</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 mt-4 pt-lg-4 pt-3 text-center">
+                    <!-- <a
+                        href="blog-grid-no-sidebar.html"
+                        class="btn btn-lg btn-outline-primary w-sm-auto w-100"
+                        >More portfolios</a
+                    > -->
+
+                    <router-link
+                        class="btn btn-lg btn-outline-primary w-sm-auto w-100"
+                        :to="{ name: 'portfolios index' }"
+                        >More portfolios</router-link
+                    >
+                </div>
+            </div>
+        </section>
+
         <!-- News slider -->
         <section class="bg-secondary border-bottom border-light pt-4 pb-2 mt-5">
             <div class="container">
@@ -478,8 +571,14 @@
                                 1200: {
                                     slidesPerView: 3,
                                 },
+                                768: {
+                                    slidesPerView: 2.5,
+                                },
+                                568: {
+                                    slidesPerView: 2,
+                                },
                                 360: {
-                                    slidesPerView: 3,
+                                    slidesPerView: 1.4,
                                 },
                             },
                         }"

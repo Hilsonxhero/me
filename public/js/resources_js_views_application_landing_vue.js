@@ -151,105 +151,109 @@ var _hoisted_1 = {
   "class": ""
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"position-relative overflow-hidden pb-4 mb-3 d-none\"><div class=\"container pt-lg-3\"><div class=\"row flex-lg-nowrap\"><div class=\"col-lg-6 col-xl-5 text-center text-lg-start mt-xl-4\"><h1 class=\"display-4 pt-5 pb-2 pb-lg-3 mt-2 mt-lg-5\"> Task Management Assistant You Gonna Love </h1><p class=\"fs-lg mb-4 mb-lg-5\"> We offer you a new generation of task management system. Plan, manage &amp; track all your tasks in one flexible tool. </p><a href=\"#\" class=\"btn btn-primary btn-lg\">Get started for free</a><div class=\"pt-5 mt-xl-5\"><!-- &lt;h6 class=&quot;pt-xl-3 pb-3 pb-lg-4&quot;&gt;\n                                    Largest companies use our tool to work\n                                    efficiently\n                                &lt;/h6&gt;\n                                &lt;div\n                                    class=&quot;d-flex justify-content-center justify-content-lg-start mx-xl-n2&quot;\n                                &gt;\n                                    &lt;a href=&quot;#&quot; class=&quot;d-block me-2&quot;&gt;\n                                        &lt;img\n                                            src=&quot;assets/img/brands/07.svg&quot;\n                                            width=&quot;135&quot;\n                                            alt=&quot;Logo&quot;\n                                        /&gt;\n                                    &lt;/a&gt;\n                                    &lt;a href=&quot;#&quot; class=&quot;d-block me-2&quot;&gt;\n                                        &lt;img\n                                            src=&quot;assets/img/brands/04.svg&quot;\n                                            width=&quot;135&quot;\n                                            alt=&quot;Logo&quot;\n                                        /&gt;\n                                    &lt;/a&gt;\n                                    &lt;a href=&quot;#&quot; class=&quot;d-block me-2&quot;&gt;\n                                        &lt;img\n                                            src=&quot;assets/img/brands/02.svg&quot;\n                                            width=&quot;135&quot;\n                                            alt=&quot;Logo&quot;\n                                        /&gt;\n                                    &lt;/a&gt;\n                                    &lt;a href=&quot;#&quot; class=&quot;d-block me-2&quot;&gt;\n                                        &lt;img\n                                            src=&quot;assets/img/brands/05.svg&quot;\n                                            width=&quot;135&quot;\n                                            alt=&quot;Logo&quot;\n                                        /&gt;\n                                    &lt;/a&gt;\n                                &lt;/div&gt; --></div></div><!-- Layer parallax --><div class=\"parallax mt-4 ms-4 me-lg-0 ms-lg-n5 ms-xl-n3 mt-lg-n4\"><div class=\"parallax-layer\" data-depth=\"0.1\"><img src=\"assets/img/layer01.png\" width=\"1416\" alt=\"Layer\"></div><div class=\"parallax-layer zindex-2\" data-depth=\"0.15\"><img src=\"assets/img/layer02.png\" alt=\"Layer\"></div><div class=\"parallax-layer zindex-2\" data-depth=\"0.35\"><img src=\"assets/img/layer03.png\" alt=\"Layer\"></div><div class=\"parallax-layer zindex-2\" data-depth=\"0.25\"><img src=\"assets/img/layer04.png\" alt=\"Layer\"></div><div class=\"parallax-layer zindex-2\" data-depth=\"0.4\"><img src=\"assets/img/layer05.png\" alt=\"Layer\"></div><div class=\"parallax-layer zindex-2\" data-depth=\"0.28\"><img src=\"assets/img/layer06.png\" alt=\"Layer\"></div><div class=\"parallax-layer zindex-2\" data-depth=\"0.35\"><img src=\"assets/img/layer07.png\" alt=\"Layer\"></div></div></div></div></section>", 1);
-
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", {
-  "class": "container-fluid position-relative px-0"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "row g-0"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "col-xl-7 col-lg-6 pe-lg-5"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "d-flex h-100 pe-xl-4"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("video", {
-  "class": "w-100",
-  autoplay: "",
-  muted: "",
-  loop: "",
-  style: {
-    "object-fit": "cover"
-  },
-  __idm_id__: "2588673"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("source", {
-  src: "https://silicon.createx.studio/assets/img/landing/conference/hero-video.mp4",
-  type: "video/mp4"
-})])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "col-xl-5 col-lg-6 position-relative py-5"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "https://silicon.createx.studio/assets/img/landing/conference/hero-bg.png",
-  "class": "position-absolute top-50 translate-middle-y ms-lg-n4",
-  width: "866",
-  alt: "Background shapes"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "position-relative zindex-5 text-center text-lg-start px-3 px-lg-0 py-xl-4 py-xxl-5 mt-lg-3 mx-auto mx-lg-0",
-  style: {
-    "max-width": "530px"
-  }
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
-  "class": "h3 text-primary"
-}, "Oct 14-15, 2021"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
-  "class": "display-1 pb-lg-3 mb-3"
-}, " NY Digital Conference "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "d-flex justify-content-center justify-content-lg-start text-start mb-2"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "bx bx-map fs-4 text-primary me-2"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "fs-xl"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" International Convention Centre,"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("New York, USA ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start py-4 py-lg-5"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#",
-  "class": "btn btn-primary shadow-primary btn-lg me-sm-3 me-xl-4 mb-3"
-}, "Buy access pass"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#",
-  "class": "btn btn-outline-primary btn-lg mb-3"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "bx bx-calendar-check fs-xl me-2 ms-n1"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Add to calendar ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "d-flex align-items-center justify-content-center justify-content-lg-start text-start pb-2 pt-lg-2 pb-xl-0 pt-xl-5 mt-xxl-5"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "fs-sm"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "text-primary fw-semibold"
-}, "400+"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" attendees are already with us")])])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "position-absolute d-none d-lg-block bottom-0 start-0 w-100 zindex-5 pb-xxl-5"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "container pb-4 mb-3 mb-xxl-0"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#speakers",
-  "class": "d-table text-light opacity-80 text-decoration-none w-auto py-4",
-  "data-scroll": "",
-  "data-scroll-offset": "70"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "d-flex align-items-center"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Scroll for more "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "bx bx-down-arrow-circle fs-3 ms-2"
-})])])])])], -1
-/* HOISTED */
-);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"position-relative overflow-hidden pb-4 mb-3 d-none\"><div class=\"container pt-lg-3\"><div class=\"row flex-lg-nowrap\"><div class=\"col-lg-6 col-xl-5 text-center text-lg-start mt-xl-4\"><h1 class=\"display-4 pt-5 pb-2 pb-lg-3 mt-2 mt-lg-5\"> Task Management Assistant You Gonna Love </h1><p class=\"fs-lg mb-4 mb-lg-5\"> We offer you a new generation of task management system. Plan, manage &amp; track all your tasks in one flexible tool. </p><a href=\"#\" class=\"btn btn-primary btn-lg\">Get started for free</a><div class=\"pt-5 mt-xl-5\"><!-- &lt;h6 class=&quot;pt-xl-3 pb-3 pb-lg-4&quot;&gt;\n                                    Largest companies use our tool to work\n                                    efficiently\n                                &lt;/h6&gt;\n                                &lt;div\n                                    class=&quot;d-flex justify-content-center justify-content-lg-start mx-xl-n2&quot;\n                                &gt;\n                                    &lt;a href=&quot;#&quot; class=&quot;d-block me-2&quot;&gt;\n                                        &lt;img\n                                            src=&quot;assets/img/brands/07.svg&quot;\n                                            width=&quot;135&quot;\n                                            alt=&quot;Logo&quot;\n                                        /&gt;\n                                    &lt;/a&gt;\n                                    &lt;a href=&quot;#&quot; class=&quot;d-block me-2&quot;&gt;\n                                        &lt;img\n                                            src=&quot;assets/img/brands/04.svg&quot;\n                                            width=&quot;135&quot;\n                                            alt=&quot;Logo&quot;\n                                        /&gt;\n                                    &lt;/a&gt;\n                                    &lt;a href=&quot;#&quot; class=&quot;d-block me-2&quot;&gt;\n                                        &lt;img\n                                            src=&quot;assets/img/brands/02.svg&quot;\n                                            width=&quot;135&quot;\n                                            alt=&quot;Logo&quot;\n                                        /&gt;\n                                    &lt;/a&gt;\n                                    &lt;a href=&quot;#&quot; class=&quot;d-block me-2&quot;&gt;\n                                        &lt;img\n                                            src=&quot;assets/img/brands/05.svg&quot;\n                                            width=&quot;135&quot;\n                                            alt=&quot;Logo&quot;\n                                        /&gt;\n                                    &lt;/a&gt;\n                                &lt;/div&gt; --></div></div><!-- Layer parallax --><div class=\"parallax mt-4 ms-4 me-lg-0 ms-lg-n5 ms-xl-n3 mt-lg-n4\"><div class=\"parallax-layer\" data-depth=\"0.1\"><img src=\"assets/img/layer01.png\" width=\"1416\" alt=\"Layer\"></div><div class=\"parallax-layer zindex-2\" data-depth=\"0.15\"><img src=\"assets/img/layer02.png\" alt=\"Layer\"></div><div class=\"parallax-layer zindex-2\" data-depth=\"0.35\"><img src=\"assets/img/layer03.png\" alt=\"Layer\"></div><div class=\"parallax-layer zindex-2\" data-depth=\"0.25\"><img src=\"assets/img/layer04.png\" alt=\"Layer\"></div><div class=\"parallax-layer zindex-2\" data-depth=\"0.4\"><img src=\"assets/img/layer05.png\" alt=\"Layer\"></div><div class=\"parallax-layer zindex-2\" data-depth=\"0.28\"><img src=\"assets/img/layer06.png\" alt=\"Layer\"></div><div class=\"parallax-layer zindex-2\" data-depth=\"0.35\"><img src=\"assets/img/layer07.png\" alt=\"Layer\"></div></div></div></div></section><section class=\"container-fluid position-relative px-0\"><div class=\"row g-0\"><div class=\"col-xl-7 col-lg-6 pe-lg-5\"><div class=\"d-flex h-100 pe-xl-4\"><!-- &lt;video\n                            class=&quot;w-100&quot;\n                            autoplay=&quot;&quot;\n                            muted=&quot;&quot;\n                            loop=&quot;&quot;\n                            style=&quot;object-fit: cover&quot;\n                            __idm_id__=&quot;2588673&quot;\n                        &gt;\n                            &lt;source\n                                src=&quot;https://silicon.createx.studio/assets/img/landing/conference/hero-video.mp4&quot;\n                                type=&quot;video/mp4&quot;\n                            /&gt;\n                        &lt;/video&gt; --></div></div><div class=\"col-xl-5 col-lg-6 position-relative py-5\"><img src=\"https://silicon.createx.studio/assets/img/landing/conference/hero-bg.png\" class=\"position-absolute top-50 translate-middle-y ms-lg-n4\" width=\"866\" alt=\"Background shapes\"><div class=\"position-relative zindex-5 text-center text-lg-start px-3 px-lg-0 py-xl-4 py-xxl-5 mt-lg-3 mx-auto mx-lg-0\" style=\"max-width:530px;\"><h2 class=\"h3 text-primary\">Oct 14-15, 2021</h2><h1 class=\"display-1 pb-lg-3 mb-3\"> NY Digital Conference </h1><div class=\"d-flex justify-content-center justify-content-lg-start text-start mb-2\"><i class=\"bx bx-map fs-4 text-primary me-2\"></i><div class=\"fs-xl\"> International Convention Centre,<br>New York, USA </div></div><div class=\"d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start py-4 py-lg-5\"><a href=\"#\" class=\"btn btn-primary shadow-primary btn-lg me-sm-3 me-xl-4 mb-3\">Buy access pass</a><a href=\"#\" class=\"btn btn-outline-primary btn-lg mb-3\"><i class=\"bx bx-calendar-check fs-xl me-2 ms-n1\"></i> Add to calendar </a></div><div class=\"d-flex align-items-center justify-content-center justify-content-lg-start text-start pb-2 pt-lg-2 pb-xl-0 pt-xl-5 mt-xxl-5\"><span class=\"fs-sm\"><span class=\"text-primary fw-semibold\">400+</span> attendees are already with us</span></div></div></div></div><div class=\"position-absolute d-none d-lg-block bottom-0 start-0 w-100 zindex-5 pb-xxl-5\"><div class=\"container pb-4 mb-3 mb-xxl-0\"><a href=\"#speakers\" class=\"d-table text-light opacity-80 text-decoration-none w-auto py-4\" data-scroll=\"\" data-scroll-offset=\"70\"><span class=\"d-flex align-items-center\"> Scroll for more <i class=\"bx bx-down-arrow-circle fs-3 ms-2\"></i></span></a></div></div></section>", 2);
 
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"container mt-5 pt-5\"><h2 class=\"h1 text-center pb-4 pb-lg-5\"> Stay Organized &amp; Connected </h2><div class=\"row\"><div class=\"col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4\"><div class=\"d-inline-block bg-secondary rounded-circle p-3 mb-4\"><img src=\"assets/img/chat.svg\" width=\"32\" alt=\"Icon\"></div><h3 class=\"h5 pb-1 mb-2\">Task Comments</h3><p class=\"fs-sm\"> Id mollis consectetur congue egestas egestas suspendisse blandit justo. </p></div><div class=\"col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4\"><div class=\"d-inline-block bg-secondary rounded-circle p-3 mb-4\"><img src=\"assets/img/analytics.svg\" width=\"32\" alt=\"Icon\"></div><h3 class=\"h5 pb-1 mb-2\">Tasks Analytics</h3><p class=\"fs-sm\"> Augue pulvinar justo, fermentum fames aliquamant accumsan vestibulum. </p></div><div class=\"col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4\"><div class=\"d-inline-block bg-secondary rounded-circle p-3 mb-4\"><img src=\"assets/img/bell.svg\" width=\"32\" alt=\"Icon\"></div><h3 class=\"h5 pb-1 mb-2\">Notifications</h3><p class=\"fs-sm\"> Mattis urna ultricies non amet, purus in auctor non. Odio vulputate ac nibh. </p></div><div class=\"col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4\"><div class=\"d-inline-block bg-secondary rounded-circle p-3 mb-4\"><img src=\"assets/img/tasks.svg\" width=\"32\" alt=\"Icon\"></div><h3 class=\"h5 pb-1 mb-2\">Sections &amp; Subtasks</h3><p class=\"fs-sm\"> A elementum, imperdiet enim, pretium etiam facilisi in aenean quam mauris. </p></div><div class=\"col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4\"><div class=\"d-inline-block bg-secondary rounded-circle p-3 mb-4\"><img src=\"assets/img/calendar.svg\" width=\"32\" alt=\"Icon\"></div><h3 class=\"h5 pb-1 mb-2\">Progress Tracking</h3><p class=\"fs-sm\"> Sit facilisis dolor arcu, fermentum vestibulum arcu elementum imperdiet eleifend. </p></div><div class=\"col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4\"><div class=\"d-inline-block bg-secondary rounded-circle p-3 mb-4\"><img src=\"assets/img/add-group.svg\" width=\"32\" alt=\"Icon\"></div><h3 class=\"h5 pb-1 mb-2\">Multiple Assignees</h3><p class=\"fs-sm\"> Faucibus cursus maecenas lorem cursus nibh. Sociis sit risus id. Sit facilisis dolor arcu. </p></div><div class=\"col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4\"><div class=\"d-inline-block bg-secondary rounded-circle p-3 mb-4\"><img src=\"assets/img/headset.svg\" width=\"32\" alt=\"Icon\"></div><h3 class=\"h5 pb-1 mb-2\">Support 24/7</h3><p class=\"fs-sm\"> Sapien sed massa sit erat pellentesque pellentesque nisl, elementum. </p></div><div class=\"col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4\"><div class=\"d-inline-block bg-secondary rounded-circle p-3 mb-4\"><img src=\"assets/img/shield.svg\" width=\"32\" alt=\"Icon\"></div><h3 class=\"h5 pb-1 mb-2\">Data Security</h3><p class=\"fs-sm\"> Aliquet felis facilisi sem nunc. Sapien fermentum, fringilla molestie lorem nec. </p></div></div></section>", 1);
 
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"container pt-3 pt-md-4 pt-lg-5 pb-2 mt-lg-2 mt-xl-4\"><div class=\"row align-items-center\"><div class=\"col-md-7\" data-jarallax-element=\"25\" data-disable-parallax-down=\"lg\"><img src=\"assets/img/dashboard.png\" class=\"d-block mx-auto\" width=\"746\" alt=\"Image\"></div><div class=\"col-md-5 col-xl-4 offset-xl-1 d-flex d-sm-block flex-column\" data-jarallax-element=\"-25\" data-disable-parallax-down=\"lg\"><h2 class=\"pb-3 pt-2 pt-md-0\">Manage Your Work</h2><ul class=\"list-unstyled pb-2\"><li class=\"d-flex align-items-center pb-1 mb-2\"><i class=\"bx bx-check-circle text-primary fs-xl me-2\"></i> Powerful project management </li><li class=\"d-flex align-items-center pb-1 mb-2\"><i class=\"bx bx-check-circle text-primary fs-xl me-2\"></i> Transparent work management </li><li class=\"d-flex align-items-center pb-1 mb-2\"><i class=\"bx bx-check-circle text-primary fs-xl me-2\"></i> Manage work &amp; focus on the most important tasks </li><li class=\"d-flex align-items-center pb-1 mb-2\"><i class=\"bx bx-check-circle text-primary fs-xl me-2\"></i> Track your progress with interactive charts </li><li class=\"d-flex align-items-center pb-1 mb-2\"><i class=\"bx bx-check-circle text-primary fs-xl me-2\"></i> Easiest way to track time spent on tasks </li></ul><a href=\"#\" class=\"btn btn-primary\"> Learn more <i class=\"bx bx-right-arrow-alt fs-xl ms-2\"></i></a></div></div></section><section class=\"container mb-1 mb-md-3 mb-lg-4 d-none\"><div class=\"bg-secondary rounded-3 overflow-hidden\"><div class=\"row align-items-center\"><div class=\"col-xl-4 col-md-5 offset-lg-1\"><div class=\"pt-5 pb-3 pb-md-5 px-4 px-lg-0 text-center text-md-start\"><p class=\"lead mb-3\">Ready to get started?</p><h2 class=\"h1 pb-3 pb-sm-4\"> Take Your <span class=\"text-primary\">Business</span> to the Next Level </h2><a href=\"#\" class=\"btn btn-primary btn-lg\">Work with us</a></div></div><div class=\"col-lg-6 col-md-7 offset-xl-1\"><div class=\"position-relative d-flex flex-column align-items-center justify-content-center h-100\"><svg class=\"d-none d-md-block position-absolute top-50 start-0 translate-middle-y\" width=\"868\" height=\"868\" style=\"min-width:868px;\" viewBox=\"0 0 868 868\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle opacity=\"0.15\" cx=\"434\" cy=\"434\" r=\"434\" fill=\"#6366F1\"></circle></svg><img src=\"assets/img/about/cta.png\" class=\"position-relative zindex-3 mb-2 my-lg-4\" width=\"382\" alt=\"Illustration\"></div></div></div></div></section>", 2);
 
 var _hoisted_7 = {
+  "class": "container mb-5 py-lg-5"
+};
+
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+  "class": "h1 mb-4 pb-3 text-center"
+}, "Latest Portfolios", -1
+/* HOISTED */
+);
+
+var _hoisted_9 = {
+  "class": "row"
+};
+var _hoisted_10 = {
+  "class": "card border-0 shadow-sm overflow-hidden mb-4"
+};
+var _hoisted_11 = {
+  "class": "row g-0"
+};
+var _hoisted_12 = {
+  "class": "col-sm-5 position-relative bg-position-center bg-repeat-0 bg-size-cover",
+  style: {
+    "background-image": "url(https://silicon.createx.studio/assets/img/landing/digital-agency/blog/02.jpg)",
+    "min-height": "15rem"
+  }
+};
+
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "#",
+  "class": "btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3",
+  "data-bs-toggle": "tooltip",
+  "data-bs-placement": "left",
+  title: "",
+  "data-bs-original-title": "Read later"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "bx bx-bookmark"
+})], -1
+/* HOISTED */
+);
+
+var _hoisted_14 = {
+  "class": "col-sm-7"
+};
+var _hoisted_15 = {
+  "class": "card-body"
+};
+
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "d-flex align-items-center mb-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "#",
+  "class": "badge fs-sm text-nav bg-secondary text-decoration-none"
+}, "Design"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "fs-sm text-muted border-start ps-3 ms-3"
+}, "1 day ago")], -1
+/* HOISTED */
+);
+
+var _hoisted_17 = {
+  "class": "h5"
+};
+
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Brand analysis: second step to the brand identity ");
+
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", {
+  "class": "my-4"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_20 = {
+  "class": "d-flex flex-wrap align-items-center justify-content-between"
+};
+var _hoisted_21 = {
+  "class": "col-12 mt-4 pt-lg-4 pt-3 text-center"
+};
+
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("More portfolios");
+
+var _hoisted_23 = {
   "class": "bg-secondary border-bottom border-light pt-4 pb-2 mt-5"
 };
-var _hoisted_8 = {
+var _hoisted_24 = {
   "class": "container"
 };
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "h1 text-center pb-2"
 }, "News & Insights", -1
 /* HOISTED */
 );
 
-var _hoisted_10 = {
+var _hoisted_26 = {
   "class": "position-relative mx-md-2 px-md-5"
 };
 
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   type: "button",
   id: "news-prev",
   "class": "btn btn-prev btn-icon btn-sm position-absolute top-50 start-0 translate-middle-y d-none d-md-inline-flex"
@@ -259,7 +263,7 @@ var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   type: "button",
   id: "news-next",
   "class": "btn btn-next btn-icon btn-sm position-absolute top-50 end-0 translate-middle-y d-none d-md-inline-flex"
@@ -269,14 +273,14 @@ var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_13 = {
+var _hoisted_29 = {
   "class": "card p-md-3 p-2 border-0 shadow-sm card-hover-primary h-100 mx-2"
 };
-var _hoisted_14 = {
+var _hoisted_30 = {
   "class": "card-body pb-0"
 };
 
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "d-flex align-items-center justify-content-between mb-3"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: "#",
@@ -287,19 +291,19 @@ var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_16 = {
+var _hoisted_32 = {
   "class": "h4"
 };
 
-var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" How the Millennial Lifestyle Changes as Service Prices Rise ");
+var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" How the Millennial Lifestyle Changes as Service Prices Rise ");
 
-var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "mb-0"
 }, " Sit facilisis dolor arcu, fermentum vestibulum arcu elementum imperdiet. Mauris duis eleifend faucibus amet sagittis. ", -1
 /* HOISTED */
 );
 
-var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "card-footer d-flex align-items-center py-4 text-muted border-top-0"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "d-flex align-items-center me-3"
@@ -323,14 +327,14 @@ var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   id: "news-pagination",
   "class": "swiper-pagination position-relative mt-5"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: "#top",
   "class": "btn-scroll-top",
   "data-scroll": ""
@@ -347,7 +351,57 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_carousel = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("carousel");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Hero section with layer parallax gfx "), _hoisted_2, _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Features (Icon + Text) "), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Dashboard "), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" News slider "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [_hoisted_11, _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_carousel, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Hero section with layer parallax gfx "), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Features (Icon + Text) "), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Dashboard "), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(6, function (portfolio, index) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+      "class": "col-lg-6",
+      key: index
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Article "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+      "class": "position-absolute top-0 start-0 w-100 h-100",
+      to: {
+        name: 'portfolios show',
+        params: {
+          id: 2,
+          slug: 'test'
+        }
+      }
+    }), _hoisted_13]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+      to: {
+        name: 'portfolios show',
+        params: {
+          id: 2,
+          slug: 'test'
+        }
+      }
+    }, {
+      "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+        return [_hoisted_18];
+      }),
+      _: 1
+      /* STABLE */
+
+    })]), _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(6, function (tag, index) {
+      return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+        "class": "badge badge bg-light mb-2",
+        key: index
+      }, "test");
+    }), 64
+    /* STABLE_FRAGMENT */
+    ))])])])])])]);
+  }), 64
+  /* STABLE_FRAGMENT */
+  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <a\n                        href=\"blog-grid-no-sidebar.html\"\n                        class=\"btn btn-lg btn-outline-primary w-sm-auto w-100\"\n                        >More portfolios</a\n                    > "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    "class": "btn btn-lg btn-outline-primary w-sm-auto w-100",
+    to: {
+      name: 'portfolios index'
+    }
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_22];
+    }),
+    _: 1
+    /* STABLE */
+
+  })])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" News slider "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [_hoisted_27, _hoisted_28, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_carousel, {
     options: {
       autoplay: {
         delay: 500
@@ -364,8 +418,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         1200: {
           slidesPerView: 3
         },
+        768: {
+          slidesPerView: 2.5
+        },
+        568: {
+          slidesPerView: 2
+        },
         360: {
-          slidesPerView: 3
+          slidesPerView: 1.4
         }
       }
     }
@@ -375,7 +435,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
           "class": "swiper-slide h-auto py-3",
           key: index
-        }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+        }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [_hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
           "class": "stretched-link",
           to: {
             name: 'articles show',
@@ -386,12 +446,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }
         }, {
           "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-            return [_hoisted_17];
+            return [_hoisted_33];
           }),
           _: 1
           /* STABLE */
 
-        })]), _hoisted_18]), _hoisted_19])]);
+        })]), _hoisted_34]), _hoisted_35])]);
       }), 64
       /* STABLE_FRAGMENT */
       ))];
@@ -399,7 +459,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  }), _hoisted_20])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Back to top button "), _hoisted_21]);
+  }, 8
+  /* PROPS */
+  , ["options"]), _hoisted_36])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Back to top button "), _hoisted_37]);
 }
 
 /***/ }),

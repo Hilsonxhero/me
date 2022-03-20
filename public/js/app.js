@@ -19623,12 +19623,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
 
-var routes = [{
-  path: "/",
-  name: "home",
+var routes = [// {
+//     path: "/",
+//     name: "home",
+//     component: () => import("../views/application/landing"),
+// },
+// errors page
+{
+  path: "/404",
   component: function component() {
-    return __webpack_require__.e(/*! import() */ "resources_js_views_application_landing_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/application/landing */ "./resources/js/views/application/landing.vue"));
-  }
+    return __webpack_require__.e(/*! import() */ "resources_js_views_utility_404_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/utility/404 */ "./resources/js/views/utility/404.vue"));
+  },
+  name: "not-found"
+}, {
+  path: "/500",
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_views_utility_500_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/utility/500 */ "./resources/js/views/utility/500.vue"));
+  },
+  name: "server-error"
 }, {
   path: "/",
   component: function component() {
@@ -19676,6 +19688,9 @@ var routes = [{
     component: function component() {
       return __webpack_require__.e(/*! import() */ "resources_js_views_application_articles_show_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/application/articles/show */ "./resources/js/views/application/articles/show.vue"));
     }
+  }, {
+    path: "/:match(.*)",
+    redirect: "/404"
   }]
 }];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createRouter)({
@@ -40944,7 +40959,7 @@ function compileToFunction(template, options) {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_views_application_landing_vue":1,"resources_js_layout_app_vue":1,"resources_js_views_application_about_vue":1,"resources_js_views_application_contact_vue":1,"resources_js_views_application_portfolios_index_vue":1,"resources_js_views_application_portfolios_show_vue":1,"resources_js_views_application_articles_index_vue":1,"resources_js_views_application_articles_show_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_views_utility_404_vue":1,"resources_js_views_utility_500_vue":1,"resources_js_layout_app_vue":1,"resources_js_views_application_landing_vue":1,"resources_js_views_application_about_vue":1,"resources_js_views_application_contact_vue":1,"resources_js_views_application_portfolios_index_vue":1,"resources_js_views_application_portfolios_show_vue":1,"resources_js_views_application_articles_index_vue":1,"resources_js_views_application_articles_show_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

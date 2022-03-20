@@ -1,10 +1,24 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
+    // {
+    //     path: "/",
+    //     name: "home",
+    //     component: () => import("../views/application/landing"),
+    // },
+
+    // errors page
+
     {
-        path: "/",
-        name: "home",
-        component: () => import("../views/application/landing"),
+        path: "/404",
+        component: () => import("../views/utility/404"),
+        name: "not-found",
+    },
+
+    {
+        path: "/500",
+        component: () => import("../views/utility/500"),
+        name: "server-error",
     },
 
     {
@@ -45,14 +59,18 @@ const routes = [
             {
                 path: "articles",
                 name: "articles index",
-                component: () =>
-                    import("../views/application/articles/index"),
+                component: () => import("../views/application/articles/index"),
             },
 
             {
                 path: "articles/:id/:slug",
                 name: "articles show",
                 component: () => import("../views/application/articles/show"),
+            },
+
+            {
+                path: "/:match(.*)",
+                redirect: "/404",
             },
         ],
     },
@@ -63,6 +81,6 @@ export default createRouter({
     routes,
     scrollBehavior(to, from, savedPosition) {
         // always scroll to top
-        return { top: 0 }
-      },
+        return { top: 0 };
+    },
 });

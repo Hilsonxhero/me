@@ -60,11 +60,11 @@
                         rel="noopener"
                     >
                         <i class="bx bx-cart fs-4 lh-1 me-1"></i>
-                        &nbsp;Buy now
+                        &nbsp;Sign in
                     </a>
                 </div>
             </div>
-            <div
+            <!-- <div
                 class="form-check form-switch mode-switch pe-lg-1 ms-auto me-4"
                 data-bs-toggle="mode"
             >
@@ -83,7 +83,7 @@
                     for="theme-mode"
                     >Dark</label
                 >
-            </div>
+            </div> -->
             <button
                 type="button"
                 class="navbar-toggler"
@@ -101,9 +101,9 @@
                 target="_blank"
                 rel="noopener"
             >
-                <i class="bx bx-cart fs-5 lh-1 me-1"></i>
-                &nbsp;Buy now
-            </a>
+                <i class="bx bx-user-circle fs-5 lh-1 me-1"></i>
+                &nbsp;Sign in
+            </a>    
         </div>
     </header>
 </template>
