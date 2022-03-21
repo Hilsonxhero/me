@@ -79,13 +79,15 @@
                         <i class="bx bxs-zap fs-xl opacity-60 me-2"></i>
                         Technologies
                     </a>
-                    <a
-                        href="account-saved-items.html"
+
+                    <router-link
+                        exact
                         class="list-group-item list-group-item-action d-flex align-items-center"
+                        :to="{ name: 'panel admin tags' }"
                     >
                         <i class="bx bx-layer fs-xl opacity-60 me-2"></i>
                         Tags
-                    </a>
+                    </router-link>
 
                     <a
                         href="account-security.html"

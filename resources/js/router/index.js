@@ -104,6 +104,24 @@ const routes = [
             },
 
             {
+                path: "tags",
+                name: "panel admin tags",
+                component: () => import("@/views/panel/tags/index"),
+            },
+
+            {
+                path: "tags/create",
+                name: "panel admin tags create",
+                component: () => import("@/views/panel/tags/create"),
+            },
+
+            {
+                path: "tags/edit/:id",
+                name: "panel admin tags edit",
+                component: () => import("@/views/panel/tags/edit"),
+            },
+
+            {
                 path: "portfolios",
                 name: "panel admin portfolios",
                 component: () => import("../views/panel/portfolios/index"),

@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Services\ApiService;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Tag;
+use Illuminate\Http\Request;
 
-class TagController extends Controller
+class TechnologyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +14,7 @@ class TagController extends Controller
      */
     public function index()
     {
-        $categories = Tag::query()->orderByDesc('created_at')->get();
-
-
-        ApiService::_success($categories);
+        //
     }
 
     /**
@@ -30,11 +25,7 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-
-        Tag::query()->create([
-            'title' => $request->title,
-        ]);
-        return ApiService::_success("Category created successfully");
+        //
     }
 
     /**
@@ -45,9 +36,7 @@ class TagController extends Controller
      */
     public function show($id)
     {
-        $category = Tag::query()->where('id', $id)->first();
-
-        return ApiService::_success($category);
+        //
     }
 
     /**
@@ -59,14 +48,7 @@ class TagController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $category = Tag::query()->where('id', $id)->first();
-
-        $category->update([
-            'title' => $request->title,
-
-        ]);
-
-        return ApiService::_success("Category updated successfully");
+        //
     }
 
     /**
@@ -77,10 +59,6 @@ class TagController extends Controller
      */
     public function destroy($id)
     {
-        $category = Tag::query()->where('id', $id)->first();
-
-        $category->delete();
-
-        return ApiService::_success("Category deleted successfully");
+        //
     }
 }
