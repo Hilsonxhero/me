@@ -4,4 +4,9 @@ import { createApp } from "vue";
 
 import router from "./router";
 
-const app = createApp({ components: {} }).use(router).mount("#app");
+import Vuesax from 'vuesax3'
+
+import 'vuesax3/dist/vuesax.css'
+
+
+const app = createApp({ components: {} }).use(router).use(Vuesax).mount("#app");

@@ -5,10 +5,10 @@
         class="header navbar navbar-expand-lg navbar-light position-absolute navbar-sticky navbar-stuck"
     >
         <div class="container px-3">
-            <a href="index.html" class="navbar-brand pe-3">
-                <img src="assets/img/logo.svg" width="47" alt="Silicon" />
+            <router-link class="navbar-brand pe-3" :to="{ name: 'home' }">
+                <img src="/assets/img/logo.svg" width="47" alt="Silicon" />
                 Silicon
-            </a>
+            </router-link>
             <div id="navbarNav" class="offcanvas offcanvas-end">
                 <div class="offcanvas-header border-bottom">
                     <h5 class="offcanvas-title">Menu</h5>

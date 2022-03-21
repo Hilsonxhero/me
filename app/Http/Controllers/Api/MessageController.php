@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
-use App\Services\ApiService;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class MessageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-
-        ApiService::_success($categories);
+        //
     }
 
     /**
@@ -29,14 +25,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-
-        Category::query()->create([
-            'title' => $request->title,
-            'parent_id' => $request->parent,
-        ]);
-
-
-        return ApiService::_success("Category created successfully");
+        //
     }
 
     /**
@@ -47,9 +36,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        $category = Category::query()->where('id', $id)->first();
-
-        return ApiService::_success($category);
+        //
     }
 
     /**
@@ -61,14 +48,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $category = Category::query()->where('id', $id)->first();
-
-        $category->update([
-            'title' => $request->title,
-            'parent_id' => $request->parent,
-        ]);
-
-        return ApiService::_success("Category updated successfully");
+        //
     }
 
     /**
@@ -79,10 +59,6 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $category = Category::query()->where('id', $id)->first();
-
-        $category->delete();
-
-        return ApiService::_success("Category deleted successfully");
+        //
     }
 }

@@ -85,12 +85,59 @@ const routes = [
                 component: () => import("../views/panel/dashboard"),
             },
 
-            // {
-            //     path: "about",
-            //     name: "about",
-            //     component: () => import("../views/application/about"),
-            // },
+            {
+                path: "categories",
+                name: "panel admin categories",
+                component: () => import("@/views/panel/categories/index"),
+            },
 
+            {
+                path: "categories/create",
+                name: "panel admin categories create",
+                component: () => import("@/views/panel/categories/create"),
+            },
+
+            {
+                path: "categories/edit/:id",
+                name: "panel admin categories edit",
+                component: () => import("@/views/panel/categories/edit"),
+            },
+
+            {
+                path: "portfolios",
+                name: "panel admin portfolios",
+                component: () => import("../views/panel/portfolios/index"),
+            },
+
+            {
+                path: "portfolios/create",
+                name: "panel admin portfolios create",
+                component: () => import("../views/panel/portfolios/create"),
+            },
+
+            {
+                path: "portfolios/edit/:id",
+                name: "panel admin portfolios edit",
+                component: () => import("../views/panel/portfolios/edit"),
+            },
+
+            {
+                path: "articles",
+                name: "panel admin articles",
+                component: () => import("../views/panel/articles/index"),
+            },
+
+            {
+                path: "articles/create",
+                name: "panel admin articles create",
+                component: () => import("../views/panel/articles/create"),
+            },
+
+            {
+                path: "articles/edit/:id",
+                name: "panel admin articles edit",
+                component: () => import("../views/panel/articles/edit"),
+            },
         ],
     },
 ];
