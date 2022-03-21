@@ -19784,6 +19784,24 @@ var routes = [// {
       return __webpack_require__.e(/*! import() */ "resources_js_views_panel_tags_edit_vue").then(__webpack_require__.bind(__webpack_require__, /*! @/views/panel/tags/edit */ "./resources/js/views/panel/tags/edit.vue"));
     }
   }, {
+    path: "technologies",
+    name: "panel admin technologies",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_panel_technologies_index_vue").then(__webpack_require__.bind(__webpack_require__, /*! @/views/panel/technologies/index */ "./resources/js/views/panel/technologies/index.vue"));
+    }
+  }, {
+    path: "technologies/create",
+    name: "panel admin technologies create",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_panel_technologies_create_vue").then(__webpack_require__.bind(__webpack_require__, /*! @/views/panel/technologies/create */ "./resources/js/views/panel/technologies/create.vue"));
+    }
+  }, {
+    path: "technologies/edit/:id",
+    name: "panel admin technologies edit",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_panel_technologies_edit_vue").then(__webpack_require__.bind(__webpack_require__, /*! @/views/panel/technologies/edit */ "./resources/js/views/panel/technologies/edit.vue"));
+    }
+  }, {
     path: "portfolios",
     name: "panel admin portfolios",
     component: function component() {
@@ -57077,7 +57095,7 @@ module.exports = fails(function () {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_views_utility_404_vue":1,"resources_js_views_utility_500_vue":1,"resources_js_layouts_application_app_vue":1,"resources_js_views_application_landing_vue":1,"resources_js_views_application_about_vue":1,"resources_js_views_application_contact_vue":1,"resources_js_views_application_portfolios_index_vue":1,"resources_js_views_application_portfolios_show_vue":1,"resources_js_views_application_articles_index_vue":1,"resources_js_views_application_articles_show_vue":1,"resources_js_layouts_panel_app_vue":1,"resources_js_views_panel_dashboard_vue":1,"resources_js_views_panel_categories_index_vue":1,"resources_js_views_panel_categories_create_vue":1,"resources_js_views_panel_categories_edit_vue":1,"resources_js_views_panel_tags_index_vue":1,"resources_js_views_panel_tags_create_vue":1,"resources_js_views_panel_tags_edit_vue":1,"resources_js_views_panel_portfolios_index_vue":1,"resources_js_views_panel_portfolios_create_vue":1,"resources_js_views_panel_portfolios_edit_vue":1,"resources_js_views_panel_articles_index_vue":1,"resources_js_views_panel_articles_create_vue":1,"resources_js_views_panel_articles_edit_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_views_utility_404_vue":1,"resources_js_views_utility_500_vue":1,"resources_js_layouts_application_app_vue":1,"resources_js_views_application_landing_vue":1,"resources_js_views_application_about_vue":1,"resources_js_views_application_contact_vue":1,"resources_js_views_application_portfolios_index_vue":1,"resources_js_views_application_portfolios_show_vue":1,"resources_js_views_application_articles_index_vue":1,"resources_js_views_application_articles_show_vue":1,"resources_js_layouts_panel_app_vue":1,"resources_js_views_panel_dashboard_vue":1,"resources_js_views_panel_categories_index_vue":1,"resources_js_views_panel_categories_create_vue":1,"resources_js_views_panel_categories_edit_vue":1,"resources_js_views_panel_tags_index_vue":1,"resources_js_views_panel_tags_create_vue":1,"resources_js_views_panel_tags_edit_vue":1,"resources_js_views_panel_technologies_index_vue":1,"resources_js_views_panel_technologies_create_vue":1,"resources_js_views_panel_technologies_edit_vue":1,"resources_js_views_panel_portfolios_index_vue":1,"resources_js_views_panel_portfolios_create_vue":1,"resources_js_views_panel_portfolios_edit_vue":1,"resources_js_views_panel_articles_index_vue":1,"resources_js_views_panel_articles_create_vue":1,"resources_js_views_panel_articles_edit_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

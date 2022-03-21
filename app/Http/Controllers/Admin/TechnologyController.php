@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Services\ApiService;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Technology;
 
 class TechnologyController extends Controller
 {
@@ -14,7 +16,10 @@ class TechnologyController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Technology::query()->orderByDesc('created_at')->get();
+
+
+        ApiService::_success($categories);
     }
 
     /**
@@ -25,7 +30,11 @@ class TechnologyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        Technology::query()->create([
+            'title' => $request->title,
+        ]);
+        return ApiService::_success("Category created successfully");
     }
 
     /**
@@ -36,7 +45,9 @@ class TechnologyController extends Controller
      */
     public function show($id)
     {
-        //
+        $category = Technology::query()->where('id', $id)->first();
+
+        return ApiService::_success($category);
     }
 
     /**
@@ -48,7 +59,14 @@ class TechnologyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Technology::query()->where('id', $id)->first();
+
+        $category->update([
+            'title' => $request->title,
+
+        ]);
+
+        return ApiService::_success("Category updated successfully");
     }
 
     /**
@@ -59,6 +77,10 @@ class TechnologyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Technology::query()->where('id', $id)->first();
+
+        $category->delete();
+
+        return ApiService::_success("Category deleted successfully");
     }
 }

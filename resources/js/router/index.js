@@ -122,6 +122,24 @@ const routes = [
             },
 
             {
+                path: "technologies",
+                name: "panel admin technologies",
+                component: () => import("@/views/panel/technologies/index"),
+            },
+
+            {
+                path: "technologies/create",
+                name: "panel admin technologies create",
+                component: () => import("@/views/panel/technologies/create"),
+            },
+
+            {
+                path: "technologies/edit/:id",
+                name: "panel admin technologies edit",
+                component: () => import("@/views/panel/technologies/edit"),
+            },
+
+            {
                 path: "portfolios",
                 name: "panel admin portfolios",
                 component: () => import("../views/panel/portfolios/index"),

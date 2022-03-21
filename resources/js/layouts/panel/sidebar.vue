@@ -72,13 +72,15 @@
                         <i class="bx bx-chat fs-xl opacity-60 me-2"></i>
                         Messages
                     </a>
-                    <a
-                        href="account-saved-items.html"
+
+                    <router-link
+                        exact
                         class="list-group-item list-group-item-action d-flex align-items-center"
+                        :to="{ name: 'panel admin technologies' }"
                     >
                         <i class="bx bxs-zap fs-xl opacity-60 me-2"></i>
                         Technologies
-                    </a>
+                    </router-link>
 
                     <router-link
                         exact
