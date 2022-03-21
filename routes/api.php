@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\TechnologyController;
 use Illuminate\Http\Request;
@@ -25,4 +26,6 @@ Route::prefix('admin')->group(function () {
     Route::apiResource('categories', CategoryController::class);
     Route::apiResource('tags', TagController::class);
     Route::apiResource('technologies', TechnologyController::class);
+    Route::apiResource('portfolios', PortfolioController::class)->except('update');
+    Route::post("portfolios/update", [PortfolioController::class, 'update']);
 });

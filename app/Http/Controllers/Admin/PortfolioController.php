@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Services\ApiService;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Portfolio;
+use App\Services\MediaFileService;
 
 class PortfolioController extends Controller
 {
@@ -14,7 +17,10 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Portfolio::query()->orderByDesc('created_at')->get();
+
+
+        ApiService::_success($categories);
     }
 
     /**
@@ -25,7 +31,23 @@ class PortfolioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+        if ($request->file('file')) {
+
+            $request->merge(['media_id' => MediaFileService::publicUpload($request->file)->id]);
+        }
+
+
+        Portfolio::query()->create([
+            'title' => $request->title,
+            'web' => $request->web,
+            'services' => $request->services,
+            'description' => $request->description,
+            'media_id' => $request->media_id,
+            'category_id' => $request->category_id,
+        ]);
+        return ApiService::_success("portfolio created successfully");
     }
 
     /**
@@ -36,7 +58,9 @@ class PortfolioController extends Controller
      */
     public function show($id)
     {
-        //
+        $portfolio = Portfolio::query()->where('id', $id)->first();
+
+        return ApiService::_success($portfolio);
     }
 
     /**
@@ -48,7 +72,14 @@ class PortfolioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $portfolio = Portfolio::query()->where('id', $id)->first();
+
+        $portfolio->update([
+            'title' => $request->title,
+
+        ]);
+
+        return ApiService::_success("portfolio updated successfully");
     }
 
     /**
@@ -59,6 +90,10 @@ class PortfolioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $portfolio = Portfolio::query()->where('id', $id)->first();
+
+        $portfolio->delete();
+
+        return ApiService::_success("portfolio deleted successfully");
     }
 }

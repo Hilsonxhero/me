@@ -23,8 +23,12 @@
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>media</th>
                                 <th>title</th>
 
+                                <th>category</th>
+                                <th>web</th>
+                                <th>services</th>
                                 <th class="text-center">actions</th>
                             </tr>
                         </thead>
@@ -33,10 +37,21 @@
                                 v-for="(technology, index) in portfolios"
                                 :key="index"
                             >
-                                <th scope="row">{{ technology.id }}</th>
+                                <th class="middle">{{ technology.id }}</th>
+                                <td>
+                                    <img
+                                        :src="technology.banner_src"
+                                        alt=""
+                                        class="banner-ui"
+                                    />
+                                </td>
                                 <td>{{ technology.title }}</td>
 
-                                <td class="d-flex justify-content-center">
+                                <td>{{ technology.category.title }}</td>
+                                <td>{{ technology.web }}</td>
+                                <td>{{ technology.services }}</td>
+
+                                <td class="d-flex justify-content-center pt-4">
                                     <router-link
                                         class="btn btn-outline-secondary px-3 px-xl-4 me-3"
                                         :to="{
@@ -102,10 +117,20 @@ onMounted(() => {
     text-align: center;
 }
 
-/* table tbody tr td {
+.banner-ui {
+    width: 95px;
+    object-fit: cover;
+}
+table tbody tr {
+    border-color: transparent !important;
+}
+table tbody tr td {
     vertical-align: middle;
 }
 table thead tr th {
     vertical-align: middle;
-} */
+}
+.middle {
+    vertical-align: middle;
+}
 </style>

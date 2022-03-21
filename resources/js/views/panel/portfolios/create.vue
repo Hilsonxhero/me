@@ -75,6 +75,28 @@
                             placeholder="description"
                         ></textarea>
                     </div>
+
+                    <div class="col-12 mb-4">
+                        <label
+                            class="custom-file-upload btn btn-outline-success btn-block"
+                        >
+                            <input
+                                class="d-none"
+                                type="file"
+                                @change="selectedFile"
+                            />
+                            <template v-if="filename">
+                                {{ filename }}
+                            </template>
+
+                            <template v-else>select file</template>
+                        </label>
+                        <template v-if="src">
+                            <div class="w-50 d-block my-4">
+                                <img :src="src" alt="" />
+                            </div>
+                        </template>
+                    </div>
                 </div>
                 <div class="d-flex mb-3">
                     <router-link
@@ -84,7 +106,7 @@
                         Cancel</router-link
                     >
                     <button
-                        type="submit"
+                        type="button"
                         class="btn btn-primary"
                         @click="createHandler"
                     >
@@ -101,6 +123,9 @@ import { useRoute, useRouter } from "vue-router";
 
 const route = useRoute();
 const router = useRouter();
+const file = ref();
+const src = ref();
+const filename = ref();
 
 const form = reactive({
     title: "",
@@ -108,16 +133,26 @@ const form = reactive({
     services: "",
     description: "",
     category: null,
-    file: null,
 });
 
 let categories = ref([]);
 
+const selectedFile = (event) => {
+    // const file = event.target.files[0];
+    filename.value = event.target.files[0].name;
+    src.value = URL.createObjectURL(event.target.files[0]);
+    file.value = event.target.files[0];
+};
+
 const createHandler = () => {
-    const data = {
-        title: form.title,
-        parent: form.parent,
-    };
+    let data = new FormData();
+
+    data.append("title", form.title);
+    data.append("web", form.web);
+    data.append("services", form.services);
+    data.append("description", form.description);
+    data.append("category_id", form.category);
+    data.append("file", file.value);
     axios
         .post("/api/admin/portfolios", data)
         .then(({ data }) => {
@@ -135,4 +170,8 @@ onMounted(() => {
         .catch((error) => {});
 });
 </script>
-<style></style>
+<style>
+.w-50 {
+    width: 50%;
+}
+</style>
