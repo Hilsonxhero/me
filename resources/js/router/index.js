@@ -158,6 +158,18 @@ const routes = [
             },
 
             {
+                path: "portfolios/gallery/:id",
+                name: "panel admin portfolios gallery",
+                component: () => import("../views/panel/portfolios/gallery"),
+            },
+
+            {
+                path: "portfolios/gallery/edit/:id",
+                name: "panel admin portfolios gallery edit",
+                component: () => import("../views/panel/portfolios/gallery"),
+            },
+
+            {
                 path: "articles",
                 name: "panel admin articles",
                 component: () => import("../views/panel/articles/index"),

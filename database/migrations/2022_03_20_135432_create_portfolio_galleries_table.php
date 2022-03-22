@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('portfolio_galleries', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger("portfolio_id");
             $table->unsignedBigInteger("media_id");
             $table->string("title");
             $table->boolean("status")->default(0);

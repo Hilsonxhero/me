@@ -34,25 +34,25 @@
                         </thead>
                         <tbody>
                             <tr
-                                v-for="(technology, index) in portfolios"
+                                v-for="(portfolio, index) in portfolios"
                                 :key="index"
                             >
-                                <th class="middle">{{ technology.id }}</th>
+                                <th class="middle">{{ portfolio.id }}</th>
                                 <td>
                                     <img
-                                        :src="technology.banner_src"
+                                        :src="portfolio.banner_src"
                                         alt=""
                                         class="banner-ui"
                                     />
                                 </td>
-                                <td>{{ technology.title }}</td>
+                                <td>{{ portfolio.title }}</td>
 
-                                <td>{{ technology.category.title }}</td>
-                                <td>{{ technology.web }}</td>
-                                <td>{{ technology.services }}</td>
+                                <td>{{ portfolio.category.title }}</td>
+                                <td>{{ portfolio.web }}</td>
+                                <td>{{ portfolio.services }}</td>
 
                                 <td>
-                                    <template v-if="technology.status == 1">
+                                    <template v-if="portfolio.status == 1">
                                         <span
                                             class="badge bg-success rounded-pill"
                                             >published</span
@@ -71,8 +71,22 @@
                                     <router-link
                                         class="btn btn-outline-secondary px-3 px-xl-4 me-3"
                                         :to="{
+                                            name: 'panel admin portfolios gallery',
+                                            params: { id: portfolio.id },
+                                        }"
+                                    >
+                                        <i
+                                            class="bx bx-image fs-xl me-lg-1 me-xl-2"
+                                        ></i>
+                                        <span class="d-none d-lg-inline"
+                                            >Gallery</span
+                                        >
+                                    </router-link>
+                                    <router-link
+                                        class="btn btn-outline-secondary px-3 px-xl-4 me-3"
+                                        :to="{
                                             name: 'panel admin portfolios edit',
-                                            params: { id: technology.id },
+                                            params: { id: portfolio.id },
                                         }"
                                     >
                                         <i

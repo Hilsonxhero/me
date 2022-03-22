@@ -19,9 +19,6 @@
                             class="form-control form-control-lg"
                             required=""
                         />
-                        <div class="invalid-feedback">
-                            Please enter your first name!
-                        </div>
                     </div>
                     <div class="col-sm-6 mb-4">
                         <label for="sn" class="form-label fs-base"
