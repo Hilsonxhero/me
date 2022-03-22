@@ -12,6 +12,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var element_plus__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! element-plus */ "./node_modules/element-plus/es/components/notification/index.js");
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   setup: function setup(__props, _ref) {
@@ -23,6 +25,10 @@ __webpack_require__.r(__webpack_exports__);
       axios["delete"]("/api/admin/portfolios/".concat(id)).then(function (_ref2) {
         var data = _ref2.data;
         portfolios.value.splice(index, 1);
+        element_plus__WEBPACK_IMPORTED_MODULE_1__.ElNotification.success({
+          title: "Success",
+          message: "Portfolio deleted successfully"
+        });
       })["catch"](function (error) {});
     };
 
@@ -37,7 +43,8 @@ __webpack_require__.r(__webpack_exports__);
       deleteHandler: deleteHandler,
       reactive: vue__WEBPACK_IMPORTED_MODULE_0__.reactive,
       onMounted: vue__WEBPACK_IMPORTED_MODULE_0__.onMounted,
-      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref
+      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
+      ElNotification: element_plus__WEBPACK_IMPORTED_MODULE_1__.ElNotification
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,

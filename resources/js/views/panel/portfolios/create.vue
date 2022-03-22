@@ -125,7 +125,7 @@
                             <template v-else>select file</template>
                         </label>
                         <template v-if="src">
-                            <div class="w-50 d-block my-4">
+                            <div class="banner__src d-block my-4">
                                 <img :src="src" alt="" />
                             </div>
                         </template>
@@ -156,11 +156,8 @@ import { useRoute, useRouter } from "vue-router";
 
 import Multiselect from "@suadelabs/vue3-multiselect";
 
-//  ElNotification.success({
-//     title: 'Success',
-//     message: 'This is a success message',
+import { ElNotification } from "element-plus";
 
-//   })
 const selectedTechnologies = ref([]);
 
 const route = useRoute();
@@ -206,7 +203,7 @@ const createHandler = () => {
 
             ElNotification.success({
                 title: "Success",
-                message: "This is a success message",
+                message: "Portfolio created successfully",
             });
         })
         .catch((error) => {});
@@ -261,6 +258,16 @@ onMounted(() => {
     font-size: 0.9rem;
     /* line-height: 50px; */
     background: none;
+}
+
+.banner__src {
+    width: 200px;
+    max-width: 200px;
+}
+
+.banner__src img {
+    border-radius: 0.7rem;
+    object-fit: cover;
 }
 /* .multiselect__tags {
     background: rgba(255, 255, 255, 0.05);

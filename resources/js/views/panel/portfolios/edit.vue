@@ -28,7 +28,7 @@
                             >category</label
                         >
                         <select
-                            v-model="form.category"
+                            v-model="form.category_id"
                             id="country"
                             class="form-select form-select-lg"
                             required=""
@@ -125,7 +125,7 @@
                             <template v-else>select file</template>
                         </label>
                         <template v-if="src">
-                            <div class="w-50 d-block my-4">
+                            <div class="banner__src d-block my-4">
                                 <img :src="src" alt="" />
                             </div>
                         </template>
@@ -141,7 +141,7 @@
                     <button
                         type="button"
                         class="btn btn-primary"
-                        @click="createHandler"
+                        @click="editHandler"
                     >
                         Save changes
                     </button>
@@ -156,6 +156,7 @@ import { useRoute, useRouter } from "vue-router";
 
 import Multiselect from "@suadelabs/vue3-multiselect";
 
+import { ElNotification } from "element-plus";
 
 const selectedTechnologies = ref([]);
 
@@ -165,7 +166,7 @@ const file = ref();
 const src = ref();
 const filename = ref();
 
-const form = reactive({
+const form = ref({
     title: "",
     web: "",
     services: "",
@@ -177,25 +178,32 @@ const form = reactive({
 let categories = ref([]);
 let technologies = ref([]);
 
+let id = ref();
+
 const selectedFile = (event) => {
     filename.value = event.target.files[0].name;
     src.value = URL.createObjectURL(event.target.files[0]);
     file.value = event.target.files[0];
 };
 
-const createHandler = () => {
+const editHandler = () => {
     let data = new FormData();
 
-    data.append("title", form.title);
-    data.append("web", form.web);
-    data.append("services", form.services);
-    data.append("description", form.description);
-    data.append("category_id", form.category);
+    data.append("id", id.value);
+    data.append("title", form.value.title);
+    data.append("web", form.value.web);
+    data.append("services", form.value.services);
+    data.append("description", form.value.description);
+    data.append("category_id", form.value.category_id);
     data.append("technologies", JSON.stringify(selectedTechnologies.value));
-    data.append("status", form.status ? 1 : 0);
-    data.append("file", file.value);
+    data.append("status", form.value.status ? 1 : 0);
+
+    if (file.value) {
+        data.append("file", file.value);
+    }
+
     axios
-        .post("/api/admin/portfolios", data)
+        .post("/api/admin/portfolios/update", data)
         .then(({ data }) => {
             router.push({ name: "panel admin portfolios" });
         })
@@ -203,6 +211,7 @@ const createHandler = () => {
 };
 
 onMounted(() => {
+    id.value = route.params.id;
     axios
         .get("/api/admin/categories")
         .then(({ data }) => {
@@ -216,6 +225,29 @@ onMounted(() => {
             technologies.value = data.data;
         })
         .catch((error) => {});
+
+    axios
+        .get(`/api/admin/portfolios/${id.value}`)
+        .then(({ data }) => {
+            form.value = data.data;
+
+            form.value.status == 1
+                ? (form.value.status = true)
+                : (form.value.status = false);
+
+            src.value = form.value.banner_src;
+
+            selectedTechnologies.value = form.value.technologies.map(
+                (technology) => {
+                    let item = {};
+                    item["title"] = technology.title;
+                    item["id"] = technology.id;
+
+                    return item;
+                }
+            );
+        })
+        .catch((error) => {});
 });
 </script>
 
@@ -225,6 +257,14 @@ onMounted(() => {
 }
 .el-notification__title {
     color: #333 !important;
+}
+.banner__src {
+    width: 200px;
+    max-width: 200px;
+}
+.banner__src img {
+    border-radius: 0.7rem;
+    object-fit: cover;
 }
 
 /* .multiselect__tags {

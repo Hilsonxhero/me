@@ -26,6 +26,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
 /* harmony import */ var _suadelabs_vue3_multiselect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @suadelabs/vue3-multiselect */ "./node_modules/@suadelabs/vue3-multiselect/dist/vue3-multiselect.umd.min.js");
 /* harmony import */ var _suadelabs_vue3_multiselect__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_suadelabs_vue3_multiselect__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var element_plus__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! element-plus */ "./node_modules/element-plus/es/components/notification/index.js");
+
 
 
 
@@ -39,7 +41,7 @@ __webpack_require__.r(__webpack_exports__);
     var file = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)();
     var src = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)();
     var filename = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)();
-    var form = (0,vue__WEBPACK_IMPORTED_MODULE_0__.reactive)({
+    var form = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)({
       title: "",
       web: "",
       services: "",
@@ -49,6 +51,7 @@ __webpack_require__.r(__webpack_exports__);
     });
     var categories = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)([]);
     var technologies = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)([]);
+    var id = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)();
 
     var selectedFile = function selectedFile(event) {
       filename.value = event.target.files[0].name;
@@ -56,17 +59,22 @@ __webpack_require__.r(__webpack_exports__);
       file.value = event.target.files[0];
     };
 
-    var createHandler = function createHandler() {
+    var editHandler = function editHandler() {
       var data = new FormData();
-      data.append("title", form.title);
-      data.append("web", form.web);
-      data.append("services", form.services);
-      data.append("description", form.description);
-      data.append("category_id", form.category);
+      data.append("id", id.value);
+      data.append("title", form.value.title);
+      data.append("web", form.value.web);
+      data.append("services", form.value.services);
+      data.append("description", form.value.description);
+      data.append("category_id", form.value.category_id);
       data.append("technologies", JSON.stringify(selectedTechnologies.value));
-      data.append("status", form.status ? 1 : 0);
-      data.append("file", file.value);
-      axios.post("/api/admin/portfolios", data).then(function (_ref2) {
+      data.append("status", form.value.status ? 1 : 0);
+
+      if (file.value) {
+        data.append("file", file.value);
+      }
+
+      axios.post("/api/admin/portfolios/update", data).then(function (_ref2) {
         var data = _ref2.data;
         router.push({
           name: "panel admin portfolios"
@@ -75,6 +83,7 @@ __webpack_require__.r(__webpack_exports__);
     };
 
     (0,vue__WEBPACK_IMPORTED_MODULE_0__.onMounted)(function () {
+      id.value = route.params.id;
       axios.get("/api/admin/categories").then(function (_ref3) {
         var data = _ref3.data;
         categories.value = data.data;
@@ -82,6 +91,18 @@ __webpack_require__.r(__webpack_exports__);
       axios.get("/api/admin/technologies").then(function (_ref4) {
         var data = _ref4.data;
         technologies.value = data.data;
+      })["catch"](function (error) {});
+      axios.get("/api/admin/portfolios/".concat(id.value)).then(function (_ref5) {
+        var data = _ref5.data;
+        form.value = data.data;
+        form.value.status == 1 ? form.value.status = true : form.value.status = false;
+        src.value = form.value.banner_src;
+        selectedTechnologies.value = form.value.technologies.map(function (technology) {
+          var item = {};
+          item["title"] = technology.title;
+          item["id"] = technology.id;
+          return item;
+        });
       })["catch"](function (error) {});
     });
     var __returned__ = {
@@ -94,14 +115,16 @@ __webpack_require__.r(__webpack_exports__);
       form: form,
       categories: categories,
       technologies: technologies,
+      id: id,
       selectedFile: selectedFile,
-      createHandler: createHandler,
+      editHandler: editHandler,
       reactive: vue__WEBPACK_IMPORTED_MODULE_0__.reactive,
       onMounted: vue__WEBPACK_IMPORTED_MODULE_0__.onMounted,
       ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
       useRoute: vue_router__WEBPACK_IMPORTED_MODULE_2__.useRoute,
       useRouter: vue_router__WEBPACK_IMPORTED_MODULE_2__.useRouter,
-      Multiselect: (_suadelabs_vue3_multiselect__WEBPACK_IMPORTED_MODULE_1___default())
+      Multiselect: (_suadelabs_vue3_multiselect__WEBPACK_IMPORTED_MODULE_1___default()),
+      ElNotification: element_plus__WEBPACK_IMPORTED_MODULE_3__.ElNotification
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -256,7 +279,7 @@ var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNo
 
 var _hoisted_28 = {
   key: 0,
-  "class": "w-50 d-block my-4"
+  "class": "banner__src d-block my-4"
 };
 var _hoisted_29 = ["src"];
 var _hoisted_30 = {
@@ -280,7 +303,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.form.title]]), _hoisted_9]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
-      return $setup.form.category = $event;
+      return $setup.form.category_id = $event;
     }),
     id: "country",
     "class": "form-select form-select-lg",
@@ -296,7 +319,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* KEYED_FRAGMENT */
   ))], 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $setup.form.category]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $setup.form.category_id]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return $setup.form.web = $event;
     }),
@@ -379,7 +402,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
     "class": "btn btn-primary",
-    onClick: $setup.createHandler
+    onClick: $setup.editHandler
   }, " Save changes ")])])])]);
 }
 
@@ -402,7 +425,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.w-50 {\n    width: 50%;\n}\n.el-notification__title {\n    color: #333 !important;\n}\n\n/* .multiselect__tags {\n    background: rgba(255, 255, 255, 0.05);\n    border: 1px solid rgba(255, 255, 255, 0.2) !important;\n} */\n\n/* .multiselect__input,\n.multiselect__single {\n    background: rgba(255, 255, 255, 0.05) !important;\n}\n\n.multiselect__content-wrapper {\n    background: rgba(255, 255, 255, 0.05) !important;\n    border: 1px solid rgba(255, 255, 255, 0.2) !important;\n} */\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.w-50 {\n    width: 50%;\n}\n.el-notification__title {\n    color: #333 !important;\n}\n.banner__src {\n    width: 200px;\n    max-width: 200px;\n}\n.banner__src img {\n    border-radius: 0.7rem;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n\n/* .multiselect__tags {\n    background: rgba(255, 255, 255, 0.05);\n    border: 1px solid rgba(255, 255, 255, 0.2) !important;\n} */\n\n/* .multiselect__input,\n.multiselect__single {\n    background: rgba(255, 255, 255, 0.05) !important;\n}\n\n.multiselect__content-wrapper {\n    background: rgba(255, 255, 255, 0.05) !important;\n    border: 1px solid rgba(255, 255, 255, 0.2) !important;\n} */\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -26,12 +26,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
 /* harmony import */ var _suadelabs_vue3_multiselect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @suadelabs/vue3-multiselect */ "./node_modules/@suadelabs/vue3-multiselect/dist/vue3-multiselect.umd.min.js");
 /* harmony import */ var _suadelabs_vue3_multiselect__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_suadelabs_vue3_multiselect__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var element_plus__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! element-plus */ "./node_modules/element-plus/es/components/notification/index.js");
 
 
- //  ElNotification.success({
-//     title: 'Success',
-//     message: 'This is a success message',
-//   })
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   setup: function setup(__props, _ref) {
@@ -76,9 +74,9 @@ __webpack_require__.r(__webpack_exports__);
         router.push({
           name: "panel admin portfolios"
         });
-        ElNotification.success({
+        element_plus__WEBPACK_IMPORTED_MODULE_3__.ElNotification.success({
           title: "Success",
-          message: "This is a success message"
+          message: "Portfolio created successfully"
         });
       })["catch"](function (error) {});
     };
@@ -110,7 +108,8 @@ __webpack_require__.r(__webpack_exports__);
       ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
       useRoute: vue_router__WEBPACK_IMPORTED_MODULE_2__.useRoute,
       useRouter: vue_router__WEBPACK_IMPORTED_MODULE_2__.useRouter,
-      Multiselect: (_suadelabs_vue3_multiselect__WEBPACK_IMPORTED_MODULE_1___default())
+      Multiselect: (_suadelabs_vue3_multiselect__WEBPACK_IMPORTED_MODULE_1___default()),
+      ElNotification: element_plus__WEBPACK_IMPORTED_MODULE_3__.ElNotification
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -265,7 +264,7 @@ var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNo
 
 var _hoisted_28 = {
   key: 0,
-  "class": "w-50 d-block my-4"
+  "class": "banner__src d-block my-4"
 };
 var _hoisted_29 = ["src"];
 var _hoisted_30 = {
@@ -411,7 +410,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.w-50 {\n    width: 50%;\n}\n.el-notification__title {\n    color: #333 !important;\n}\n.tag-input__tag {\n    /* height: 30px; */\n    float: left;\n    margin-right: 10px;\n    background-color: #eee;\n    color: #333;\n    /* margin-top: 10px;\n    line-height: 30px; */\n    padding: 0 5px;\n    border-radius: 5px;\n}\n.tag-input__tag span {\n    cursor: pointer;\n    opacity: 0.75;\n}\n.tag-input__text {\n    color: #fff;\n    border: none;\n    outline: none;\n    font-size: 0.9rem;\n    /* line-height: 50px; */\n    background: none;\n}\n/* .multiselect__tags {\n    background: rgba(255, 255, 255, 0.05);\n    border: 1px solid rgba(255, 255, 255, 0.2) !important;\n} */\n\n/* .multiselect__input,\n.multiselect__single {\n    background: rgba(255, 255, 255, 0.05) !important;\n}\n\n.multiselect__content-wrapper {\n    background: rgba(255, 255, 255, 0.05) !important;\n    border: 1px solid rgba(255, 255, 255, 0.2) !important;\n} */\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.w-50 {\n    width: 50%;\n}\n.el-notification__title {\n    color: #333 !important;\n}\n.tag-input__tag {\n    /* height: 30px; */\n    float: left;\n    margin-right: 10px;\n    background-color: #eee;\n    color: #333;\n    /* margin-top: 10px;\n    line-height: 30px; */\n    padding: 0 5px;\n    border-radius: 5px;\n}\n.tag-input__tag span {\n    cursor: pointer;\n    opacity: 0.75;\n}\n.tag-input__text {\n    color: #fff;\n    border: none;\n    outline: none;\n    font-size: 0.9rem;\n    /* line-height: 50px; */\n    background: none;\n}\n.banner__src {\n    width: 200px;\n    max-width: 200px;\n}\n.banner__src img {\n    border-radius: 0.7rem;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n/* .multiselect__tags {\n    background: rgba(255, 255, 255, 0.05);\n    border: 1px solid rgba(255, 255, 255, 0.2) !important;\n} */\n\n/* .multiselect__input,\n.multiselect__single {\n    background: rgba(255, 255, 255, 0.05) !important;\n}\n\n.multiselect__content-wrapper {\n    background: rgba(255, 255, 255, 0.05) !important;\n    border: 1px solid rgba(255, 255, 255, 0.2) !important;\n} */\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

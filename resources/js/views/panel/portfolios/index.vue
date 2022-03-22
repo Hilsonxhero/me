@@ -107,7 +107,7 @@
 </template>
 <script setup>
 import { reactive, onMounted, ref } from "vue";
-
+import { ElNotification } from "element-plus";
 let portfolios = ref([]);
 
 const deleteHandler = (id, index) => {
@@ -115,6 +115,11 @@ const deleteHandler = (id, index) => {
         .delete(`/api/admin/portfolios/${id}`)
         .then(({ data }) => {
             portfolios.value.splice(index, 1);
+
+            ElNotification.success({
+                title: "Success",
+                message: "Portfolio deleted successfully",
+            });
         })
         .catch((error) => {});
 };
