@@ -12,9 +12,6 @@ class Portfolio extends Model
     use HasFactory, SoftDeletes, Sluggable;
 
 
-
-
-
     protected $fillable = [
         'category_id', 'media_id', 'title', 'slug', 'description', 'services', 'web', 'status'
     ];

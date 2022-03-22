@@ -38,6 +38,10 @@ main {
   color: #6366f1 !important;
 }
 
+.el-notification__title {
+  color: #333 !important;
+}
+
 .text-gradient-primary {
   background: linear-gradient(to right, #6366f1, #8B5CF6, #D946EF);
   -webkit-background-clip: text;

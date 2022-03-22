@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\PortfolioGalleryController;
@@ -24,9 +25,21 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::prefix('admin')->group(function () {
+
+    // categories
     Route::apiResource('categories', CategoryController::class);
+
+    // tags
     Route::apiResource('tags', TagController::class);
+
+    // technologies
     Route::apiResource('technologies', TechnologyController::class);
+
+    // articles
+    Route::apiResource('articles', ArticleController::class)->except('update');
+    Route::post("articles/update", [ArticleController::class, 'update']);
+
+    // portfolios
     Route::apiResource('portfolios', PortfolioController::class)->except('update');
     Route::post("portfolios/update", [PortfolioController::class, 'update']);
     Route::apiResource('portfolios/gallery', PortfolioGalleryController::class)->except(['update', 'index']);

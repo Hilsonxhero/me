@@ -107,6 +107,9 @@ class PortfolioController extends Controller
             'status' => $request->status,
         ]);
 
+
+        $portfolio->technologies()->sync($technologies);
+
         return ApiService::_success("portfolio updated successfully");
     }
 
