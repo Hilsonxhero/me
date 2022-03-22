@@ -61,11 +61,10 @@ class PortfolioGalleryController extends Controller
      */
     public function show($id)
     {
-        // dd("ww");
 
-        $portfolio = Portfolio::query()->where('id', $id)->with('technologies')->first();
+        $media = PortfolioGallery::query()->where('id', $id)->first();
 
-        return ApiService::_success($portfolio);
+        return ApiService::_success($media);
     }
 
     /**
@@ -77,33 +76,23 @@ class PortfolioGalleryController extends Controller
      */
     public function update(Request $request)
     {
-        $portfolio = Portfolio::query()->where('id', $request->id)->first();
+        $media = PortfolioGallery::query()->where('id', $request->id)->first();
 
 
         if ($request->file('file')) {
             $request->merge(['media_id' => MediaFileService::publicUpload($request->file)->id]);
-            if ($portfolio->media) $portfolio->media->delete();
+            if ($media->media) $media->media->delete();
         } else {
-            $request->merge(['media_id' => $portfolio->media_id]);
+            $request->merge(['media_id' => $media->media_id]);
         }
 
-        $technologies = json_decode($request->technologies);
-
-        $technologies = collect($technologies)->map(function ($technology) use ($request) {
-            return $technology->id;
-        });
-
-        $portfolio->update([
+        $media->update([
             'title' => $request->title,
-            'web' => $request->web,
-            'services' => $request->services,
-            'description' => $request->description,
-            'media_id' => $request->media_id,
-            'category_id' => $request->category_id,
             'status' => $request->status,
+            'media_id' => $request->media_id,
         ]);
 
-        return ApiService::_success("portfolio updated successfully");
+        return ApiService::_success("portfolio media updated successfully");
     }
 
     /**

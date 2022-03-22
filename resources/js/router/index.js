@@ -166,7 +166,7 @@ const routes = [
             {
                 path: "portfolios/gallery/edit/:id",
                 name: "panel admin portfolios gallery edit",
-                component: () => import("../views/panel/portfolios/gallery"),
+                component: () => import("../views/panel/portfolios/gallery/edit"),
             },
 
             {

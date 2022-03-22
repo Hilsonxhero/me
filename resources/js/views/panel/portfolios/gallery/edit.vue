@@ -1,106 +1,9 @@
 <template>
-    <div class="col-md-8 offset-lg-1 pb-5 mb-2 mb-lg-4 pt-md-5 mt-n3 mt-md-0">
+    <div
+        class="col-md-8 offset-lg-1 pb-5 mb-2 mb-lg-4 pt-md-5 mt-n3 mt-md-0"
+        v-if="form"
+    >
         <div class="row">
-            <div class="col-md-12">
-                <div class="ps-md-3 ps-lg-0 mt-md-2 pt-md-4 pb-md-2">
-                    <div
-                        class="d-flex align-items-center justify-content-between pt-xl-1 mb-3 pb-2 pb-lg-3"
-                    >
-                        <h1 class="h2 m-0">gallery</h1>
-                    </div>
-
-                    <div
-                        class="card p-2 d-sm-flex flex-sm-row align-items-sm-center justify-content-between border-0 shadow-sm p-md-4"
-                    >
-                        <div class="table-responsive w-100">
-                            <table class="table mb-0">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>media</th>
-                                        <th>title</th>
-                                        <th>sttaus</th>
-                                        <th class="text-center">actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr
-                                        v-for="(media, index) in media"
-                                        :key="index"
-                                    >
-                                        <th class="middle">
-                                            {{ media.id }}
-                                        </th>
-                                        <td>
-                                            <img
-                                                :src="media.banner_src"
-                                                alt=""
-                                                class="banner-ui"
-                                            />
-                                        </td>
-                                        <td>{{ media.title }}</td>
-
-                                        <td>
-                                            <template v-if="media.status == 1">
-                                                <span
-                                                    class="badge bg-success rounded-pill"
-                                                    >published</span
-                                                >
-                                            </template>
-
-                                            <template v-else>
-                                                <span
-                                                    class="badge bg-danger rounded-pill"
-                                                    >not published</span
-                                                >
-                                            </template>
-                                        </td>
-
-                                        <td
-                                            class="d-flex justify-content-center pt-4"
-                                        >
-
-                                            <router-link
-                                                class="btn btn-outline-secondary px-3 px-xl-4 me-3"
-                                                :to="{
-                                                    name: 'panel admin portfolios gallery edit',
-                                                    params: {
-                                                        id: media.id,
-                                                    },
-                                                }"
-                                            >
-                                                <i
-                                                    class="bx bx-edit fs-xl me-lg-1 me-xl-2"
-                                                ></i>
-                                                <span class="d-none d-lg-inline"
-                                                    >Edit</span
-                                                >
-                                            </router-link>
-                                            <button
-                                                @click="
-                                                    deleteHandler(
-                                                        media.id,
-                                                        index
-                                                    )
-                                                "
-                                                type="button"
-                                                class="btn btn-outline-danger px-3 px-xl-4"
-                                            >
-                                                <i
-                                                    class="bx bx-trash-alt fs-xl me-lg-1 me-xl-2"
-                                                ></i>
-                                                <span class="d-none d-lg-inline"
-                                                    >Delete</span
-                                                >
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="col-md-12">
                 <div class="ps-md-3 ps-lg-0 mt-md-2 pt-md-4 pb-md-2">
                     <div
@@ -181,14 +84,17 @@
                             <div class="d-flex mb-3">
                                 <router-link
                                     class="btn btn-secondary me-3"
-                                    :to="{ name: 'panel admin portfolios' }"
+                                    :to="{
+                                        name: 'panel admin portfolios gallery',
+                                        params: { id: form.portfolio_id },
+                                    }"
                                 >
                                     Cancel</router-link
                                 >
                                 <button
                                     type="button"
                                     class="btn btn-primary"
-                                    @click="createHandler"
+                                    @click="editHandler"
                                 >
                                     Save changes
                                 </button>
@@ -204,6 +110,7 @@
 import { reactive, onMounted, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { ElNotification } from "element-plus";
+import { fromJSON } from "postcss";
 let media = ref([]);
 const id = ref(null);
 const route = useRoute();
@@ -213,10 +120,7 @@ const src = ref();
 
 const filename = ref();
 
-const form = ref({
-    title: "",
-    status: true,
-});
+const form = ref(null);
 
 const selectedFile = (event) => {
     // const file = event.target.files[0];
@@ -225,20 +129,19 @@ const selectedFile = (event) => {
     file.value = event.target.files[0];
 };
 
-const createHandler = () => {
+const editHandler = () => {
     let data = new FormData();
-    data.append("portfolio", id.value);
+    data.append("id", id.value);
     data.append("title", form.value.title);
     data.append("status", form.value.status ? 1 : 0);
     data.append("file", file.value);
     axios
-        .post("/api/admin/portfolios/gallery", data)
+        .post("/api/admin/portfolios/gallery/update", data)
         .then(({ data }) => {
-            form.value.title = "";
-            form.value.status = true;
-            src.value = null;
-            file.value = null;
-            fetchMedia();
+            router.push({
+                name: "panel admin portfolios gallery",
+                params: { id: form.value.portfolio_id },
+            });
 
             ElNotification.success({
                 title: "Success",
@@ -248,25 +151,16 @@ const createHandler = () => {
         .catch((error) => {});
 };
 
-const deleteHandler = (id, index) => {
-    axios
-        .delete(`/api/admin/portfolios/gallery/${id}`)
-        .then(({ data }) => {
-            media.value.splice(index, 1);
-
-            ElNotification.success({
-                title: "Success",
-                message: "Portfolio media deleted successfully",
-            });
-        })
-        .catch((error) => {});
-};
-
 const fetchMedia = () => {
     axios
-        .get(`/api/admin/portfolios/gallery/all/${id.value}`)
+        .get(`/api/admin/portfolios/gallery/${id.value}`)
         .then(({ data }) => {
-            media.value = data.data;
+            form.value = data.data;
+            form.value.status == 1
+                ? (form.value.status = true)
+                : (form.value.status = false);
+
+            src.value = form.value.banner_src;
         })
         .catch((error) => {});
 };
