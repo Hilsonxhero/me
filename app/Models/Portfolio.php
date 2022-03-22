@@ -16,7 +16,7 @@ class Portfolio extends Model
 
 
     protected $fillable = [
-        'category_id', 'media_id', 'title', 'slug', 'description', 'services', 'web',
+        'category_id', 'media_id', 'title', 'slug', 'description', 'services', 'web', 'status'
     ];
     protected $with = ['category'];
 
@@ -25,6 +25,11 @@ class Portfolio extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function technologies()
+    {
+        return $this->belongsToMany(Technology::class, 'portfolio_technologies');
     }
 
     public function media()

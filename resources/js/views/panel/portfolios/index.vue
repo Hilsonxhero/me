@@ -25,10 +25,10 @@
                                 <th>#</th>
                                 <th>media</th>
                                 <th>title</th>
-
                                 <th>category</th>
                                 <th>web</th>
                                 <th>services</th>
+                                <th>sttaus</th>
                                 <th class="text-center">actions</th>
                             </tr>
                         </thead>
@@ -50,6 +50,22 @@
                                 <td>{{ technology.category.title }}</td>
                                 <td>{{ technology.web }}</td>
                                 <td>{{ technology.services }}</td>
+
+                                <td>
+                                    <template v-if="technology.status == 1">
+                                        <span
+                                            class="badge bg-success rounded-pill"
+                                            >published</span
+                                        >
+                                    </template>
+
+                                    <template v-else>
+                                        <span
+                                            class="badge bg-danger rounded-pill"
+                                            >not published</span
+                                        >
+                                    </template>
+                                </td>
 
                                 <td class="d-flex justify-content-center pt-4">
                                     <router-link
@@ -118,8 +134,11 @@ onMounted(() => {
 }
 
 .banner-ui {
-    width: 95px;
+    width: 85px;
+    min-width: 85px;
+    height: 75px;
     object-fit: cover;
+    border-radius: 0.7rem;
 }
 table tbody tr {
     border-color: transparent !important;

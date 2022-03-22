@@ -17,7 +17,6 @@
                             type="text"
                             id="fn"
                             class="form-control form-control-lg"
-                            value="John"
                             required=""
                         />
                         <div class="invalid-feedback">
@@ -77,6 +76,40 @@
                     </div>
 
                     <div class="col-12 mb-4">
+                        <label class="form-label fs-base">technologies </label>
+
+                        <multiselect
+                            :multiple="true"
+                            label="title"
+                            track-by="id"
+                            v-model="selectedTechnologies"
+                            :options="technologies"
+                        >
+                        </multiselect>
+                    </div>
+
+                    <div class="col-12 my-5">
+                        <div
+                            class="form-check form-switch form-switch-success d-flex mb-4"
+                        >
+                            <input
+                                v-model="form.status"
+                                type="checkbox"
+                                id="activity"
+                                class="form-check-input flex-shrink-0"
+                            />
+                            <label for="activity" class="form-check-label ps-3">
+                                <span class="h6 d-block mb-2"
+                                    >published portfolio</span
+                                >
+                                <span class="fs-sm text-muted"
+                                    >Is displayed on the home page</span
+                                >
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 mb-4">
                         <label
                             class="custom-file-upload btn btn-outline-success btn-block"
                         >
@@ -121,6 +154,15 @@
 import { reactive, onMounted, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
+import Multiselect from "@suadelabs/vue3-multiselect";
+
+//  ElNotification.success({
+//     title: 'Success',
+//     message: 'This is a success message',
+
+//   })
+const selectedTechnologies = ref([]);
+
 const route = useRoute();
 const router = useRouter();
 const file = ref();
@@ -133,9 +175,11 @@ const form = reactive({
     services: "",
     description: "",
     category: null,
+    status: true,
 });
 
 let categories = ref([]);
+let technologies = ref([]);
 
 const selectedFile = (event) => {
     // const file = event.target.files[0];
@@ -152,11 +196,18 @@ const createHandler = () => {
     data.append("services", form.services);
     data.append("description", form.description);
     data.append("category_id", form.category);
+    data.append("technologies", JSON.stringify(selectedTechnologies.value));
+    data.append("status", form.status ? 1 : 0);
     data.append("file", file.value);
     axios
         .post("/api/admin/portfolios", data)
         .then(({ data }) => {
             router.push({ name: "panel admin portfolios" });
+
+            ElNotification.success({
+                title: "Success",
+                message: "This is a success message",
+            });
         })
         .catch((error) => {});
 };
@@ -168,10 +219,61 @@ onMounted(() => {
             categories.value = data.data;
         })
         .catch((error) => {});
+
+    axios
+        .get("/api/admin/technologies")
+        .then(({ data }) => {
+            technologies.value = data.data;
+        })
+        .catch((error) => {});
 });
 </script>
+
+<!-- <style src="vue3-multiselect/dist/vue3-multiselect.css"></style> -->
+
 <style>
 .w-50 {
     width: 50%;
 }
+.el-notification__title {
+    color: #333 !important;
+}
+
+.tag-input__tag {
+    /* height: 30px; */
+    float: left;
+    margin-right: 10px;
+    background-color: #eee;
+    color: #333;
+    /* margin-top: 10px;
+    line-height: 30px; */
+    padding: 0 5px;
+    border-radius: 5px;
+}
+.tag-input__tag span {
+    cursor: pointer;
+    opacity: 0.75;
+}
+.tag-input__text {
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+    /* line-height: 50px; */
+    background: none;
+}
+/* .multiselect__tags {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+} */
+
+/* .multiselect__input,
+.multiselect__single {
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.multiselect__content-wrapper {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+} */
 </style>

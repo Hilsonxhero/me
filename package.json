@@ -21,14 +21,13 @@
         "vue-template-compiler": "^2.6.14"
     },
     "dependencies": {
+        "@suadelabs/vue3-multiselect": "^1.0.2",
         "css-loader": "^6.7.1",
+        "element-plus": "1.1.0-beta.24",
         "sass": "^1.49.9",
         "sass-loader": "^12.6.0",
         "swiper": "^8.0.7",
         "vue": "^3.2.30",
-        "vue-awesome-swiper": "^5.0.1",
-        "vue-router": "^4.0.12",
-        "vuesax": "^3.12.2",
-        "vuesax3": "^4.0.15"
+        "vue-router": "^4.0.12"
     }
 }

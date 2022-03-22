@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class PortfolioTechnology extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['technology_id', 'portfolio_id'];
 }

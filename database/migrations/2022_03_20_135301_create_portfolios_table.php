@@ -22,6 +22,7 @@ return new class extends Migration
             $table->longText("description");
             $table->string("services")->nullable();
             $table->string("web")->nullable();
+            $table->boolean("status")->default(0);
             $table->softDeletes();
             $table->timestamps();
         });

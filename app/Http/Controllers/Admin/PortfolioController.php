@@ -38,15 +38,24 @@ class PortfolioController extends Controller
             $request->merge(['media_id' => MediaFileService::publicUpload($request->file)->id]);
         }
 
+        $technologies = json_decode($request->technologies);
 
-        Portfolio::query()->create([
+        $technologies = collect($technologies)->map(function ($technology) use ($request) {
+            return $technology->id;
+        });
+
+        $portfolio =  Portfolio::query()->create([
             'title' => $request->title,
             'web' => $request->web,
             'services' => $request->services,
             'description' => $request->description,
             'media_id' => $request->media_id,
             'category_id' => $request->category_id,
+            'status' => $request->status,
         ]);
+
+        $portfolio->technologies()->sync($technologies);
+
         return ApiService::_success("portfolio created successfully");
     }
 
