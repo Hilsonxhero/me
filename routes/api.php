@@ -2,10 +2,13 @@
 
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\EditorUploadController;
+use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\PortfolioGalleryController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\TechnologyController;
+use App\Http\Controllers\Api\MessageController as ApiMessageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +25,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::prefix('application')->group(function(){
+ // editor upload
+ Route::post('message/user', [ApiMessageController::class, 'store']);
 });
 
 Route::prefix('admin')->group(function () {
@@ -45,4 +53,10 @@ Route::prefix('admin')->group(function () {
     Route::apiResource('portfolios/gallery', PortfolioGalleryController::class)->except(['update', 'index']);
     Route::get("portfolios/gallery/all/{id}", [PortfolioGalleryController::class, 'index'])->name('portfolios.gallery.index');
     Route::post("portfolios/gallery/update", [PortfolioGalleryController::class, 'update'])->name('portfolios.gallery.update');
+
+    // messages
+    Route::apiResource('messages', MessageController::class);
+
+    // editor upload
+    Route::post('upload/editor', [EditorUploadController::class, 'upload']);
 });

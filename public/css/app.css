@@ -42,6 +42,19 @@ main {
   color: #333 !important;
 }
 
+.ProseMirror {
+  border: none !important;
+  outline: none !important;
+}
+
+.editor__content h1,
+.editor__content h2,
+.editor__content h4,
+.editor__content h5,
+.editor__content h6 {
+  color: #333 !important;
+}
+
 .text-gradient-primary {
   background: linear-gradient(to right, #6366f1, #8B5CF6, #D946EF);
   -webkit-background-clip: text;

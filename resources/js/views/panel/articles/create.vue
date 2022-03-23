@@ -44,12 +44,20 @@
 
                     <div class="col-12 mb-4">
                         <label class="form-label fs-base">description </label>
-                        <textarea
+                        <!-- <textarea
                             v-model="form.description"
                             class="form-control form-control-lg"
                             rows="4"
                             placeholder="description"
-                        ></textarea>
+                        ></textarea> -->
+
+                        <!-- <editor-content :editor="editor" /> -->
+
+                        <TiptapEditor
+                            v-model="content"
+                            :content="content"
+                            ref="tiptap"
+                        ></TiptapEditor>
                     </div>
 
                     <div class="col-12 mb-4">
@@ -133,6 +141,8 @@ import { useRoute, useRouter } from "vue-router";
 
 import Multiselect from "@suadelabs/vue3-multiselect";
 
+import TiptapEditor from "@/components/tiptap-editor";
+
 import { ElNotification } from "element-plus";
 
 const selectedTags = ref([]);
@@ -142,8 +152,9 @@ const router = useRouter();
 const file = ref();
 const src = ref();
 const filename = ref();
+const content = ref("");
 
-const form = reactive({
+const form = ref({
     title: "",
     web: "",
     services: "",
@@ -163,13 +174,14 @@ const selectedFile = (event) => {
 };
 
 const createHandler = () => {
+    console.log("content",content.value);
     let data = new FormData();
 
-    data.append("title", form.title);
-    data.append("description", form.description);
-    data.append("category_id", form.category);
+    data.append("title", form.value.title);
+    data.append("description", content.value);
+    data.append("category_id", form.value.category);
     data.append("tags", JSON.stringify(selectedTags.value));
-    data.append("is_published", form.is_published ? 1 : 0);
+    data.append("is_published", form.value.is_published ? 1 : 0);
     data.append("file", file.value);
     axios
         .post("/api/admin/articles", data)

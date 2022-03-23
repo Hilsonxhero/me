@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Message;
+use App\Services\ApiService;
 use Illuminate\Http\Request;
 
 class MessageController extends Controller
@@ -25,7 +27,13 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Message::query()->create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'content' => $request->content,
+        ]);
+
+        ApiService::_success("Message created successfully");
     }
 
     /**

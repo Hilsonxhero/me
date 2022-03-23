@@ -26,7 +26,7 @@ main {
     box-shadow: 0 0.5rem 1.125rem -0.5rem rgb(99 102 241 / 90%) !important;
 }
 
-.list-group-item + .list-group-item.router-link-exact-active {
+.list-group-item+.list-group-item.router-link-exact-active {
     margin-top: -1px;
     border-top-width: 1px;
 }
@@ -37,5 +37,18 @@ main {
 
 
 .el-notification__title {
+    color: #333 !important;
+}
+
+.ProseMirror {
+    border: none !important;
+    outline: none !important;
+}
+
+.editor__content h1,
+.editor__content h2,
+.editor__content h4,
+.editor__content h5,
+.editor__content h6 {
     color: #333 !important;
 }

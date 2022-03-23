@@ -36,3 +36,16 @@ main {
 .el-notification__title {
   color: #333 !important;
 }
+
+.ProseMirror {
+  border: none !important;
+  outline: none !important;
+}
+
+.editor__content h1,
+.editor__content h2,
+.editor__content h4,
+.editor__content h5,
+.editor__content h6 {
+  color: #333 !important;
+}

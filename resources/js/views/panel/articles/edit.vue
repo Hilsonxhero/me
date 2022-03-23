@@ -44,12 +44,18 @@
 
                     <div class="col-12 mb-4">
                         <label class="form-label fs-base">description </label>
-                        <textarea
+                        <!-- <textarea
                             v-model="form.description"
                             class="form-control form-control-lg"
                             rows="4"
                             placeholder="description"
-                        ></textarea>
+                        ></textarea> -->
+
+                        <TiptapEditor
+                            v-model="content"
+                            :content="content"
+                            ref="tiptap"
+                        ></TiptapEditor>
                     </div>
 
                     <div class="col-12 mb-4">
@@ -132,7 +138,7 @@ import { reactive, onMounted, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
 import Multiselect from "@suadelabs/vue3-multiselect";
-
+import TiptapEditor from "@/components/tiptap-editor";
 import { ElNotification } from "element-plus";
 
 const selectedTags = ref([]);
@@ -142,6 +148,9 @@ const router = useRouter();
 const file = ref();
 const src = ref();
 const filename = ref();
+const content = ref("");
+
+const tiptap = ref(null);
 
 const form = ref({
     title: "",
@@ -166,7 +175,7 @@ const editHandler = () => {
 
     data.append("id", id.value);
     data.append("title", form.value.title);
-    data.append("description", form.value.description);
+    data.append("description", content.value);
     data.append("category_id", form.value.category_id);
     data.append("tags", JSON.stringify(selectedTags.value));
     data.append("is_published", form.value.is_published ? 1 : 0);
@@ -209,16 +218,17 @@ onMounted(() => {
                 : (form.value.is_published = false);
 
             src.value = form.value.banner_src;
+            content.value = form.value.description;
 
-            selectedTags.value = form.value.tags.map(
-                (technology) => {
-                    let item = {};
-                    item["title"] = technology.title;
-                    item["id"] = technology.id;
+            tiptap.value.editor.commands.setContent(form.value.description);
 
-                    return item;
-                }
-            );
+            selectedTags.value = form.value.tags.map((technology) => {
+                let item = {};
+                item["title"] = technology.title;
+                item["id"] = technology.id;
+
+                return item;
+            });
         })
         .catch((error) => {});
 });

@@ -91,9 +91,10 @@
             <div class="col-xl-8 order-first order-md-last">
                 <!-- Contact form -->
                 <div class="bg-secondary rounded-3 py-4 px-1 px-sm-0 mb-xl-4">
-                    <form
+                    <Form
+                        @submit="sendMessageHandler"
+                        :validation-schema="validationSchema"
                         class="needs-validation row justify-content-center py-lg-3 py-xl-4"
-                        novalidate
                     >
                         <div class="col-xl-8 col-lg-9 col-md-10 col-sm-11">
                             <h2 class="h1 pb-lg-1 mb-4">Leave Us a Message</h2>
@@ -107,14 +108,25 @@
                                     <label for="name" class="form-label fs-base"
                                         >Full name</label
                                     >
-                                    <input
+                                    <Field
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        class="form-control form-control-lg"
+                                        required
+                                        v-model="form.name"
+                                    />
+
+                                    <!-- <input
                                         type="text"
                                         id="name"
                                         class="form-control form-control-lg"
                                         required
-                                    />
-                                    <div class="invalid-feedback">
-                                        Please enter your name!
+                                        v-model="form.name"
+                                    /> -->
+
+                                    <div class="invalid-feedback d-block">
+                                        <ErrorMessage name="name" />
                                     </div>
                                 </div>
                                 <div class="col-sm-6 mb-4">
@@ -123,49 +135,58 @@
                                         class="form-label fs-base"
                                         >Email address</label
                                     >
-                                    <input
+                                    <Field
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        class="form-control form-control-lg"
+                                        required
+                                        v-model="form.email"
+                                    />
+                                    <!-- <input
                                         type="email"
                                         id="email"
                                         class="form-control form-control-lg"
                                         required
-                                    />
-                                    <div class="invalid-feedback">
-                                        Please provide a valid email address!
+                                        v-model="form.email"
+                                    /> -->
+                                    <div class="invalid-feedback d-block">
+                                        <ErrorMessage name="email" />
                                     </div>
                                 </div>
                                 <div class="col-12 mb-4">
                                     <label
-                                        for="message"
+                                        for="content"
                                         class="form-label fs-base"
                                         >Message</label
                                     >
-                                    <textarea
-                                        id="message"
+
+                                    <!-- <textarea
+                                        id="content"
+                                        name="content"
                                         class="form-control form-control-lg"
                                         rows="4"
                                         required
-                                    ></textarea>
-                                    <div class="invalid-feedback">
-                                        Please write your message!
+                                        v-model="form.content"
+                                    ></textarea> -->
+
+                                    <Field name="content" v-slot="{ field }">
+                                        <textarea
+                                            v-bind="field"
+                                            id="content"
+                                            name="content"
+                                            class="form-control form-control-lg"
+                                            rows="4"
+                                            required
+                                            v-model="form.content"
+                                        ></textarea>
+                                    </Field>
+                                    <div class="invalid-feedback d-block">
+                                        <ErrorMessage name="content" />
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-check mb-4">
-                                <input
-                                    type="checkbox"
-                                    id="terms"
-                                    class="form-check-input"
-                                    required
-                                />
-                                <label
-                                    for="terms"
-                                    class="form-check-label fs-base"
-                                    >I agree to the
-                                    <a href="#"
-                                        >Terms &amp; Conditions</a
-                                    ></label
-                                >
-                            </div>
+
                             <button
                                 type="submit"
                                 class="btn btn-primary btn-lg shadow-primary"
@@ -173,13 +194,50 @@
                                 Send message
                             </button>
                         </div>
-                    </form>
+                    </Form>
                 </div>
             </div>
         </div>
     </section>
 </template>
-<script>
-export default {};
+
+<script setup>
+import { ref } from "vue";
+import { ElNotification } from "element-plus";
+import { ErrorMessage, Field, Form } from "vee-validate";
+import * as Yup from "yup";
+const form = ref({
+    name: "",
+    email: "",
+    content: "",
+});
+
+const validationSchema = Yup.object().shape({
+    name: Yup.string().required().label("name"),
+    email: Yup.string().email().required().label("email"),
+    content: Yup.string().required().label("content"),
+});
+
+const sendMessageHandler = (values, { resetForm }) => {
+    const data = new FormData();
+
+    data.append("name", form.value.name);
+    data.append("email", form.value.email);
+    data.append("content", form.value.content);
+
+    axios
+        .post("/api/application/message/user", data)
+        .then(({ data }) => {
+            form.value.name = "";
+            form.value.email = "";
+            form.value.content = "";
+            resetForm();
+            ElNotification.success({
+                title: "Success",
+                message: "Your message has been sent",
+            });
+        })
+        .catch((error) => {});
+};
 </script>
 <style></style>
