@@ -101,13 +101,14 @@
                         Security
                     </a>
 
-                    <a
-                        href="account-details.html"
+                    <router-link
+                        exact
                         class="list-group-item list-group-item-action d-flex align-items-center"
+                        :to="{ name: 'panel admin setting' }"
                     >
                         <i class="bx bx-cog fs-xl opacity-60 me-2"></i>
                         Setting
-                    </a>
+                    </router-link>
 
                     <a
                         href="account-signin.html"

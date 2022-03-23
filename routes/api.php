@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\EditorUploadController;
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\PortfolioGalleryController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\TechnologyController;
 use App\Http\Controllers\Api\MessageController as ApiMessageController;
@@ -27,9 +28,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('application')->group(function(){
- // editor upload
- Route::post('message/user', [ApiMessageController::class, 'store']);
+Route::prefix('application')->group(function () {
+    // editor upload
+    Route::post('message/user', [ApiMessageController::class, 'store']);
 });
 
 Route::prefix('admin')->group(function () {
@@ -57,6 +58,11 @@ Route::prefix('admin')->group(function () {
     // messages
     Route::apiResource('messages', MessageController::class)->except('update');
     Route::post("messages/update", [MessageController::class, 'update']);
+
+
+    // setting
+    Route::get("setting", [SettingController::class, 'index']);
+    Route::post("setting/update", [SettingController::class, 'update']);
 
     // editor upload
     Route::post('upload/editor', [EditorUploadController::class, 'upload']);
