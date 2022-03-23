@@ -65,13 +65,15 @@
                         <i class="bx bx-file fs-xl opacity-60 me-2"></i>
                         Articles
                     </router-link>
-                    <a
-                        href="account-messages.html"
+
+                    <router-link
+                        exact
                         class="list-group-item list-group-item-action d-flex align-items-center"
+                        :to="{ name: 'panel admin messages' }"
                     >
                         <i class="bx bx-chat fs-xl opacity-60 me-2"></i>
                         Messages
-                    </a>
+                    </router-link>
 
                     <router-link
                         exact

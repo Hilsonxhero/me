@@ -166,7 +166,8 @@ const routes = [
             {
                 path: "portfolios/gallery/edit/:id",
                 name: "panel admin portfolios gallery edit",
-                component: () => import("../views/panel/portfolios/gallery/edit"),
+                component: () =>
+                    import("../views/panel/portfolios/gallery/edit"),
             },
 
             {
@@ -185,6 +186,24 @@ const routes = [
                 path: "articles/edit/:id",
                 name: "panel admin articles edit",
                 component: () => import("../views/panel/articles/edit"),
+            },
+
+            {
+                path: "messages",
+                name: "panel admin messages",
+                component: () => import("../views/panel/messages/index"),
+            },
+
+            {
+                path: "messages/edit/:id",
+                name: "panel admin messages edit",
+                component: () => import("../views/panel/messages/edit"),
+            },
+
+            {
+                path: "setting",
+                name: "panel admin setting",
+                component: () => import("../views/panel/setting/index"),
             },
         ],
     },

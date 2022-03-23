@@ -55,7 +55,8 @@ Route::prefix('admin')->group(function () {
     Route::post("portfolios/gallery/update", [PortfolioGalleryController::class, 'update'])->name('portfolios.gallery.update');
 
     // messages
-    Route::apiResource('messages', MessageController::class);
+    Route::apiResource('messages', MessageController::class)->except('update');
+    Route::post("messages/update", [MessageController::class, 'update']);
 
     // editor upload
     Route::post('upload/editor', [EditorUploadController::class, 'upload']);

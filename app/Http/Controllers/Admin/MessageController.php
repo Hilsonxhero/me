@@ -2,8 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Services\ApiService;
 use Illuminate\Http\Request;
+use App\Services\MediaFileService;
+use App\Http\Controllers\Controller;
+use App\Mail\MessageAnswer;
+use App\Mail\MessageAnswerMail;
+use App\Models\Message;
+use App\Notifications\MessageAnswerNotification;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Notification;
 
 class MessageController extends Controller
 {
@@ -14,7 +22,9 @@ class MessageController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Message::query()->orderByDesc('created_at')->get();
+
+        ApiService::_success($categories);
     }
 
     /**
@@ -25,7 +35,6 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
@@ -36,7 +45,9 @@ class MessageController extends Controller
      */
     public function show($id)
     {
-        //
+        $message = Message::query()->where('id', $id)->first();
+
+        return ApiService::_success($message);
     }
 
     /**
@@ -46,9 +57,20 @@ class MessageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $message = Message::query()->where('id', $request->id)->first();
+
+        $message->update([
+            'answer' => $request->answer,
+            'status' => 1,
+        ]);
+
+
+        // Notification::send(null, new MessageAnswerNotification($message->email));
+        Mail::to($message->email)->send(new MessageAnswer($message->answer));
+
+        return ApiService::_success("article updated successfully");
     }
 
     /**
@@ -59,6 +81,10 @@ class MessageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $message = Message::query()->where('id', $id)->first();
+
+        $message->delete();
+
+        return ApiService::_success("article deleted successfully");
     }
 }
