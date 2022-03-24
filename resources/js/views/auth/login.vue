@@ -22,6 +22,7 @@
                             >Email</label
                         >
                         <input
+                            v-model="form.email"
                             type="email"
                             id="email"
                             class="form-control form-control-lg"
@@ -39,6 +40,7 @@
                         >
                         <div class="password-toggle">
                             <input
+                                v-model="form.password"
                                 type="password"
                                 id="password"
                                 class="form-control form-control-lg"
@@ -76,7 +78,8 @@
                         </div>
                     </div>
                     <button
-                        type="submit"
+                        @click="loginHandler"
+                        type="button"
                         class="btn btn-primary shadow-primary btn-lg w-100"
                     >
                         Sign in
@@ -131,7 +134,31 @@
         ></div>
     </section>
 </template>
-<script>
-export default {};
+<script setup>
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+import { useStore } from "vuex";
+const form = ref({
+    email: "",
+    password: "",
+});
+const router = useRouter();
+
+const store = useStore();
+
+const loginHandler = (e) => {
+    const data = {
+        email: form.value.email,
+        password: form.value.password,
+    };
+
+    store
+        .dispatch("Auth/login", data)
+        .then(() => {
+            router.push({ name: "panel admin dashboard" });
+        })
+        .catch((error) => {})
+        .finally(() => {});
+};
 </script>
 <style></style>

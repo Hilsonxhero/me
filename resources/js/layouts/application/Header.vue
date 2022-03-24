@@ -53,7 +53,7 @@
                     </ul>
                 </div>
                 <div class="offcanvas-footer border-top">
-                    <a
+                    <!-- <a
                         href=""
                         class="btn btn-primary w-100"
                         target="_blank"
@@ -61,7 +61,15 @@
                     >
                         <i class="bx bx-cart fs-4 lh-1 me-1"></i>
                         &nbsp;Sign in
-                    </a>
+                    </a> -->
+
+                    <router-link
+                        class="btn btn-primary w-100"
+                        :to="{ name: 'login' }"
+                    >
+                        <i class="bx bx-cart fs-4 lh-1 me-1"></i>
+                        &nbsp;Sign in
+                    </router-link>
                 </div>
             </div>
             <!-- <div
@@ -84,30 +92,52 @@
                     >Dark</label
                 >
             </div> -->
-            <button
-                type="button"
-                class="navbar-toggler"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
+            <button type="button" class="navbar-toggler">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a
-                href=""
-                class="btn btn-primary btn-sm fs-sm rounded d-none d-lg-inline-flex"
-                target="_blank"
-                rel="noopener"
-            >
-                <i class="bx bx-user-circle fs-5 lh-1 me-1"></i>
-                &nbsp;Sign in
-            </a>
+            <template v-if="!isLoggedIn">
+                <router-link
+                    class="btn btn-primary btn-sm fs-sm rounded d-none d-lg-inline-flex"
+                    :to="{ name: 'login' }"
+                >
+                    <i class="bx bx-user-circle fs-5 lh-1 me-1"></i>
+                    &nbsp;Sign in
+                </router-link>
+            </template>
+            <template v-else>
+                <router-link
+                    class="btn btn-primary btn-sm fs-sm rounded d-none d-lg-inline-flex"
+                    :to="{ name: 'panel admin dashboard' }"
+                >
+                    <i class="bx bx-user-circle fs-5 lh-1 me-1"></i>
+                    &nbsp;Profile
+                </router-link>
+            </template>
         </div>
     </header>
 </template>
 <script>
-export default {};
+import { computed } from "vue";
+
+import { mapState, mapGetters } from "vuex";
+// const auth = computed(
+//     ...mapState({
+//         auth: (state) => state.user.isLoggedIn,
+//     })
+// );
+
+export default {
+    computed: {
+        // ...mapState({
+        //     auth: (state) => state.Auth.user.isLoggedIn,
+        //     user: (state) => state.Auth.user.user,
+        // }),
+
+        ...mapState("Auth", ["user"]),
+        ...mapState("Auth", ["isLoggedIn"]),
+    },
+
+    mounted() {},
+};
 </script>
 <style></style>

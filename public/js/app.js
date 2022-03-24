@@ -29290,6 +29290,39 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
+_router__WEBPACK_IMPORTED_MODULE_1__["default"].beforeEach(function (to, from, next) {
+  console.log("user ".concat(_store__WEBPACK_IMPORTED_MODULE_2__["default"].state.Auth.user));
+
+  if (to.meta.guest && _store__WEBPACK_IMPORTED_MODULE_2__["default"].state.Auth.isLoggedIn) {
+    next({
+      name: "home"
+    });
+  }
+
+  if ((to.meta.auth || to.matched.some(function (parent) {
+    return parent.meta.auth;
+  })) && !_store__WEBPACK_IMPORTED_MODULE_2__["default"].state.Auth.isLoggedIn) {
+    next({
+      name: "login"
+    });
+  }
+
+  if (to.meta.verified && _store__WEBPACK_IMPORTED_MODULE_2__["default"].state.Auth.user.isVerified !== 2) {
+    next({
+      name: "login"
+    });
+  }
+
+  if ((to.meta.admin || to.matched.some(function (parent) {
+    return parent.meta.auth;
+  })) && _store__WEBPACK_IMPORTED_MODULE_2__["default"].state.Auth.user.isAdmin !== 1) {
+    next({
+      name: "login"
+    });
+  }
+
+  next();
+});
 var app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)({
   components: {}
 });
@@ -29393,13 +29426,19 @@ var routes = [{
     component: function component() {
       return __webpack_require__.e(/*! import() */ "resources_js_views_auth_register_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/auth/register */ "./resources/js/views/auth/register.vue"));
     },
-    name: "register"
+    name: "register",
+    meta: {
+      guest: true
+    }
   }, {
     path: "login",
     component: function component() {
       return __webpack_require__.e(/*! import() */ "resources_js_views_auth_login_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/auth/login */ "./resources/js/views/auth/login.vue"));
     },
-    name: "login"
+    name: "login",
+    meta: {
+      guest: true
+    }
   }]
 }, // errors page
 {
@@ -29469,6 +29508,10 @@ var routes = [{
   path: "/panel/admin",
   component: function component() {
     return __webpack_require__.e(/*! import() */ "resources_js_layouts_panel_app_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../layouts/panel/app */ "./resources/js/layouts/panel/app.vue"));
+  },
+  meta: {
+    auth: true,
+    admin: true
   },
   children: [{
     path: "dashboard",

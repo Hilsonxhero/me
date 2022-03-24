@@ -17,7 +17,7 @@
     <script>
         window.user = {
                 id: '{{auth('sanctum')->user()->id}}',
-                name: '{{auth('sanctum')->user()->name}}',
+                username: '{{auth('sanctum')->user()->username}}',
                 email: '{{auth('sanctum')->user()->email}}',
                 isVerified: {{auth('sanctum')->user()->email_verified_at == null ? 1 :2}},
                 isAdmin: {{auth('sanctum')->user()->is_superuser}}

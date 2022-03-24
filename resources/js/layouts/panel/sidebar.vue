@@ -111,7 +111,7 @@
                     </router-link>
 
                     <a
-                        href="account-signin.html"
+                        @click="logoutUser"
                         class="list-group-item list-group-item-action d-flex align-items-center"
                     >
                         <i class="bx bx-log-out fs-xl opacity-60 me-2"></i>
@@ -123,6 +123,25 @@
     </aside>
 </template>
 <script>
-export default {};
+import { mapActions } from "vuex";
+export default {
+    methods: {
+        ...mapActions("Auth", ["logout"]),
+        logoutUser() {
+            this.logout()
+                .then(() => {
+                    this.$router.push({ name: "home" });
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+                .finally(() => {});
+        },
+
+        toggleMenu() {
+            this.$parent.toggleMenu();
+        },
+    },
+};
 </script>
 <style></style>

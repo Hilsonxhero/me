@@ -32,6 +32,19 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::prefix('application')->group(function () {
 
+
+    Route::prefix('auth')->group(function () {
+        Route::post('/register', [App\Http\Controllers\Auth\RegisteredUserController::class, 'store'])
+            ->middleware('guest');
+
+        Route::post('/login', [App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'store'])
+            ->middleware('guest');
+
+        Route::post('/logout', [App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'destroy'])
+            ->name('logout');
+    });
+
+
     // portfolios
     Route::get('portfolios', [ApiPortfolioController::class, 'index']);
 

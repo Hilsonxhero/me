@@ -9,11 +9,17 @@ const routes = [
                 path: "register",
                 component: () => import("../views/auth/register"),
                 name: "register",
+                meta: {
+                    guest: true,
+                },
             },
             {
                 path: "login",
                 component: () => import("../views/auth/login"),
                 name: "login",
+                meta: {
+                    guest: true,
+                },
             },
         ],
     },
@@ -89,6 +95,10 @@ const routes = [
     {
         path: "/panel/admin",
         component: () => import("../layouts/panel/app"),
+        meta: {
+            auth: true,
+            admin: true,
+        },
         children: [
             {
                 path: "dashboard",
