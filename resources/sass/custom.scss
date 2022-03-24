@@ -52,3 +52,15 @@ main {
 .editor__content h6 {
     color: #333 !important;
 }
+
+.badge.bg-primary {
+    // background: rgba(26, 92, 255, 1);
+    background: transparent !important;
+    background-color: transparent !important;
+    // box-shadow: 0 10px 20px -10px rgba(26, 92, 255, 1);
+    border: 2px solid rgba(26, 92, 255, 1);
+    // color: #fff;
+    color: rgba(26, 92, 255, 1);
+    border-radius: 12px;
+    padding: 8px 12px;
+}

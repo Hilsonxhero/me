@@ -9,7 +9,9 @@ use App\Http\Controllers\Admin\PortfolioGalleryController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\TechnologyController;
+use App\Http\Controllers\Api\ArticleController as ApiArticleController;
 use App\Http\Controllers\Api\MessageController as ApiMessageController;
+use App\Http\Controllers\Api\PortfolioController as ApiPortfolioController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -29,7 +31,24 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::prefix('application')->group(function () {
-    // editor upload
+
+    // portfolios
+    Route::get('portfolios', [ApiPortfolioController::class, 'index']);
+
+    // portfolios show
+    Route::get('portfolios/{id}', [ApiPortfolioController::class, 'show']);
+
+    // portfolios all
+    Route::get('portfolios/all/index', [ApiPortfolioController::class, 'all']);
+
+
+    // articles
+    Route::get('articles', [ApiArticleController::class, 'index']);
+
+    // articles all
+    Route::get('articles/all', [ApiArticleController::class, 'all']);
+
+    // message
     Route::post('message/user', [ApiMessageController::class, 'store']);
 });
 

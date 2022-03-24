@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Portfolio;
+use App\Services\ApiService;
 use Illuminate\Http\Request;
 
 class PortfolioController extends Controller
@@ -14,8 +16,26 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        //
+        $portfolios = Portfolio::query()->where('status', 1)
+            ->take(6)
+            ->orderByDesc('created_at')
+            ->with('technologies')
+            ->get();
+
+        ApiService::_success($portfolios);
     }
+
+
+    public function all()
+    {
+        $portfolios = Portfolio::query()->where('status', 1)
+            ->orderByDesc('created_at')
+            ->with('technologies')
+            ->get();
+
+        ApiService::_success($portfolios);
+    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -36,7 +56,9 @@ class PortfolioController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $portfolio = Portfolio::query()->where('id', $id)->with(['technologies', 'galleries'])->firstOrFail();
+        return  ApiService::_success($portfolio);
     }
 
     /**

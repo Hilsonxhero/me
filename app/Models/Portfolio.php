@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Portfolio extends Model
 {
@@ -17,7 +18,7 @@ class Portfolio extends Model
     ];
     protected $with = ['category'];
 
-    protected $appends = ['banner_src'];
+    protected $appends = ['banner_src','created_at'];
 
     public function category()
     {
@@ -44,6 +45,12 @@ class Portfolio extends Model
         if (!is_null($this->media)) return $this->media->thumb();
 
         return "";
+    }
+
+
+    public function getCreatedAtAttribute()
+    {
+      return Carbon::parse($this->attributes['created_at'])->diffForHumans();
     }
 
     /**

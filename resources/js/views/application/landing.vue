@@ -1,7 +1,5 @@
 <template>
     <div class="">
-
-
         <section class="container-fluid position-relative px-0">
             <div class="row g-0">
                 <div class="col-xl-7 col-lg-6 pe-lg-5">
@@ -362,12 +360,12 @@
             </div>
         </section>
 
-        <section class="container mb-5 py-lg-5">
+        <section class="container mb-5 py-lg-5" v-if="portfolios">
             <h2 class="h1 mb-4 pb-3 text-center">Latest Portfolios</h2>
             <div class="row">
                 <div
                     class="col-lg-6"
-                    v-for="(portfolio, index) in 6"
+                    v-for="(portfolio, index) in portfolios"
                     :key="index"
                 >
                     <!-- Article -->
@@ -377,16 +375,17 @@
                         <div class="row g-0">
                             <div
                                 class="col-sm-5 position-relative bg-position-center bg-repeat-0 bg-size-cover"
-                                style="
-                                    background-image: url(assets/img/02.jpg);
-                                    min-height: 15rem;
-                                "
+                                style="min-height: 15rem"
+                                :style="`background-image: url(${portfolio.banner_src})`"
                             >
                                 <router-link
                                     class="position-absolute top-0 start-0 w-100 h-100"
                                     :to="{
                                         name: 'portfolios show',
-                                        params: { id: 2, slug: 'test' },
+                                        params: {
+                                            id: portfolio.id,
+                                            slug: portfolio.slug,
+                                        },
                                     }"
                                 >
                                 </router-link>
@@ -407,33 +406,37 @@
                                         <a
                                             href="#"
                                             class="badge fs-sm text-nav bg-secondary text-decoration-none"
-                                            >Design</a
+                                            >{{ portfolio.category.title }}</a
                                         >
                                         <span
                                             class="fs-sm text-muted border-start ps-3 ms-3"
-                                            >1 day ago</span
+                                            >{{ portfolio.created_at }}</span
                                         >
                                     </div>
                                     <h3 class="h5">
                                         <router-link
                                             :to="{
                                                 name: 'portfolios show',
-                                                params: { id: 2, slug: 'test' },
+                                                params: {
+                                                    id: portfolio.id,
+                                                    slug: portfolio.slug,
+                                                },
                                             }"
                                         >
-                                            Brand analysis: second step to the
-                                            brand identity
+                                            {{ portfolio.title }}
                                         </router-link>
                                     </h3>
                                     <hr class="my-4" />
                                     <div
-                                        class="d-flex flex-wrap align-items-center justify-content-between"
+                                        class="d-flex flex-wrap align-items-center"
                                     >
                                         <span
-                                            class="badge badge bg-light mb-2"
-                                            v-for="(tag, index) in 6"
+                                            class="badge bg-primary mb-2 me-2"
+                                            v-for="(
+                                                technology, index
+                                            ) in portfolio.technologies"
                                             :key="index"
-                                            >test</span
+                                            >{{ technology.title }}</span
                                         >
                                     </div>
                                 </div>
@@ -509,7 +512,7 @@
                     >
                         <div
                             class="swiper-slide h-auto py-3"
-                            v-for="(article, index) in 6"
+                            v-for="(article, index) in articles"
                             :key="index"
                         >
                             <article
@@ -522,22 +525,24 @@
                                         <a
                                             href="#"
                                             class="badge fs-sm text-nav bg-secondary text-decoration-none position-relative zindex-2"
-                                            >Tech</a
+                                            >{{ article.category.title }}</a
                                         >
-                                        <span class="fs-sm text-muted"
-                                            >1 day ago</span
-                                        >
+                                        <span class="fs-sm text-muted">{{
+                                            article.created_at
+                                        }}</span>
                                     </div>
                                     <h3 class="h4">
                                         <router-link
                                             class="stretched-link"
                                             :to="{
                                                 name: 'articles show',
-                                                params: { id: 2, slug: 'test' },
+                                                params: {
+                                                    id: article.id,
+                                                    slug: article.slug,
+                                                },
                                             }"
                                         >
-                                            How the Millennial Lifestyle Changes
-                                            as Service Prices Rise
+                                            {{ article.title }}
                                         </router-link>
                                     </h3>
                                     <p class="mb-0">
@@ -548,7 +553,7 @@
                                     </p>
                                 </div>
                                 <div
-                                    class="card-footer d-flex align-items-center py-4 text-muted border-top-0"
+                                    class="card-footer d-flex align-items-center py-4 text-muted border-top-0 d-none"
                                 >
                                     <div class="d-flex align-items-center me-3">
                                         <i class="bx bx-like fs-lg me-1"></i>
@@ -587,59 +592,30 @@
     </div>
 </template>
 
-<script>
-import { reactive } from "vue";
-// import Swiper core and required modules
-// import { Navigation, Pagination } from "swiper";
-// import { Swiper, SwiperSlide, useSwiper } from "swiper/vue";
+<script setup>
+import { onMounted, reactive, ref } from "vue";
 
 import "swiper/css";
-// import "swiper/css/navigation";
-// import "swiper/css/pagination";
-// import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
-// import 'swiper/css/swiper.css'
-
 import Carousel from "@/components/carousel";
 
-export default {
-    components: { Carousel },
-    // components: {
-    //     Swiper,
-    //     SwiperSlide,
-    // },
+const portfolios = ref([]);
+const articles = ref([]);
 
-    // directives: {
-    //     swiper: directive,
-    // },
+onMounted(() => {
+    axios
+        .get("/api/application/portfolios")
+        .then(({ data }) => {
+            portfolios.value = data.data;
+        })
+        .catch((error) => {});
 
-    data() {
-        return {
-            // swiperOptions: {
-            //     slidesPerView: 4,
-            //     breakpoints: {
-            //         1200: {
-            //             slidesPerView: 3,
-            //         },
-            //         360: {
-            //             slidesPerView: 3,
-            //         },
-            //     },
-            // },
-        };
-    },
-
-    computed: {
-        swiperOptions() {
-            return {
-                slidesPerView: 5,
-            };
-        },
-    },
-
-    mounted() {
-        console.log("Current Swiper instance object", this.swiper);
-    },
-};
+    axios
+        .get("/api/application/articles")
+        .then(({ data }) => {
+            articles.value = data.data;
+        })
+        .catch((error) => {});
+});
 </script>
 
 <style scoped></style>

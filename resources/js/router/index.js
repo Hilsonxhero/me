@@ -1,11 +1,22 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
-    // {
-    //     path: "/",
-    //     name: "home",
-    //     component: () => import("../views/application/landing"),
-    // },
+    {
+        path: "/auth",
+        component: () => import("../layouts/auth/app"),
+        children: [
+            {
+                path: "register",
+                component: () => import("../views/auth/register"),
+                name: "register",
+            },
+            {
+                path: "login",
+                component: () => import("../views/auth/login"),
+                name: "login",
+            },
+        ],
+    },
 
     // errors page
 

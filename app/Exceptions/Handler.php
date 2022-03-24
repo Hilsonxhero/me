@@ -2,8 +2,10 @@
 
 namespace App\Exceptions;
 
-use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+use Illuminate\Support\Facades\App;
+use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use IlluminateDatabaseEloquentModelNotFoundException as ModelNotFound;
 
 class Handler extends ExceptionHandler
 {
@@ -35,7 +37,9 @@ class Handler extends ExceptionHandler
     public function register()
     {
         $this->reportable(function (Throwable $e) {
-            //
+
         });
     }
+
+    
 }

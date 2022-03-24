@@ -3,11 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link
-    rel="stylesheet"
-    media="screen"
-    href="{{asset('assets/css/vendor/boxicons/css/boxicons.min.css')}}"
-  />
+    <link rel="stylesheet" media="screen" href="{{asset('assets/css/vendor/boxicons/css/boxicons.min.css')}}" />
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <title>Laravel</title>
 </head>
@@ -16,6 +12,19 @@
     <div id="app">
         <router-view></router-view>
     </div>
+
+    @auth
+    <script>
+        window.user = {
+                id: '{{auth('sanctum')->user()->id}}',
+                name: '{{auth('sanctum')->user()->name}}',
+                email: '{{auth('sanctum')->user()->email}}',
+                isVerified: {{auth('sanctum')->user()->email_verified_at == null ? 1 :2}},
+                isAdmin: {{auth('sanctum')->user()->is_superuser}}
+            }
+    </script>
+    @endauth
+
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
 

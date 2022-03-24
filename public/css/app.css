@@ -55,6 +55,15 @@ main {
   color: #333 !important;
 }
 
+.badge.bg-primary {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 2px solid #1a5cff;
+  color: #1a5cff;
+  border-radius: 12px;
+  padding: 8px 12px;
+}
+
 .text-gradient-primary {
   background: linear-gradient(to right, #6366f1, #8B5CF6, #D946EF);
   -webkit-background-clip: text;
