@@ -11,7 +11,19 @@
 <script>
 import Header from "@/layouts/application/Header.vue";
 import Footer from "@/layouts/application/Footer.vue";
-export default { components: { Header, Footer } };
+import { mapActions, mapState, mapGetters } from "vuex";
+export default {
+    components: { Header, Footer },
+
+    methods: {
+        ...mapActions("General", ["generalHandler"]),
+    },
+
+    mounted() {
+        console.log("mounted");
+        this.generalHandler();
+    },
+};
 </script>
 <style lang="sass">
 @import "@/assets/sass/style"

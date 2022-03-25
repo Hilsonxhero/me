@@ -5,9 +5,6 @@
         <nav class="pt-4 mt-lg-3" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item">
-                    <!-- <a href="index.html"
-                        ><i class="bx bx-home-alt fs-lg me-1"></i>Home</a
-                    > -->
                     <router-link :to="{ name: 'home' }">
                         <i class="bx bx-home-alt fs-lg me-1"></i>Home
                     </router-link>
@@ -36,7 +33,7 @@
                                 respond as soon as possible.
                             </p>
                             <a
-                                href="mailto:silicon@example.com"
+                                :href="`mailto:${general.email}`"
                                 class="btn btn-link stretched-link fs-base px-0"
                             >
                                 Leave a message
@@ -59,7 +56,7 @@
                             <a
                                 href="tel:4065550120"
                                 class="btn btn-link stretched-link fs-base px-0"
-                                >(406) 555-0120</a
+                                >{{ general.phone }}</a
                             >
                         </div>
                     </div>
@@ -72,8 +69,7 @@
                         <div class="ps-4">
                             <h3 class="h4 pb-1 mb-2">Visit us</h3>
                             <p class="pb-1 mb-2">
-                                1904 3rd Ave, Seattle, WA 98101, United States,
-                                United Sates
+                                {{ general.address }}
                             </p>
                             <a
                                 href="#"
@@ -117,14 +113,6 @@
                                         v-model="form.name"
                                     />
 
-                                    <!-- <input
-                                        type="text"
-                                        id="name"
-                                        class="form-control form-control-lg"
-                                        required
-                                        v-model="form.name"
-                                    /> -->
-
                                     <div class="invalid-feedback d-block">
                                         <ErrorMessage name="name" />
                                     </div>
@@ -143,13 +131,7 @@
                                         required
                                         v-model="form.email"
                                     />
-                                    <!-- <input
-                                        type="email"
-                                        id="email"
-                                        class="form-control form-control-lg"
-                                        required
-                                        v-model="form.email"
-                                    /> -->
+
                                     <div class="invalid-feedback d-block">
                                         <ErrorMessage name="email" />
                                     </div>
@@ -160,15 +142,6 @@
                                         class="form-label fs-base"
                                         >Message</label
                                     >
-
-                                    <!-- <textarea
-                                        id="content"
-                                        name="content"
-                                        class="form-control form-control-lg"
-                                        rows="4"
-                                        required
-                                        v-model="form.content"
-                                    ></textarea> -->
 
                                     <Field name="content" v-slot="{ field }">
                                         <textarea
@@ -202,15 +175,19 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { ElNotification } from "element-plus";
 import { ErrorMessage, Field, Form } from "vee-validate";
 import * as Yup from "yup";
+import { mapActions, mapState, mapGetters } from "vuex";
+import { useStore } from "vuex";
 const form = ref({
     name: "",
     email: "",
     content: "",
 });
+
+const store = useStore();
 
 const validationSchema = Yup.object().shape({
     name: Yup.string().required().label("name"),
@@ -239,5 +216,7 @@ const sendMessageHandler = (values, { resetForm }) => {
         })
         .catch((error) => {});
 };
+
+const general = computed(() => store.state.General.general);
 </script>
 <style></style>

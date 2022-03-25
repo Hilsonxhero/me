@@ -188,6 +188,11 @@ const editHandler = () => {
         .post("/api/admin/articles/update", data)
         .then(({ data }) => {
             router.push({ name: "panel admin articles" });
+
+            ElNotification.success({
+                title: "Success",
+                message: "Article updated successfully",
+            });
         })
         .catch((error) => {});
 };

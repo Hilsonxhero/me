@@ -6,8 +6,11 @@
     >
         <div class="container px-3">
             <router-link class="navbar-brand pe-3" :to="{ name: 'home' }">
-                <img src="/assets/img/logo.svg" width="47" alt="Silicon" />
-                Silicon
+                <img
+                    :src="$store.state.General.general.logo"
+                    width="47"
+                    alt="Silicon"
+                />
             </router-link>
             <div id="navbarNav" class="offcanvas offcanvas-end">
                 <div class="offcanvas-header border-bottom">
@@ -128,11 +131,6 @@ import { mapState, mapGetters } from "vuex";
 
 export default {
     computed: {
-        // ...mapState({
-        //     auth: (state) => state.Auth.user.isLoggedIn,
-        //     user: (state) => state.Auth.user.user,
-        // }),
-
         ...mapState("Auth", ["user"]),
         ...mapState("Auth", ["isLoggedIn"]),
     },

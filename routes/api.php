@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\TechnologyController;
 use App\Http\Controllers\Api\ArticleController as ApiArticleController;
+use App\Http\Controllers\Api\GeneralController;
 use App\Http\Controllers\Api\MessageController as ApiMessageController;
 use App\Http\Controllers\Api\PortfolioController as ApiPortfolioController;
 use Illuminate\Http\Request;
@@ -43,6 +44,10 @@ Route::prefix('application')->group(function () {
         Route::post('/logout', [App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'destroy'])
             ->name('logout');
     });
+
+
+    // general
+    Route::get('general', [GeneralController::class, 'index']);
 
 
     // portfolios

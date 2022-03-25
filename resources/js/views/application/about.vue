@@ -27,8 +27,6 @@
                             >
                                 <i class="bx bxs-quote-left"></i>
                             </span>
-
-
                         </div>
 
                         <div class="swiper-slide h-auto">
@@ -36,17 +34,13 @@
                                 class="card h-100 position-relative border-0 bg-transparent"
                             >
                                 <blockquote class="card-body p-0 mb-0">
-                                    <p class="fs-lg mb-0">
-                                        Mi semper risus ultricies orci pulvinar
-                                        in at enim orci. Quis facilisis nunc
-                                        pellentesque in ullamcorper sit. Lorem
-                                        blandit arcu sapien, senectus libero,
-                                        amet dapibus cursus quam. Eget
-                                        pellentesque eu purus volutpat
-                                        adipiscing malesuada.
-                                    </p>
+                                    <p
+                                        class="fs-lg mb-0"
+                                        v-html="
+                                            $store.state.General.general.about
+                                        "
+                                    ></p>
                                 </blockquote>
-
                             </figure>
                         </div>
                     </div>
@@ -54,8 +48,6 @@
             </div>
         </div>
     </section>
-
-
 </template>
 <script>
 export default {};

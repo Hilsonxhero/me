@@ -30,12 +30,49 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "position-relative overflow-hidden mb-3 pt-5"
 };
+var _hoisted_2 = {
+  "class": "container"
+};
+var _hoisted_3 = {
+  "class": "row row-cols-1 row-cols-md-2 gx-3 gx-lg-4"
+};
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container\"><div class=\"row row-cols-1 row-cols-md-2 gx-3 gx-lg-4\"><div class=\"col-md-6 mb-3 mb-md-0\"><div class=\"card bg-dark h-100 p-xl-4\"><div class=\"card-body\"><h2 class=\"display-1 text-light\">420k</h2><p class=\"lead fw-medium text-light\"><span class=\"opacity-70\">users are taking advantage of our</span><span class=\"fw-bold\">Task Manager Tool</span><span class=\"opacity-70\">. It’s a new transparent and efficient way to organize all of your daily tasks.</span></p></div></div></div><div class=\"col-md-6\"><div class=\"card border-0 shadow-sm p-4 p-xxl-5\"><div class=\"d-flex justify-content-between pb-4 mb-2\"><span class=\"btn btn-icon btn-primary btn-lg shadow-primary pe-none\"><i class=\"bx bxs-quote-left\"></i></span></div><div class=\"swiper-slide h-auto\"><figure class=\"card h-100 position-relative border-0 bg-transparent\"><blockquote class=\"card-body p-0 mb-0\"><p class=\"fs-lg mb-0\"> Mi semper risus ultricies orci pulvinar in at enim orci. Quis facilisis nunc pellentesque in ullamcorper sit. Lorem blandit arcu sapien, senectus libero, amet dapibus cursus quam. Eget pellentesque eu purus volutpat adipiscing malesuada. </p></blockquote></figure></div></div></div></div></div>", 1);
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"col-md-6 mb-3 mb-md-0\"><div class=\"card bg-dark h-100 p-xl-4\"><div class=\"card-body\"><h2 class=\"display-1 text-light\">420k</h2><p class=\"lead fw-medium text-light\"><span class=\"opacity-70\">users are taking advantage of our</span><span class=\"fw-bold\">Task Manager Tool</span><span class=\"opacity-70\">. It’s a new transparent and efficient way to organize all of your daily tasks.</span></p></div></div></div>", 1);
 
-var _hoisted_3 = [_hoisted_2];
+var _hoisted_5 = {
+  "class": "col-md-6"
+};
+var _hoisted_6 = {
+  "class": "card border-0 shadow-sm p-4 p-xxl-5"
+};
+
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "d-flex justify-content-between pb-4 mb-2"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "btn btn-icon btn-primary btn-lg shadow-primary pe-none"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "bx bxs-quote-left"
+})])], -1
+/* HOISTED */
+);
+
+var _hoisted_8 = {
+  "class": "swiper-slide h-auto"
+};
+var _hoisted_9 = {
+  "class": "card h-100 position-relative border-0 bg-transparent"
+};
+var _hoisted_10 = {
+  "class": "card-body p-0 mb-0"
+};
+var _hoisted_11 = ["innerHTML"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_1, _hoisted_3);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("figure", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("blockquote", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+    "class": "fs-lg mb-0",
+    innerHTML: _ctx.$store.state.General.general.about
+  }, null, 8
+  /* PROPS */
+  , _hoisted_11)])])])])])])])]);
 }
 
 /***/ }),

@@ -6,7 +6,7 @@
                     class="d-table position-relative mx-auto mt-2 mt-lg-4 pt-5 mb-3"
                 >
                     <img
-                        src="/assets/img/avatar/18.jpg"
+                        src="/assets/img/profile.jpg"
                         class="d-block rounded-circle"
                         width="120"
                         alt="John Doe"
@@ -21,8 +21,8 @@
                         <i class="bx bx-refresh"></i>
                     </button>
                 </div>
-                <h2 class="h5 mb-1">John Doe</h2>
-                <p class="mb-3 pb-3">jonny@email.com</p>
+                <h2 class="h5 mb-1" v-if="user">{{ user.username }}</h2>
+                <p class="mb-3 pb-3" v-if="user">{{ user.email }}</p>
                 <button
                     type="button"
                     class="btn btn-secondary w-100 d-md-none mt-n2 mb-3"
@@ -123,8 +123,13 @@
     </aside>
 </template>
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapState, mapGetters } from "vuex";
 export default {
+    computed: {
+        ...mapState("Auth", ["user"]),
+        ...mapState("Auth", ["isLoggedIn"]),
+    },
+
     methods: {
         ...mapActions("Auth", ["logout"]),
         logoutUser() {

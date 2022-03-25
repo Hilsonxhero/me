@@ -29665,13 +29665,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
 /* harmony import */ var _store_modules_Auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/store/modules/Auth */ "./resources/js/store/modules/Auth.js");
+/* harmony import */ var _store_modules_General__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/store/modules/General */ "./resources/js/store/modules/General.js");
+
 
  // Create a new store instance.
 
-var store = (0,vuex__WEBPACK_IMPORTED_MODULE_1__.createStore)({
+var store = (0,vuex__WEBPACK_IMPORTED_MODULE_2__.createStore)({
   modules: {
+    General: _store_modules_General__WEBPACK_IMPORTED_MODULE_1__,
     Auth: _store_modules_Auth__WEBPACK_IMPORTED_MODULE_0__
   }
 });
@@ -29734,6 +29737,60 @@ var actions = {
     var commit = _ref3.commit;
     return axios.post('/api/application/auth/logout').then(function () {
       commit('LOGOUT');
+    });
+  }
+};
+
+/***/ }),
+
+/***/ "./resources/js/store/modules/General.js":
+/*!***********************************************!*\
+  !*** ./resources/js/store/modules/General.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "namespaced": () => (/* binding */ namespaced),
+/* harmony export */   "state": () => (/* binding */ state),
+/* harmony export */   "getters": () => (/* binding */ getters),
+/* harmony export */   "mutations": () => (/* binding */ mutations),
+/* harmony export */   "actions": () => (/* binding */ actions)
+/* harmony export */ });
+var namespaced = true;
+var state = function state() {
+  return {
+    general: {
+      phone: null,
+      email: null,
+      about: null,
+      address: null,
+      instagram: null,
+      telegram: null,
+      logo: null
+    }
+  };
+};
+var getters = {
+  showGeneralData: function showGeneralData(state) {
+    return state.data;
+  }
+};
+var mutations = {
+  SET_GENERAL_DATA: function SET_GENERAL_DATA(state, payload) {
+    state.data = payload;
+    payload.map(function (item) {
+      state.general[item.title] = item.value;
+    });
+  }
+};
+var actions = {
+  generalHandler: function generalHandler(_ref) {
+    var commit = _ref.commit;
+    return axios.get("/api/application/general").then(function (_ref2) {
+      var data = _ref2.data;
+      commit("SET_GENERAL_DATA", data.data);
     });
   }
 };

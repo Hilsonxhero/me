@@ -7504,6 +7504,10 @@ __webpack_require__.r(__webpack_exports__);
         router.push({
           name: "panel admin articles"
         });
+        element_plus__WEBPACK_IMPORTED_MODULE_4__.ElNotification.success({
+          title: "Success",
+          message: "Article updated successfully"
+        });
       })["catch"](function (error) {});
     };
 
