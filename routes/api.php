@@ -59,13 +59,16 @@ Route::prefix('application')->group(function () {
     Route::get('articles', [ApiArticleController::class, 'index']);
 
     // articles all
-    Route::get('articles/all', [ApiArticleController::class, 'all']);
+    Route::get('articles/all/index', [ApiArticleController::class, 'all']);
+
+    // articles show
+    Route::get('articles/{id}', [ApiArticleController::class, 'show']);
 
     // message
     Route::post('message/user', [ApiMessageController::class, 'store']);
 });
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware(['auth:sanctum', 'auth.admin'])->group(function () {
 
     // categories
     Route::apiResource('categories', CategoryController::class);

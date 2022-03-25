@@ -141,6 +141,7 @@ import { useStore } from "vuex";
 const form = ref({
     email: "",
     password: "",
+    remember: true,
 });
 const router = useRouter();
 

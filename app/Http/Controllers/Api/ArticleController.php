@@ -35,4 +35,28 @@ class ArticleController extends Controller
 
         ApiService::_success($articles);
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+
+        $article = Article::query()->where('id', $id)->with(['tags'])->firstOrFail();
+        $related_articles = Article::with('tags')
+            ->where('id', '!=', $article->id)
+            ->where('category_id', $article->category_id)
+            ->inRandomOrder()
+            ->take(3)
+            ->get();
+        $data = [
+            'data' => $article,
+            'related_articles' => $related_articles
+
+        ];
+        return  ApiService::_success($data);
+    }
 }

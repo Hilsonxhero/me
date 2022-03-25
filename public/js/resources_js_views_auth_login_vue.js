@@ -23,7 +23,8 @@ __webpack_require__.r(__webpack_exports__);
     expose();
     var form = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)({
       email: "",
-      password: ""
+      password: "",
+      remember: true
     });
     var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_1__.useRouter)();
     var store = (0,vuex__WEBPACK_IMPORTED_MODULE_2__.useStore)();

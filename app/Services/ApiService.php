@@ -46,10 +46,13 @@ class ApiService
         // response()->json((new ResponseService($message, $success, $code))->getArray(), $code)->send();
         // exit();
 
+        if (is_array($data)) {
+            throw new HttpResponseException(response()->json($data, $code));
+        }
+
         throw new HttpResponseException(response()->json([
-            'success'   => $success,
-            // 'message'   => 'Validation errors',
-            'data'      => $data
+            'success' => $success,
+            'data' => $data
         ], $code));
     }
 }

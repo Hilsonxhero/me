@@ -249,7 +249,7 @@
         </section>
 
         <!-- Dashboard -->
-        <section class="container pt-3 pt-md-4 pt-lg-5 pb-2 mt-lg-2 mt-xl-4">
+        <section class="container pt-3 pt-md-4 pt-lg-5 pb-2 mt-lg-2 mt-xl-4 d-none">
             <div class="row align-items-center">
                 <div
                     class="col-md-7"
@@ -462,7 +462,10 @@
         </section>
 
         <!-- News slider -->
-        <section class="bg-secondary border-bottom border-light pt-4 pb-2 mt-5">
+        <section
+            class="bg-secondary border-bottom border-light pt-4 pb-2 mt-5"
+            v-if="articles.length > 0"
+        >
             <div class="container">
                 <h2 class="h1 text-center pb-2">News &amp; Insights</h2>
                 <div class="position-relative mx-md-2 px-md-5">
