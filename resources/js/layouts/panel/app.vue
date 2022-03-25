@@ -17,7 +17,17 @@
 import Header from "@/layouts/application/Header.vue";
 import Footer from "@/layouts/application/Footer.vue";
 import Sidebar from "@/layouts/panel/sidebar.vue";
-export default { components: { Header, Footer, Sidebar } };
+import { mapActions, mapState, mapGetters } from "vuex";
+export default {
+    components: { Header, Footer, Sidebar },
+    methods: {
+        ...mapActions("General", ["generalHandler"]),
+    },
+
+    mounted() {
+        this.generalHandler();
+    },
+};
 </script>
 <style lang="sass">
 @import "@/assets/sass/style"

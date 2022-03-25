@@ -3,8 +3,6 @@
         <div class="ps-md-3 ps-lg-0 mt-md-2 py-md-4">
             <h1 class="h2 pt-xl-1 pb-3">Setting</h1>
 
-
-
             <el-tabs
                 v-model="activeName"
                 class="demo-tabs"
@@ -115,6 +113,30 @@
                 </el-tab-pane>
                 <el-tab-pane label="General" name="general">
                     <div class="row">
+                        <div class="col-sm-6 mb-4">
+                            <label for="fn" class="form-label fs-base"
+                                >title</label
+                            >
+                            <input
+                                v-model="form.title"
+                                type="text"
+                                id="fn"
+                                class="form-control form-control-lg"
+                                required=""
+                            />
+                        </div>
+                        <div class="col-sm-6 mb-4">
+                            <label for="fn" class="form-label fs-base"
+                                >subtitle</label
+                            >
+                            <input
+                                v-model="form.subtitle"
+                                type="text"
+                                id="fn"
+                                class="form-control form-control-lg"
+                                required=""
+                            />
+                        </div>
                         <div class="col-12 mb-4">
                             <label class="form-label fs-base d-block pb-2"
                                 >logo
@@ -144,7 +166,6 @@
             </el-tabs>
 
             <div class="d-flex mb-3">
-
                 <button
                     type="button"
                     class="btn btn-primary"
@@ -180,6 +201,8 @@ const form = ref({
     address: "",
     about: "",
     instagram: "",
+    title: "",
+    subtitle: "",
     telegram: "",
 });
 
@@ -198,6 +221,8 @@ const createHandler = () => {
     data.append("about", form.value.about);
     data.append("instagram", form.value.instagram);
     data.append("telegram", form.value.telegram);
+    data.append("title", form.value.title);
+    data.append("subtitle", form.value.subtitle);
     if (file.value) {
         data.append("file", file.value);
     }

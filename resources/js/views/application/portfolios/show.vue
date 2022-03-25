@@ -3,7 +3,7 @@
         <!-- Page title -->
         <section class="container pb-4 mb-2 mb-lg-3">
             <h1>{{ portfolio.title }}</h1>
-            <el-breadcrumb separator="/">
+            <!-- <el-breadcrumb separator="/">
                 <el-breadcrumb-item :to="{ name: 'home' }"
                     >home</el-breadcrumb-item
                 >
@@ -11,7 +11,24 @@
                     >portfolios</el-breadcrumb-item
                 >
                 <el-breadcrumb-item>{{ portfolio.title }}</el-breadcrumb-item>
-            </el-breadcrumb>
+            </el-breadcrumb> -->
+
+            <!-- Breadcrumb -->
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item">
+                    <router-link :to="{ name: 'home' }">
+                        <i class="bx bx-home-alt fs-lg me-1"></i>Home
+                    </router-link>
+                </li>
+                <li class="breadcrumb-item">
+                    <router-link :to="{ name: 'portfolios index' }">
+                        portfolios
+                    </router-link>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    {{ portfolio.title }}
+                </li>
+            </ol>
         </section>
 
         <!-- Hero image (Parallax) -->
@@ -117,14 +134,11 @@ import { useRoute } from "vue-router";
 import "swiper/css";
 import Carousel from "@/components/carousel";
 
-
-
 const portfolio = ref([]);
 
 const route = useRoute();
 
 const id = ref(null);
-
 
 onMounted(() => {
     id.value = route.params.id;

@@ -29768,6 +29768,8 @@ var state = function state() {
       address: null,
       instagram: null,
       telegram: null,
+      title: null,
+      subtitle: null,
       logo: null
     }
   };

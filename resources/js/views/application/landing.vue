@@ -30,17 +30,14 @@
                         class="position-relative zindex-5 text-center text-lg-start px-3 px-lg-0 py-xl-4 py-xxl-5 mt-lg-3 mx-auto mx-lg-0"
                         style="max-width: 530px"
                     >
-                        <h2 class="h3 text-primary">Oct 14-15, 2021</h2>
-                        <h1 class="display-1 pb-lg-3 mb-3">
-                            NY Digital Conference
-                        </h1>
+                        <h2 class="h3 text-primary"> {{ $store.state.General.general.subtitle }}</h2>
+                        <h1 class="display-1 pb-lg-3 mb-3">{{ $store.state.General.general.title }}</h1>
                         <div
                             class="d-flex justify-content-center justify-content-lg-start text-start mb-2"
                         >
                             <i class="bx bx-map fs-4 text-primary me-2"></i>
                             <div class="fs-xl">
-                                International Convention Centre,<br />New York,
-                                USA
+                                {{ $store.state.General.general.address }}
                             </div>
                         </div>
                         <div
@@ -249,7 +246,9 @@
         </section>
 
         <!-- Dashboard -->
-        <section class="container pt-3 pt-md-4 pt-lg-5 pb-2 mt-lg-2 mt-xl-4 d-none">
+        <section
+            class="container pt-3 pt-md-4 pt-lg-5 pb-2 mt-lg-2 mt-xl-4 d-none"
+        >
             <div class="row align-items-center">
                 <div
                     class="col-md-7"

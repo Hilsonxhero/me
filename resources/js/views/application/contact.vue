@@ -86,7 +86,7 @@
             <!-- Map -->
             <div class="col-xl-8 order-first order-md-last">
                 <!-- Contact form -->
-                <div class="bg-secondary rounded-3 py-4 px-1 px-sm-0 mb-xl-4">
+                <div class="bg-secondary rounded-3 py-4 px-4 px-sm-0 mb-xl-4">
                     <Form
                         @submit="sendMessageHandler"
                         :validation-schema="validationSchema"

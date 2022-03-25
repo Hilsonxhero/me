@@ -64,3 +64,32 @@ main {
     border-radius: 12px;
     padding: 8px 12px;
 }
+
+.navbar-light .navbar-nav .nav-link.router-link-exact-active {
+    color: #6366f1 !important;
+}
+
+.dark-mode .el-tabs__item {
+
+    color: #fff;
+
+}
+
+// .navbar-brand {
+//     padding-top: 1rem !important;
+//     padding-bottom: 1rem !important;
+//     margin-right: 1rem;
+//     font-size: calc(1.2625rem + 0.15vw);
+//     text-decoration: none;
+//     white-space: nowrap
+// }
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.2rem !important;
+    padding-bottom: 1.2rem !important;
+}

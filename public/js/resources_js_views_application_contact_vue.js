@@ -255,7 +255,7 @@ var _hoisted_35 = {
   "class": "col-xl-8 order-first order-md-last"
 };
 var _hoisted_36 = {
-  "class": "bg-secondary rounded-3 py-4 px-1 px-sm-0 mb-xl-4"
+  "class": "bg-secondary rounded-3 py-4 px-4 px-sm-0 mb-xl-4"
 };
 var _hoisted_37 = {
   "class": "col-xl-8 col-lg-9 col-md-10 col-sm-11"

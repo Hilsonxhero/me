@@ -105,6 +105,24 @@ class SettingController extends Controller
         }
 
 
+        if ($request->title) {
+            Setting::query()->updateOrCreate(
+                ['title' => 'title'],
+                ['value' => $request->title]
+            );
+        }
+
+
+        if ($request->subtitle) {
+            Setting::query()->updateOrCreate(
+                ['title' => 'subtitle'],
+                ['value' => $request->subtitle]
+            );
+        }
+
+
+
+
 
         if ($request->file('file')) {
             $request->merge(['media' => MediaFileService::publicUpload($request->file)->files['original']]);

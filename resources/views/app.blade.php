@@ -1,4 +1,4 @@
-<html class="dark-modee" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="dark-mode" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">

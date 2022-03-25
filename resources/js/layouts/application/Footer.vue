@@ -8,8 +8,8 @@
                 <img
                     :src="$store.state.General.general.logo"
                     class="me-2"
-                    width="60"
-                    alt="Silicon"
+                    width="120"
+                    alt="Logo"
                 />
             </div>
             <ul class="nav justify-content-center pt-3 pb-4 pb-lg-5">

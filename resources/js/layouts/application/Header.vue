@@ -2,20 +2,26 @@
     <!-- Navbar -->
     <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
     <header
+        v-if="$store.state.General.general.logo"
         class="header navbar navbar-expand-lg navbar-light position-absolute navbar-sticky navbar-stuck"
     >
         <div class="container px-3">
             <router-link class="navbar-brand pe-3" :to="{ name: 'home' }">
                 <img
                     :src="$store.state.General.general.logo"
-                    width="47"
-                    alt="Silicon"
+                    width="120"
+                    alt="Logo"
                 />
             </router-link>
-            <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div
+                id="navbarNav"
+                class="offcanvas offcanvas-end"
+                :class="[toggle ? 'visible show' : '']"
+            >
                 <div class="offcanvas-header border-bottom">
                     <h5 class="offcanvas-title">Menu</h5>
                     <button
+                        @click="toggle = !toggle"
                         type="button"
                         class="btn-close"
                         data-bs-dismiss="offcanvas"
@@ -95,7 +101,11 @@
                     >Dark</label
                 >
             </div> -->
-            <button type="button" class="navbar-toggler">
+            <button
+                type="button"
+                class="navbar-toggler"
+                @click="togglerHandler"
+            >
                 <span class="navbar-toggler-icon"></span>
             </button>
             <template v-if="!isLoggedIn">
@@ -116,26 +126,40 @@
                     &nbsp;Profile
                 </router-link>
             </template>
+            <template v-if="toggle">
+                <div
+                    @click="toggle = !toggle"
+                    class="offcanvas-backdrop d-lg-none fade"
+                    :class="{ show: toggle }"
+                ></div>
+            </template>
         </div>
     </header>
 </template>
 <script>
-import { computed } from "vue";
-
 import { mapState, mapGetters } from "vuex";
-// const auth = computed(
-//     ...mapState({
-//         auth: (state) => state.user.isLoggedIn,
-//     })
-// );
 
 export default {
+    data() {
+        return {
+            toggle: false,
+        };
+    },
     computed: {
         ...mapState("Auth", ["user"]),
         ...mapState("Auth", ["isLoggedIn"]),
+    },
+    methods: {
+        togglerHandler() {
+            this.toggle = !this.toggle;
+        },
     },
 
     mounted() {},
 };
 </script>
-<style></style>
+<style>
+.visible {
+    visibility: visible;
+}
+</style>
