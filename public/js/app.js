@@ -29291,8 +29291,6 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 _router__WEBPACK_IMPORTED_MODULE_1__["default"].beforeEach(function (to, from, next) {
-  console.log("user ".concat(_store__WEBPACK_IMPORTED_MODULE_2__["default"].state.Auth.user));
-
   if (to.meta.guest && _store__WEBPACK_IMPORTED_MODULE_2__["default"].state.Auth.isLoggedIn) {
     next({
       name: "home"

@@ -30,53 +30,26 @@
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
+                        <li
+                            @click="toggle = !toggle"
+                            class="nav-item"
+                            v-for="(item, index) in items"
+                            :key="index"
+                        >
                             <router-link
                                 class="nav-link"
-                                :to="{ name: 'portfolios index' }"
-                                >Portfolios</router-link
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <router-link
-                                class="nav-link"
-                                :to="{ name: 'articles index' }"
-                                >Articles</router-link
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <router-link
-                                class="nav-link"
-                                :to="{ name: 'about' }"
-                                >About us</router-link
-                            >
-                        </li>
-
-                        <li class="nav-item">
-                            <router-link
-                                class="nav-link"
-                                :to="{ name: 'contact' }"
-                                >Contact us</router-link
+                                :to="{ name: item.route }"
+                                >{{ item.title }}</router-link
                             >
                         </li>
                     </ul>
                 </div>
                 <div class="offcanvas-footer border-top">
-                    <!-- <a
-                        href=""
-                        class="btn btn-primary w-100"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        <i class="bx bx-cart fs-4 lh-1 me-1"></i>
-                        &nbsp;Sign in
-                    </a> -->
-
                     <router-link
                         class="btn btn-primary w-100"
                         :to="{ name: 'login' }"
                     >
-                        <i class="bx bx-cart fs-4 lh-1 me-1"></i>
+                        <i class="bx bx-user-circle fs-4 lh-1 me-1"></i>
                         &nbsp;Sign in
                     </router-link>
                 </div>
@@ -143,6 +116,13 @@ export default {
     data() {
         return {
             toggle: false,
+            items: [
+                { title: "Home", route: "home" },
+                { title: "Portfolios", route: "portfolios index" },
+                { title: "Articles", route: "articles index" },
+                { title: "About us", route: "about" },
+                { title: "Contact us", route: "contact" },
+            ],
         };
     },
     computed: {
