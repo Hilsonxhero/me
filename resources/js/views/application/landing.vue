@@ -30,8 +30,12 @@
                         class="position-relative zindex-5 text-center text-lg-start px-3 px-lg-0 py-xl-4 py-xxl-5 mt-lg-3 mx-auto mx-lg-0"
                         style="max-width: 530px"
                     >
-                        <h2 class="h3 text-primary"> {{ $store.state.General.general.subtitle }}</h2>
-                        <h1 class="display-1 pb-lg-3 mb-3">{{ $store.state.General.general.title }}</h1>
+                        <h2 class="h3 text-primary">
+                            {{ $store.state.General.general.subtitle }}
+                        </h2>
+                        <h1 class="display-1 pb-lg-3 mb-3">
+                            {{ $store.state.General.general.title }}
+                        </h1>
                         <div
                             class="d-flex justify-content-center justify-content-lg-start text-start mb-2"
                         >
@@ -358,6 +362,8 @@
                 </div>
             </div>
         </section>
+
+
 
         <section class="container mb-5 py-lg-5" v-if="portfolios">
             <h2 class="h1 mb-4 pb-3 text-center">Latest Portfolios</h2>

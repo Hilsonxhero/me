@@ -3,6 +3,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="canonical" href="https://hilsonxhero.com" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="https://hilsonxhero.com" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:brand" content="" />
+    <meta property="og:locale" content="en" />
+
     <link rel="stylesheet" media="screen" href="{{asset('assets/css/vendor/boxicons/css/boxicons.min.css')}}" />
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <title>Laravel</title>
