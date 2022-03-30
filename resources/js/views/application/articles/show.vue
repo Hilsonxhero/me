@@ -78,7 +78,7 @@
                 <div class="col-lg-9">
                     <div
                         class="article__dec"
-                        v-html="article.description"
+                        v-html="article.content"
                     ></div>
                     <!-- Tags -->
                     <hr class="mb-4" />

@@ -43,19 +43,23 @@
                     </div>
 
                     <div class="col-12 mb-4">
-                        <label class="form-label fs-base">description </label>
-                        <!-- <textarea
-                            v-model="form.description"
-                            class="form-control form-control-lg"
-                            rows="4"
-                            placeholder="description"
-                        ></textarea> -->
+                        <label class="form-label fs-base">content </label>
 
                         <TiptapEditor
                             v-model="content"
                             :content="content"
                             ref="tiptap"
                         ></TiptapEditor>
+                    </div>
+
+                    <div class="col-12 mb-4">
+                        <label class="form-label fs-base">description </label>
+                        <textarea
+                            v-model="form.description"
+                            class="form-control form-control-lg"
+                            rows="4"
+                            placeholder="description"
+                        ></textarea>
                     </div>
 
                     <div class="col-12 mb-4">
@@ -175,7 +179,8 @@ const editHandler = () => {
 
     data.append("id", id.value);
     data.append("title", form.value.title);
-    data.append("description", content.value);
+    data.append("description", form.value.description);
+    data.append("content", content.value);
     data.append("category_id", form.value.category_id);
     data.append("tags", JSON.stringify(selectedTags.value));
     data.append("is_published", form.value.is_published ? 1 : 0);
@@ -223,9 +228,9 @@ onMounted(() => {
                 : (form.value.is_published = false);
 
             src.value = form.value.banner_src;
-            content.value = form.value.description;
+            content.value = form.value.content;
 
-            tiptap.value.editor.commands.setContent(form.value.description);
+            tiptap.value.editor.commands.setContent(form.value.content);
 
             selectedTags.value = form.value.tags.map((technology) => {
                 let item = {};

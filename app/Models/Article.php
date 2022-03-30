@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -14,12 +15,12 @@ class Article extends Model
 
 
     protected $fillable = [
-        'category_id', 'media_id', 'title', 'slug', 'description', 'is_published'
+        'category_id', 'media_id', 'title', 'slug', 'description', 'content', 'is_published'
     ];
 
     protected $with = ['category'];
 
-    protected $appends = ['banner_src','created_at'];
+    protected $appends = ['banner_src', 'created_at','description'];
 
     public function category()
     {
@@ -30,7 +31,6 @@ class Article extends Model
     {
         return $this->belongsToMany(Tag::class, 'article_tags');
     }
-
 
     public function media()
     {
@@ -46,8 +46,17 @@ class Article extends Model
 
     public function getCreatedAtAttribute()
     {
-      return Carbon::parse($this->attributes['created_at'])->diffForHumans();
+        return Carbon::parse($this->attributes['created_at'])->diffForHumans();
     }
+
+    public function getDescriptionAttribute()
+    {
+        return  Str::of($this->attributes['description'])->words(15, '...');
+    }
+
+
+
+
 
 
 

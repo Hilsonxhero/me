@@ -67,7 +67,18 @@ __webpack_require__.r(__webpack_exports__);
     var expose = _ref.expose;
     expose();
     var portfolios = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)([]);
-    var articles = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)([]);
+    var articles = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)([]); // const truncate = computed((value, length) => {
+    //     console.log(value);
+    //     if (value.length > length) {
+    //         return value.substring(0, length) + "...";
+    //     } else {
+    //         return value;
+    //     }
+    // });
+
+    var www = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function (value) {
+      return "test";
+    });
     (0,vue__WEBPACK_IMPORTED_MODULE_0__.onMounted)(function () {
       axios.get("/api/application/portfolios").then(function (_ref2) {
         var data = _ref2.data;
@@ -81,9 +92,11 @@ __webpack_require__.r(__webpack_exports__);
     var __returned__ = {
       portfolios: portfolios,
       articles: articles,
+      www: www,
       onMounted: vue__WEBPACK_IMPORTED_MODULE_0__.onMounted,
       reactive: vue__WEBPACK_IMPORTED_MODULE_0__.reactive,
       ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
+      computed: vue__WEBPACK_IMPORTED_MODULE_0__.computed,
       Carousel: _components_carousel__WEBPACK_IMPORTED_MODULE_2__["default"]
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
@@ -361,12 +374,9 @@ var _hoisted_47 = {
 var _hoisted_48 = {
   "class": "h4"
 };
-
-var _hoisted_49 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+var _hoisted_49 = {
   "class": "mb-0"
-}, " Sit facilisis dolor arcu, fermentum vestibulum arcu elementum imperdiet. Mauris duis eleifend faucibus amet sagittis. ", -1
-/* HOISTED */
-);
+};
 
 var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "card-footer d-flex align-items-center py-4 text-muted border-top-0 d-none"
@@ -559,7 +569,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
         }, 1032
         /* PROPS, DYNAMIC_SLOTS */
-        , ["to"])]), _hoisted_49]), _hoisted_50])]);
+        , ["to"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_49, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(article.description), 1
+        /* TEXT */
+        )]), _hoisted_50])]);
       }), 128
       /* KEYED_FRAGMENT */
       ))];

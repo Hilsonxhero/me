@@ -47,6 +47,7 @@ class ArticleController extends Controller
         $article =  Article::query()->create([
             'title' => $request->title,
             'description' => $request->description,
+            'content' => $request->content,
             'media_id' => $request->media_id,
             'category_id' => $request->category_id,
             'is_published' => $request->is_published,
@@ -98,6 +99,7 @@ class ArticleController extends Controller
         $article->update([
             'title' => $request->title,
             'description' => $request->description,
+            'content' => $request->content,
             'media_id' => $request->media_id,
             'category_id' => $request->category_id,
             'is_published' => $request->is_published,

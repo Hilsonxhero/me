@@ -363,8 +363,6 @@
             </div>
         </section>
 
-
-
         <section class="container mb-5 py-lg-5" v-if="portfolios">
             <h2 class="h1 mb-4 pb-3 text-center">Latest Portfolios</h2>
             <div class="row">
@@ -554,10 +552,7 @@
                                         </router-link>
                                     </h3>
                                     <p class="mb-0">
-                                        Sit facilisis dolor arcu, fermentum
-                                        vestibulum arcu elementum imperdiet.
-                                        Mauris duis eleifend faucibus amet
-                                        sagittis.
+                                        {{ article.description }}
                                     </p>
                                 </div>
                                 <div
@@ -601,13 +596,26 @@
 </template>
 
 <script setup>
-import { onMounted, reactive, ref } from "vue";
+import { onMounted, reactive, ref, computed } from "vue";
+
+
 
 import "swiper/css";
 import Carousel from "@/components/carousel";
 
 const portfolios = ref([]);
 const articles = ref([]);
+
+// const truncate = computed((value, length) => {
+//     console.log(value);
+//     if (value.length > length) {
+//         return value.substring(0, length) + "...";
+//     } else {
+//         return value;
+//     }
+// });
+
+const www = computed((value) => "test");
 
 onMounted(() => {
     axios
