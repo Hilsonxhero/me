@@ -57,8 +57,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _vueuse_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @vueuse/head */ "./node_modules/@vueuse/head/dist/index.mjs");
 /* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/css */ "./node_modules/swiper/swiper.min.css");
 /* harmony import */ var _components_carousel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/carousel */ "./resources/js/components/carousel.vue");
+
 
 
 
@@ -67,7 +69,19 @@ __webpack_require__.r(__webpack_exports__);
     var expose = _ref.expose;
     expose();
     var portfolios = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)([]);
-    var articles = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)([]); // const truncate = computed((value, length) => {
+    var articles = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)([]);
+    (0,_vueuse_head__WEBPACK_IMPORTED_MODULE_3__.useHead)({
+      title: (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+        return "home page";
+      }) // meta: [
+      //     {
+      //         name: `description`,
+      //         content: computed(() => portfolio.value.description),
+      //         key: "description",
+      //     },
+      // ],
+
+    }); // const truncate = computed((value, length) => {
     //     console.log(value);
     //     if (value.length > length) {
     //         return value.substring(0, length) + "...";
@@ -97,6 +111,7 @@ __webpack_require__.r(__webpack_exports__);
       reactive: vue__WEBPACK_IMPORTED_MODULE_0__.reactive,
       ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
       computed: vue__WEBPACK_IMPORTED_MODULE_0__.computed,
+      useHead: _vueuse_head__WEBPACK_IMPORTED_MODULE_3__.useHead,
       Carousel: _components_carousel__WEBPACK_IMPORTED_MODULE_2__["default"]
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {

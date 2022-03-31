@@ -79,9 +79,19 @@
     </section>
 </template>
 <script setup>
-import { ref } from "vue";
-import "swiper/css";
-import Carousel from "@/components/carousel";
+import { ref, computed } from "vue";
+import { useHead } from "@vueuse/head";
+
+useHead({
+    title: computed(() => "about page"),
+    // meta: [
+    //     {
+    //         name: `description`,
+    //         content: computed(() => portfolio.value.description),
+    //         key: "description",
+    //     },
+    // ],
+});
 
 const tools = ref([
     { img: "/assets/img/langs/react.svg" },

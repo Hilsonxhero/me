@@ -7,6 +7,7 @@ import store from "@/store";
 import "@suadelabs/vue3-multiselect/dist/vue3-multiselect.css";
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
+import { createHead } from '@vueuse/head'
 
 router.beforeEach((to, from, next) => {
     if (to.meta.guest && store.state.Auth.isLoggedIn) {
@@ -32,6 +33,8 @@ router.beforeEach((to, from, next) => {
 });
 
 const app = createApp({ components: {} });
+const head = createHead()
+app.use(head)
 app.use(router);
 app.use(store);
 app.use(ElementPlus);

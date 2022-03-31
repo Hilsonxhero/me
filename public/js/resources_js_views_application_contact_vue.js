@@ -12,10 +12,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-/* harmony import */ var element_plus__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! element-plus */ "./node_modules/element-plus/es/components/notification/index.js");
-/* harmony import */ var vee_validate__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vee-validate */ "./node_modules/vee-validate/dist/vee-validate.esm.js");
+/* harmony import */ var element_plus__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! element-plus */ "./node_modules/element-plus/es/components/notification/index.js");
+/* harmony import */ var vee_validate__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vee-validate */ "./node_modules/vee-validate/dist/vee-validate.esm.js");
 /* harmony import */ var yup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! yup */ "./node_modules/yup/es/index.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+/* harmony import */ var _vueuse_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @vueuse/head */ "./node_modules/@vueuse/head/dist/index.mjs");
+
 
 
 
@@ -26,12 +28,24 @@ __webpack_require__.r(__webpack_exports__);
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
+    (0,_vueuse_head__WEBPACK_IMPORTED_MODULE_2__.useHead)({
+      title: (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+        return "contact page";
+      }) // meta: [
+      //     {
+      //         name: `description`,
+      //         content: computed(() => portfolio.value.description),
+      //         key: "description",
+      //     },
+      // ],
+
+    });
     var form = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)({
       name: "",
       email: "",
       content: ""
     });
-    var store = (0,vuex__WEBPACK_IMPORTED_MODULE_2__.useStore)();
+    var store = (0,vuex__WEBPACK_IMPORTED_MODULE_3__.useStore)();
     var validationSchema = yup__WEBPACK_IMPORTED_MODULE_1__.object().shape({
       name: yup__WEBPACK_IMPORTED_MODULE_1__.string().required().label("name"),
       email: yup__WEBPACK_IMPORTED_MODULE_1__.string().email().required().label("email"),
@@ -50,7 +64,7 @@ __webpack_require__.r(__webpack_exports__);
         form.value.email = "";
         form.value.content = "";
         resetForm();
-        element_plus__WEBPACK_IMPORTED_MODULE_3__.ElNotification.success({
+        element_plus__WEBPACK_IMPORTED_MODULE_4__.ElNotification.success({
           title: "Success",
           message: "Your message has been sent"
         });
@@ -68,15 +82,16 @@ __webpack_require__.r(__webpack_exports__);
       general: general,
       ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
       computed: vue__WEBPACK_IMPORTED_MODULE_0__.computed,
-      ElNotification: element_plus__WEBPACK_IMPORTED_MODULE_3__.ElNotification,
-      ErrorMessage: vee_validate__WEBPACK_IMPORTED_MODULE_4__.ErrorMessage,
-      Field: vee_validate__WEBPACK_IMPORTED_MODULE_4__.Field,
-      Form: vee_validate__WEBPACK_IMPORTED_MODULE_4__.Form,
+      ElNotification: element_plus__WEBPACK_IMPORTED_MODULE_4__.ElNotification,
+      ErrorMessage: vee_validate__WEBPACK_IMPORTED_MODULE_5__.ErrorMessage,
+      Field: vee_validate__WEBPACK_IMPORTED_MODULE_5__.Field,
+      Form: vee_validate__WEBPACK_IMPORTED_MODULE_5__.Form,
       Yup: yup__WEBPACK_IMPORTED_MODULE_1__,
-      mapActions: vuex__WEBPACK_IMPORTED_MODULE_2__.mapActions,
-      mapState: vuex__WEBPACK_IMPORTED_MODULE_2__.mapState,
-      mapGetters: vuex__WEBPACK_IMPORTED_MODULE_2__.mapGetters,
-      useStore: vuex__WEBPACK_IMPORTED_MODULE_2__.useStore
+      mapActions: vuex__WEBPACK_IMPORTED_MODULE_3__.mapActions,
+      mapState: vuex__WEBPACK_IMPORTED_MODULE_3__.mapState,
+      mapGetters: vuex__WEBPACK_IMPORTED_MODULE_3__.mapGetters,
+      useStore: vuex__WEBPACK_IMPORTED_MODULE_3__.useStore,
+      useHead: _vueuse_head__WEBPACK_IMPORTED_MODULE_2__.useHead
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,

@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" media="screen" href="{{asset('assets/css/vendor/boxicons/css/boxicons.min.css')}}" />
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <title>Laravel</title>
+    <title>hilsonxhero</title>
 </head>
 
 <body class="antialiased">

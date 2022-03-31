@@ -598,6 +598,8 @@
 <script setup>
 import { onMounted, reactive, ref, computed } from "vue";
 
+import { useHead } from "@vueuse/head";
+
 
 
 import "swiper/css";
@@ -605,6 +607,17 @@ import Carousel from "@/components/carousel";
 
 const portfolios = ref([]);
 const articles = ref([]);
+
+useHead({
+    title: computed(() => "home page"),
+    // meta: [
+    //     {
+    //         name: `description`,
+    //         content: computed(() => portfolio.value.description),
+    //         key: "description",
+    //     },
+    // ],
+});
 
 // const truncate = computed((value, length) => {
 //     console.log(value);

@@ -76,10 +76,7 @@
             <div class="row gy-4">
                 <!-- Content -->
                 <div class="col-lg-9">
-                    <div
-                        class="article__dec"
-                        v-html="article.content"
-                    ></div>
+                    <div class="article__dec" v-html="article.content"></div>
                     <!-- Tags -->
                     <hr class="mb-4" />
                     <div class="d-flex flex-sm-row flex-column pt-2">
@@ -218,21 +215,31 @@
     </div>
 </template>
 <script setup>
-import { onMounted, reactive, ref } from "vue";
-
+import { onMounted, reactive, ref, computed } from "vue";
 import { useRoute } from "vue-router";
-
-import "swiper/css";
-import Carousel from "@/components/carousel";
+import { useHead } from "@vueuse/head";
 
 const article = ref([]);
 const related_articles = ref([]);
 
 const route = useRoute();
 
-const id = ref(null);
+useHead({
+    title: computed(() => article.value.title),
+    meta: [
+        {
+            name: `description`,
+            content: computed(() => article.value.description),
+            key: "description",
+        },
+    ],
+});
 
+const id = ref(null);
+console.log("sss");
 onMounted(() => {
+    console.log("WWW");
+
     id.value = route.params.id;
     axios
         .get(`/api/application/articles/${id.value}`)

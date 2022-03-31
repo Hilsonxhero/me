@@ -88,7 +88,19 @@
     </div>
 </template>
 <script setup>
-import { onMounted, reactive, ref } from "vue";
+import { onMounted, reactive, ref, computed } from "vue";
+
+import { useHead } from "@vueuse/head";
+useHead({
+    title: computed(() => "portfolios page"),
+    // meta: [
+    //     {
+    //         name: `description`,
+    //         content: computed(() => portfolio.value.description),
+    //         key: "description",
+    //     },
+    // ],
+});
 
 const portfolios = ref([]);
 

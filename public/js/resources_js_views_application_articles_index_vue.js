@@ -12,11 +12,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _vueuse_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @vueuse/head */ "./node_modules/@vueuse/head/dist/index.mjs");
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
+    (0,_vueuse_head__WEBPACK_IMPORTED_MODULE_1__.useHead)({
+      title: (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+        return "articles page";
+      }) // meta: [
+      //     {
+      //         name: `description`,
+      //         content: computed(() => portfolio.value.description),
+      //         key: "description",
+      //     },
+      // ],
+
+    });
     var articles = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)([]);
     (0,vue__WEBPACK_IMPORTED_MODULE_0__.onMounted)(function () {
       axios.get("/api/application/articles/all/index").then(function (_ref2) {
@@ -28,7 +42,9 @@ __webpack_require__.r(__webpack_exports__);
       articles: articles,
       onMounted: vue__WEBPACK_IMPORTED_MODULE_0__.onMounted,
       reactive: vue__WEBPACK_IMPORTED_MODULE_0__.reactive,
-      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref
+      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
+      computed: vue__WEBPACK_IMPORTED_MODULE_0__.computed,
+      useHead: _vueuse_head__WEBPACK_IMPORTED_MODULE_1__.useHead
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,

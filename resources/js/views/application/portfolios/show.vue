@@ -3,15 +3,6 @@
         <!-- Page title -->
         <section class="container pb-4 mb-2 mb-lg-3">
             <h1>{{ portfolio.title }}</h1>
-            <!-- <el-breadcrumb separator="/">
-                <el-breadcrumb-item :to="{ name: 'home' }"
-                    >home</el-breadcrumb-item
-                >
-                <el-breadcrumb-item :to="{ name: 'portfolios index' }"
-                    >portfolios</el-breadcrumb-item
-                >
-                <el-breadcrumb-item>{{ portfolio.title }}</el-breadcrumb-item>
-            </el-breadcrumb> -->
 
             <!-- Breadcrumb -->
             <ol class="breadcrumb mb-0">
@@ -127,14 +118,24 @@
     </div>
 </template>
 <script setup>
-import { onMounted, reactive, ref } from "vue";
+import { onMounted, reactive, ref,computed } from "vue";
 
 import { useRoute } from "vue-router";
 
-import "swiper/css";
-import Carousel from "@/components/carousel";
+import { useHead } from "@vueuse/head";
 
 const portfolio = ref([]);
+
+useHead({
+    title: computed(() => portfolio.value.title),
+    // meta: [
+    //     {
+    //         name: `description`,
+    //         content: computed(() => portfolio.value.description),
+    //         key: "description",
+    //     },
+    // ],
+});
 
 const route = useRoute();
 

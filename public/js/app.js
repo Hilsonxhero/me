@@ -29280,9 +29280,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/router */ "./resources/js/router/index.js");
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/store */ "./resources/js/store/index.js");
 /* harmony import */ var _suadelabs_vue3_multiselect_dist_vue3_multiselect_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @suadelabs/vue3-multiselect/dist/vue3-multiselect.css */ "./node_modules/@suadelabs/vue3-multiselect/dist/vue3-multiselect.css");
-/* harmony import */ var element_plus__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! element-plus */ "./node_modules/element-plus/es/defaults.js");
+/* harmony import */ var element_plus__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! element-plus */ "./node_modules/element-plus/es/defaults.js");
 /* harmony import */ var element_plus_dist_index_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! element-plus/dist/index.css */ "./node_modules/element-plus/dist/index.css");
+/* harmony import */ var _vueuse_head__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @vueuse/head */ "./node_modules/@vueuse/head/dist/index.mjs");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
 
 
 
@@ -29324,9 +29326,11 @@ _router__WEBPACK_IMPORTED_MODULE_1__["default"].beforeEach(function (to, from, n
 var app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)({
   components: {}
 });
+var head = (0,_vueuse_head__WEBPACK_IMPORTED_MODULE_5__.createHead)();
+app.use(head);
 app.use(_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
 app.use(_store__WEBPACK_IMPORTED_MODULE_2__["default"]);
-app.use(element_plus__WEBPACK_IMPORTED_MODULE_5__["default"]);
+app.use(element_plus__WEBPACK_IMPORTED_MODULE_6__["default"]);
 app.mount("#app");
 
 /***/ }),
@@ -100378,6 +100382,408 @@ function del(target, key) {
 }
 
 
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@vueuse/head/dist/index.mjs":
+/*!**************************************************!*\
+  !*** ./node_modules/@vueuse/head/dist/index.mjs ***!
+  \**************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Head": () => (/* binding */ Head),
+/* harmony export */   "createHead": () => (/* binding */ createHead),
+/* harmony export */   "injectHead": () => (/* binding */ injectHead),
+/* harmony export */   "renderHeadToString": () => (/* binding */ renderHeadToString),
+/* harmony export */   "useHead": () => (/* binding */ useHead)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+var __defProp = Object.defineProperty;
+var __defProps = Object.defineProperties;
+var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+
+// src/index.ts
+
+
+// src/constants.ts
+var PROVIDE_KEY = `usehead`;
+var HEAD_COUNT_KEY = `head:count`;
+var HEAD_ATTRS_KEY = `data-head-attrs`;
+var SELF_CLOSING_TAGS = ["meta", "link", "base"];
+
+// src/create-element.ts
+var createElement = (tag, attrs, document) => {
+  const el = document.createElement(tag);
+  for (const key of Object.keys(attrs)) {
+    let value = attrs[key];
+    if (key === "key" || value === false) {
+      continue;
+    }
+    if (key === "children") {
+      el.textContent = value;
+    } else {
+      el.setAttribute(key, value);
+    }
+  }
+  return el;
+};
+
+// src/stringify-attrs.ts
+var htmlEscape = (str) => str.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#39;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+var stringifyAttrs = (attributes) => {
+  const handledAttributes = [];
+  for (let [key, value] of Object.entries(attributes)) {
+    if (key === "children" || key === "key") {
+      continue;
+    }
+    if (value === false || value == null) {
+      continue;
+    }
+    let attribute = htmlEscape(key);
+    if (value !== true) {
+      attribute += `="${htmlEscape(String(value))}"`;
+    }
+    handledAttributes.push(attribute);
+  }
+  return handledAttributes.length > 0 ? " " + handledAttributes.join(" ") : "";
+};
+
+// src/utils.ts
+function isEqualNode(oldTag, newTag) {
+  if (oldTag instanceof HTMLElement && newTag instanceof HTMLElement) {
+    const nonce = newTag.getAttribute("nonce");
+    if (nonce && !oldTag.getAttribute("nonce")) {
+      const cloneTag = newTag.cloneNode(true);
+      cloneTag.setAttribute("nonce", "");
+      cloneTag.nonce = nonce;
+      return nonce === oldTag.nonce && oldTag.isEqualNode(cloneTag);
+    }
+  }
+  return oldTag.isEqualNode(newTag);
+}
+
+// src/index.ts
+var getTagKey = (props) => {
+  const names = ["key", "id", "name", "property"];
+  for (const n of names) {
+    const value = typeof props.getAttribute === "function" ? props.hasAttribute(n) ? props.getAttribute(n) : void 0 : props[n];
+    if (value !== void 0) {
+      return { name: n, value };
+    }
+  }
+};
+var injectHead = () => {
+  const head = (0,vue__WEBPACK_IMPORTED_MODULE_0__.inject)(PROVIDE_KEY);
+  if (!head) {
+    throw new Error(`You may forget to apply app.use(head)`);
+  }
+  return head;
+};
+var acceptFields = [
+  "title",
+  "meta",
+  "link",
+  "base",
+  "style",
+  "script",
+  "htmlAttrs",
+  "bodyAttrs"
+];
+var headObjToTags = (obj) => {
+  const tags = [];
+  for (const key of Object.keys(obj)) {
+    if (obj[key] == null)
+      continue;
+    if (key === "title") {
+      tags.push({ tag: key, props: { children: obj[key] } });
+    } else if (key === "base") {
+      tags.push({ tag: key, props: __spreadValues({ key: "default" }, obj[key]) });
+    } else if (acceptFields.includes(key)) {
+      const value = obj[key];
+      if (Array.isArray(value)) {
+        value.forEach((item) => {
+          tags.push({ tag: key, props: item });
+        });
+      } else if (value) {
+        tags.push({ tag: key, props: value });
+      }
+    }
+  }
+  return tags;
+};
+var setAttrs = (el, attrs) => {
+  const existingAttrs = el.getAttribute(HEAD_ATTRS_KEY);
+  if (existingAttrs) {
+    for (const key of existingAttrs.split(",")) {
+      if (!(key in attrs)) {
+        el.removeAttribute(key);
+      }
+    }
+  }
+  const keys = [];
+  for (const key in attrs) {
+    const value = attrs[key];
+    if (value == null)
+      continue;
+    if (value === false) {
+      el.removeAttribute(key);
+    } else {
+      el.setAttribute(key, value);
+    }
+    keys.push(key);
+  }
+  if (keys.length) {
+    el.setAttribute(HEAD_ATTRS_KEY, keys.join(","));
+  } else {
+    el.removeAttribute(HEAD_ATTRS_KEY);
+  }
+};
+var updateElements = (document = window.document, type, tags) => {
+  var _a;
+  const head = document.head;
+  let headCountEl = head.querySelector(`meta[name="${HEAD_COUNT_KEY}"]`);
+  const headCount = headCountEl ? Number(headCountEl.getAttribute("content")) : 0;
+  const oldElements = [];
+  if (headCountEl) {
+    for (let i = 0, j = headCountEl.previousElementSibling; i < headCount; i++, j = (j == null ? void 0 : j.previousElementSibling) || null) {
+      if (((_a = j == null ? void 0 : j.tagName) == null ? void 0 : _a.toLowerCase()) === type) {
+        oldElements.push(j);
+      }
+    }
+  } else {
+    headCountEl = document.createElement("meta");
+    headCountEl.setAttribute("name", HEAD_COUNT_KEY);
+    headCountEl.setAttribute("content", "0");
+    head.append(headCountEl);
+  }
+  let newElements = tags.map((tag) => createElement(tag.tag, tag.props, document));
+  newElements = newElements.filter((newEl) => {
+    for (let i = 0; i < oldElements.length; i++) {
+      const oldEl = oldElements[i];
+      if (isEqualNode(oldEl, newEl)) {
+        oldElements.splice(i, 1);
+        return false;
+      }
+    }
+    return true;
+  });
+  oldElements.forEach((t) => {
+    var _a2;
+    return (_a2 = t.parentNode) == null ? void 0 : _a2.removeChild(t);
+  });
+  newElements.forEach((t) => {
+    head.insertBefore(t, headCountEl);
+  });
+  headCountEl.setAttribute("content", "" + (headCount - oldElements.length + newElements.length));
+};
+var createHead = () => {
+  let allHeadObjs = [];
+  const head = {
+    install(app) {
+      app.config.globalProperties.$head = head;
+      app.provide(PROVIDE_KEY, head);
+    },
+    get headTags() {
+      const deduped = [];
+      allHeadObjs.forEach((objs) => {
+        const tags = headObjToTags(objs.value);
+        tags.forEach((tag) => {
+          if (tag.tag === "meta" || tag.tag === "base" || tag.tag === "script") {
+            const key = getTagKey(tag.props);
+            if (key) {
+              let index = -1;
+              for (let i = 0; i < deduped.length; i++) {
+                const prev = deduped[i];
+                const prevValue = prev.props[key.name];
+                const nextValue = tag.props[key.name];
+                if (prev.tag === tag.tag && prevValue === nextValue) {
+                  index = i;
+                  break;
+                }
+              }
+              if (index !== -1) {
+                deduped.splice(index, 1);
+              }
+            }
+          }
+          deduped.push(tag);
+        });
+      });
+      return deduped;
+    },
+    addHeadObjs(objs) {
+      allHeadObjs.push(objs);
+    },
+    removeHeadObjs(objs) {
+      allHeadObjs = allHeadObjs.filter((_objs) => _objs !== objs);
+    },
+    updateDOM(document = window.document) {
+      let title;
+      let htmlAttrs = {};
+      let bodyAttrs = {};
+      const actualTags = {};
+      for (const tag of head.headTags) {
+        if (tag.tag === "title") {
+          title = tag.props.children;
+          continue;
+        }
+        if (tag.tag === "htmlAttrs") {
+          Object.assign(htmlAttrs, tag.props);
+          continue;
+        }
+        if (tag.tag === "bodyAttrs") {
+          Object.assign(bodyAttrs, tag.props);
+          continue;
+        }
+        actualTags[tag.tag] = actualTags[tag.tag] || [];
+        actualTags[tag.tag].push(tag);
+      }
+      if (title !== void 0) {
+        document.title = title;
+      }
+      setAttrs(document.documentElement, htmlAttrs);
+      setAttrs(document.body, bodyAttrs);
+      for (const name of Object.keys(actualTags)) {
+        updateElements(document, name, actualTags[name]);
+      }
+    }
+  };
+  return head;
+};
+var IS_BROWSER = typeof window !== "undefined";
+var useHead = (obj) => {
+  const headObj = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(obj);
+  const head = injectHead();
+  head.addHeadObjs(headObj);
+  if (IS_BROWSER) {
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.watchEffect)(() => {
+      head.updateDOM();
+    });
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.onBeforeUnmount)(() => {
+      head.removeHeadObjs(headObj);
+      head.updateDOM();
+    });
+  }
+};
+var tagToString = (tag) => {
+  let attrs = stringifyAttrs(tag.props);
+  if (SELF_CLOSING_TAGS.includes(tag.tag)) {
+    return `<${tag.tag}${attrs}>`;
+  }
+  return `<${tag.tag}${attrs}>${tag.props.children || ""}</${tag.tag}>`;
+};
+var renderHeadToString = (head) => {
+  const tags = [];
+  let titleTag = "";
+  let htmlAttrs = {};
+  let bodyAttrs = {};
+  for (const tag of head.headTags) {
+    if (tag.tag === "title") {
+      titleTag = tagToString(tag);
+    } else if (tag.tag === "htmlAttrs") {
+      Object.assign(htmlAttrs, tag.props);
+    } else if (tag.tag === "bodyAttrs") {
+      Object.assign(bodyAttrs, tag.props);
+    } else {
+      tags.push(tagToString(tag));
+    }
+  }
+  tags.push(`<meta name="${HEAD_COUNT_KEY}" content="${tags.length}">`);
+  return {
+    get headTags() {
+      return titleTag + tags.join("");
+    },
+    get htmlAttrs() {
+      return stringifyAttrs(__spreadProps(__spreadValues({}, htmlAttrs), {
+        [HEAD_ATTRS_KEY]: Object.keys(htmlAttrs).join(",")
+      }));
+    },
+    get bodyAttrs() {
+      return stringifyAttrs(__spreadProps(__spreadValues({}, bodyAttrs), {
+        [HEAD_ATTRS_KEY]: Object.keys(bodyAttrs).join(",")
+      }));
+    }
+  };
+};
+var vnodesToHeadObj = (nodes) => {
+  const obj = {
+    title: void 0,
+    htmlAttrs: void 0,
+    bodyAttrs: void 0,
+    base: void 0,
+    meta: [],
+    link: [],
+    style: [],
+    script: []
+  };
+  for (const node of nodes) {
+    const type = node.type === "html" ? "htmlAttrs" : node.type === "body" ? "bodyAttrs" : node.type;
+    if (typeof type !== "string" || !(type in obj))
+      continue;
+    const props = __spreadProps(__spreadValues({}, node.props), {
+      children: Array.isArray(node.children) ? node.children[0].children : node.children
+    });
+    if (Array.isArray(obj[type])) {
+      ;
+      obj[type].push(props);
+    } else if (type === "title") {
+      obj.title = props.children;
+    } else {
+      ;
+      obj[type] = props;
+    }
+  }
+  return obj;
+};
+var Head = /* @__PURE__ */ (0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
+  name: "Head",
+  setup(_, { slots }) {
+    const head = injectHead();
+    let obj;
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.onBeforeUnmount)(() => {
+      if (obj) {
+        head.removeHeadObjs(obj);
+        head.updateDOM();
+      }
+    });
+    return () => {
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.watchEffect)(() => {
+        if (!slots.default)
+          return;
+        if (obj) {
+          head.removeHeadObjs(obj);
+        }
+        obj = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(vnodesToHeadObj(slots.default()));
+        head.addHeadObjs(obj);
+        if (IS_BROWSER) {
+          head.updateDOM();
+        }
+      });
+      return null;
+    };
+  }
+});
 
 
 

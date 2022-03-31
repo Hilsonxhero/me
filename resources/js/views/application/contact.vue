@@ -181,6 +181,18 @@ import { ErrorMessage, Field, Form } from "vee-validate";
 import * as Yup from "yup";
 import { mapActions, mapState, mapGetters } from "vuex";
 import { useStore } from "vuex";
+import { useHead } from "@vueuse/head";
+
+useHead({
+    title: computed(() => "contact page"),
+    // meta: [
+    //     {
+    //         name: `description`,
+    //         content: computed(() => portfolio.value.description),
+    //         key: "description",
+    //     },
+    // ],
+});
 const form = ref({
     name: "",
     email: "",
