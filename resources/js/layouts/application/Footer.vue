@@ -58,6 +58,20 @@
                 >
                     <i class="bx bxl-telegram"></i>
                 </a>
+
+                <a
+                    :href="$store.state.General.general.whatsapp"
+                    class="btn btn-icon btn-secondary btn-twitter mx-2"
+                >
+                    <i class="bx bxl-whatsapp"></i>
+                </a>
+
+                <a
+                    :href="`mailto:${$store.state.General.general.email}`"
+                    class="btn btn-icon btn-secondary btn-twitter mx-2"
+                >
+                    <i class="bx bx-envelope"></i>
+                </a>
             </div>
             <p class="fs-sm text-center pt-5 mt-lg-4 mb-0">
                 <span class="opacity-80">© All rights reserved </span>

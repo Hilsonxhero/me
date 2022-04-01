@@ -94,10 +94,10 @@ var _hoisted_3 = {
   "class": "row row-cols-1 row-cols-md-2 gx-3 gx-lg-4"
 };
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"col-md-6 mb-3 mb-md-0\"><div class=\"card bg-dark h-100 p-xl-4\"><div class=\"card-body\"><h2 class=\"display-1 text-light\">420k</h2><p class=\"lead fw-medium text-light\"><span class=\"opacity-70\">users are taking advantage of our</span><span class=\"fw-bold\">Task Manager Tool</span><span class=\"opacity-70\">. It’s a new transparent and efficient way to organize all of your daily tasks.</span></p></div></div></div>", 1);
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"col-md-6 mb-3 mb-md-0 d-none\"><div class=\"card bg-dark h-100 p-xl-4\"><div class=\"card-body\"><h2 class=\"display-1 text-light\">420k</h2><p class=\"lead fw-medium text-light\"><span class=\"opacity-70\">users are taking advantage of our</span><span class=\"fw-bold\">Task Manager Tool</span><span class=\"opacity-70\">. It’s a new transparent and efficient way to organize all of your daily tasks.</span></p></div></div></div>", 1);
 
 var _hoisted_5 = {
-  "class": "col-md-6"
+  "class": "col-md-12"
 };
 var _hoisted_6 = {
   "class": "card border-0 shadow-sm p-4 p-xxl-5"
@@ -133,9 +133,7 @@ var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "class": "col-lg-8 col-md-9 text-center"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "h1 mb-4"
-}, "Integrate Top Work Tools"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "fs-lg text-muted mb-0"
-}, " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin volutpat mollis egestas. Nam luctus facilisis ultrices. Pellentesque volutpat ligula est. Mattis fermentum, at nec lacus. ")])], -1
+}, "Integrate Top Work Tools"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <p class=\"fs-lg text-muted mb-0\">\n                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                    Proin volutpat mollis egestas. Nam luctus facilisis\n                    ultrices. Pellentesque volutpat ligula est. Mattis\n                    fermentum, at nec lacus.\n                </p> ")])], -1
 /* HOISTED */
 );
 
@@ -150,16 +148,6 @@ var _hoisted_16 = {
   "class": "card-body tools_img"
 };
 var _hoisted_17 = ["src"];
-
-var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "text-center my-3 mt-4"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#",
-  "class": "btn btn-primary"
-}, "View all integrations")], -1
-/* HOISTED */
-);
-
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("figure", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("blockquote", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
     "class": "fs-lg mb-0",
@@ -179,7 +167,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     , _hoisted_17)])])]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))]), _hoisted_18])], 64
+  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"text-center my-3 mt-4\">\n            <a href=\"#\" class=\"btn btn-primary\">View all integrations</a>\n        </div> ")])], 64
   /* STABLE_FRAGMENT */
   );
 }

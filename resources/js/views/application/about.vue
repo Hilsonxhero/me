@@ -2,7 +2,7 @@
     <section class="position-relative overflow-hidden mb-3 pt-5">
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2 gx-3 gx-lg-4">
-                <div class="col-md-6 mb-3 mb-md-0">
+                <div class="col-md-6 mb-3 mb-md-0 d-none">
                     <div class="card bg-dark h-100 p-xl-4">
                         <div class="card-body">
                             <h2 class="display-1 text-light">420k</h2>
@@ -19,7 +19,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="card border-0 shadow-sm p-4 p-xxl-5">
                         <div class="d-flex justify-content-between pb-4 mb-2">
                             <span
@@ -54,12 +54,12 @@
         <div class="row justify-content-center pt-1 pb-1 mb-2 mb-md-3 mb-lg-4">
             <div class="col-lg-8 col-md-9 text-center">
                 <h2 class="h1 mb-4">Integrate Top Work Tools</h2>
-                <p class="fs-lg text-muted mb-0">
+                <!-- <p class="fs-lg text-muted mb-0">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Proin volutpat mollis egestas. Nam luctus facilisis
                     ultrices. Pellentesque volutpat ligula est. Mattis
                     fermentum, at nec lacus.
-                </p>
+                </p> -->
             </div>
         </div>
 
@@ -73,9 +73,9 @@
             </div>
         </div>
 
-        <div class="text-center my-3 mt-4">
+        <!-- <div class="text-center my-3 mt-4">
             <a href="#" class="btn btn-primary">View all integrations</a>
-        </div>
+        </div> -->
     </section>
 </template>
 <script setup>

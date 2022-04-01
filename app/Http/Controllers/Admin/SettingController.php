@@ -104,6 +104,13 @@ class SettingController extends Controller
             );
         }
 
+        if ($request->whatsapp) {
+            Setting::query()->updateOrCreate(
+                ['title' => 'whatsapp'],
+                ['value' => $request->whatsapp]
+            );
+        }
+
 
         if ($request->title) {
             Setting::query()->updateOrCreate(

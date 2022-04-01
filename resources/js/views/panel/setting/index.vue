@@ -96,6 +96,15 @@
                                 required=""
                             />
                         </div>
+                        <div class="col-sm-6 mb-4">
+                            <label class="form-label fs-base">whatsapp</label>
+                            <input
+                                v-model="form.whatsapp"
+                                type="text"
+                                class="form-control form-control-lg"
+                                required=""
+                            />
+                        </div>
                     </div>
                 </el-tab-pane>
                 <el-tab-pane label="About us" name="about">
@@ -204,6 +213,7 @@ const form = ref({
     title: "",
     subtitle: "",
     telegram: "",
+    whatsapp: "",
 });
 
 const selectedFile = (event) => {
@@ -221,6 +231,7 @@ const createHandler = () => {
     data.append("about", form.value.about);
     data.append("instagram", form.value.instagram);
     data.append("telegram", form.value.telegram);
+    data.append("whatsapp", form.value.whatsapp);
     data.append("title", form.value.title);
     data.append("subtitle", form.value.subtitle);
     if (file.value) {

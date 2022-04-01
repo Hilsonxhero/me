@@ -220,8 +220,26 @@ var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 );
 
 var _hoisted_22 = [_hoisted_21];
+var _hoisted_23 = ["href"];
 
-var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "bx bxl-whatsapp"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_25 = [_hoisted_24];
+var _hoisted_26 = ["href"];
+
+var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "bx bx-envelope"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_28 = [_hoisted_27];
+
+var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "fs-sm text-center pt-5 mt-lg-4 mb-0"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "opacity-80"
@@ -309,7 +327,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "btn btn-icon btn-secondary btn-twitter mx-2"
   }, _hoisted_22, 8
   /* PROPS */
-  , _hoisted_20)]), _hoisted_23])])], 2112
+  , _hoisted_20), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: _ctx.$store.state.General.general.whatsapp,
+    "class": "btn btn-icon btn-secondary btn-twitter mx-2"
+  }, _hoisted_25, 8
+  /* PROPS */
+  , _hoisted_23), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: "mailto:".concat(_ctx.$store.state.General.general.email),
+    "class": "btn btn-icon btn-secondary btn-twitter mx-2"
+  }, _hoisted_28, 8
+  /* PROPS */
+  , _hoisted_26)]), _hoisted_29])])], 2112
   /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
   );
 }
