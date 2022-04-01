@@ -6,7 +6,12 @@ body {
 
 main {
     position: relative;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+
     flex-direction: column;
 }
 
@@ -100,4 +105,14 @@ main {
 
 .offcanvas.show {
     transform: none !important;
+}
+
+::-webkit-scrollbar {
+    width: 0 !important;
+}
+
+.swiper-wrapper {
+
+    height: auto !important;
+
 }

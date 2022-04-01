@@ -86,3 +86,11 @@ main {
 .offcanvas.show {
   transform: none !important;
 }
+
+::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.swiper-wrapper {
+  height: auto !important;
+}

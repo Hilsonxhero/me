@@ -78,6 +78,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _layouts_application_Header_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/layouts/application/Header.vue */ "./resources/js/layouts/application/Header.vue");
 /* harmony import */ var _layouts_application_Footer_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/layouts/application/Footer.vue */ "./resources/js/layouts/application/Footer.vue");
+/* harmony import */ var element_plus__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! element-plus */ "./node_modules/element-plus/es/components/loading/index.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
@@ -88,13 +89,51 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     Header: _layouts_application_Header_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     Footer: _layouts_application_Footer_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
-  methods: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_2__.mapActions)("General", ["generalHandler"])),
+  data: function data() {
+    return {
+      loading: null
+    };
+  },
+  methods: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_2__.mapActions)("General", ["generalHandler"])), {}, {
+    enableInterceptor: function enableInterceptor() {
+      var _this = this;
+
+      this.axiosInterceptor = window.axios.interceptors.request.use(function (config) {
+        _this.loading = element_plus__WEBPACK_IMPORTED_MODULE_3__.ElLoading.service({
+          lock: true,
+          text: "Loading",
+          background: "rgba(0, 0, 0, 1)"
+        });
+        return config;
+      }, function (error) {
+        _this.loading.close();
+
+        return Promise.reject(error);
+      });
+      window.axios.interceptors.response.use(function (response) {
+        _this.loading.close();
+
+        return response;
+      }, function (error) {
+        _this.loading.close();
+
+        return Promise.reject(error);
+      });
+    }
+  }),
   mounted: function mounted() {
+    this.loading = element_plus__WEBPACK_IMPORTED_MODULE_3__.ElLoading.service({
+      lock: true,
+      text: "Loading",
+      background: "rgba(0, 0, 0, 1)"
+    });
+    this.enableInterceptor();
     this.generalHandler();
   }
 });
