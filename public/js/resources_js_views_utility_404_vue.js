@@ -71,12 +71,7 @@ var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "class": "fs-sm pt-3 pt-lg-0 mb-0"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "opacity-75"
-}, "© All rights reserved. Made by"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "nav-link d-inline-block p-0",
-  href: "https://createx.studio/",
-  target: "_blank",
-  rel: "noopener"
-}, "Createx Studio")])], -1
+}, "© All rights reserved")])], -1
 /* HOISTED */
 );
 

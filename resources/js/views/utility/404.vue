@@ -86,14 +86,7 @@
             <div class="text-center py-lg-5 py-4 mt-auto">
                 <p class="fs-sm pt-3 pt-lg-0 mb-0">
                     <span class="opacity-75"
-                        >&copy; All rights reserved. Made by</span
-                    >
-                    <a
-                        class="nav-link d-inline-block p-0"
-                        href="https://createx.studio/"
-                        target="_blank"
-                        rel="noopener"
-                        >Createx Studio</a
+                        >&copy; All rights reserved</span
                     >
                 </p>
             </div>
