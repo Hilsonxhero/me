@@ -24,20 +24,23 @@
 
         <!-- Hero image (Parallax) -->
         <section class="jarallax" data-jarallax data-speed="0.5">
-            <div
-                class="jarallax-img bg-fixed"
-                :style="`background-image: url(${portfolio.banner_src})`"
-            ></div>
-            <div class="d-none d-xxl-block" style="height: 800px"></div>
-            <div
-                class="d-none d-lg-block d-xxl-none"
-                style="height: 600px"
-            ></div>
-            <div
-                class="d-none d-md-block d-lg-none"
-                style="height: 450px"
-            ></div>
-            <div class="d-md-none" style="height: 400px"></div>
+            <div>
+                <img :src="portfolio.banner_src" alt="portfolio image" class="portfolio-cover-header" loading="lazy">
+            </div>
+<!--            <div-->
+<!--                class="jarallax-img bg-fixed"-->
+<!--                :style="`background-image: url(${portfolio.banner_src})`"-->
+<!--            ></div>-->
+<!--            <div class="d-none d-xxl-block" style="height: 800px"></div>-->
+<!--            <div-->
+<!--                class="d-none d-lg-block d-xxl-none"-->
+<!--                style="height: 600px"-->
+<!--            ></div>-->
+<!--            <div-->
+<!--                class="d-none d-md-block d-lg-none"-->
+<!--                style="height: 450px"-->
+<!--            ></div>-->
+<!--            <div class="d-md-none" style="height: 400px"></div>-->
         </section>
 
         <!-- About project -->
@@ -94,12 +97,12 @@
         <section class="container position-relative pt-1 pt-md-3">
             <div class="row">
                 <div
-                    class="col-lg-3"
+                    class="col-lg-4"
                     v-for="(media, index) in portfolio.galleries"
                 >
                     <div class="card card-portfolio">
                         <div class="card-img portfolio__media">
-                            <img :src="media.banner_src" alt="Image" class="" />
+                            <img :src="media.banner_src" loading="lazy" :alt="media.title" class="" />
                         </div>
                         <div class="card-body">
                             <h3 class="h4 mb-2">
@@ -151,17 +154,24 @@ onMounted(() => {
         .catch((error) => {});
 });
 </script>
-<style>
+<style scoped>
 .bg-fixed {
     background-attachment: fixed;
 }
 .portfolio__media {
-    height: 280px;
+    /*height: 280px;*/
     object-fit: cover;
 }
 .portfolio__media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+.portfolio-cover-header{
+    object-fit: cover;
+}
+
+.card-portfolio .card-img {
+    border-radius: 0.1rem !important;
 }
 </style>

@@ -366,8 +366,9 @@
         <section class="container mb-5 py-lg-5" v-if="portfolios">
             <h2 class="h1 mb-4 pb-3 text-center">Latest Portfolios</h2>
             <div class="row">
+
                 <div
-                    class="col-lg-6"
+                    class="col-lg-6 d-none"
                     v-for="(portfolio, index) in portfolios"
                     :key="index"
                 >
@@ -448,13 +449,59 @@
                     </article>
                 </div>
 
-                <div class="col-12 mt-4 pt-lg-4 pt-3 text-center">
-                    <!-- <a
-                        href="blog-grid-no-sidebar.html"
-                        class="btn btn-lg btn-outline-primary w-sm-auto w-100"
-                        >More portfolios</a
-                    > -->
+                <div class="col-lg-6" v-for="(portfolio, index) in portfolios" :key="index">
+                    <div class="card shadow overflow-hidden p-2">
+                        <div class="row g-0">
+                            <div class="col-lg-6 overflow-hidden">
+                                <img loading="lazy" :src="portfolio.banner_src" class="portfolio-cover-ui" alt="Card image">
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <a
+                                            href="#"
+                                            class="badge fs-sm text-nav bg-secondary text-decoration-none"
+                                        >{{ portfolio.category.title }}</a
+                                        >
+                                        <span
+                                            class="fs-sm text-muted border-start ps-3 ms-3"
+                                        >{{ portfolio.created_at }}</span
+                                        >
+                                    </div>
+                                    <h3 class="h5">
+                                        <router-link
+                                            :to="{
+                                                name: 'portfolios show',
+                                                params: {
+                                                    id: portfolio.id,
+                                                    slug: portfolio.slug,
+                                                },
+                                            }"
+                                        >
+                                            {{ portfolio.title }}
+                                        </router-link>
+                                    </h3>
+                                    <hr class="my-4" />
+                                    <div
+                                        class="d-flex flex-wrap align-items-center"
+                                    >
+                                        <span
+                                            class="badge bg-primary mb-2 me-2"
+                                            v-for="(
+                                                technology, index
+                                            ) in portfolio.technologies"
+                                            :key="index"
+                                        >{{ technology.title }}</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+
+                <div class="col-12 mt-4 pt-lg-4 pt-3 text-center">
                     <router-link
                         class="btn btn-lg btn-outline-primary w-sm-auto w-100"
                         :to="{ name: 'portfolios index' }"
@@ -647,4 +694,12 @@ onMounted(() => {
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.portfolio-cover-ui{
+    object-fit: cover;
+    object-position: left;
+    height: 100%;
+    width: 100%;
+}
+
+</style>

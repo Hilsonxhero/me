@@ -54,7 +54,7 @@
                                 call us any time.
                             </p>
                             <a
-                                href="tel:4065550120"
+                                :href="'tel:' + general.phone"
                                 class="btn btn-link stretched-link fs-base px-0"
                                 >{{ general.phone }}</a
                             >

@@ -117,61 +117,55 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mb-4">
-                        <div class="form-check">
-                            <input
-                                type="checkbox"
-                                id="terms"
-                                class="form-check-input"
-                            />
-                            <label for="terms" class="form-check-label fs-base"
-                                >I agree to
-                                <a href="#">Terms &amp; Conditions</a></label
-                            >
-                        </div>
-                    </div>
-                    <button
-                        type="submit"
-                        class="btn btn-primary shadow-primary btn-lg w-100"
-                    >
-                        Sign up
-                    </button>
+<!--                    <div class="mb-4">-->
+<!--                        <div class="form-check">-->
+<!--                            <input-->
+<!--                                type="checkbox"-->
+<!--                                id="terms"-->
+<!--                                class="form-check-input"-->
+<!--                            />-->
+<!--                            <label for="terms" class="form-check-label fs-base"-->
+<!--                                >I agree to-->
+<!--                                <a href="#">Terms &amp; Conditions</a></label-->
+<!--                            >-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <button-->
+<!--                        type="submit"-->
+<!--                        class="btn btn-primary shadow-primary btn-lg w-100"-->
+<!--                    >-->
+<!--                        Sign up-->
+<!--                    </button>-->
                 </form>
-                <hr class="my-4" />
-                <h6 class="text-center mb-4">
-                    Or sign up with your social network
-                </h6>
-                <div class="row row-cols-1 row-cols-sm-2">
-                    <div class="col mb-3">
-                        <a
-                            href="#"
-                            class="btn btn-icon btn-secondary btn-google btn-lg w-100"
-                        >
-                            <i class="bx bxl-google fs-xl me-2"></i>
-                            Google
-                        </a>
-                    </div>
-                    <div class="col mb-3">
-                        <a
-                            href="#"
-                            class="btn btn-icon btn-secondary btn-facebook btn-lg w-100"
-                        >
-                            <i class="bx bxl-facebook fs-xl me-2"></i>
-                            Facebook
-                        </a>
-                    </div>
-                </div>
+<!--                <hr class="my-4" />-->
+<!--                <h6 class="text-center mb-4">-->
+<!--                    Or sign up with your social network-->
+<!--                </h6>-->
+<!--                <div class="row row-cols-1 row-cols-sm-2">-->
+<!--                    <div class="col mb-3">-->
+<!--                        <a-->
+<!--                            href="#"-->
+<!--                            class="btn btn-icon btn-secondary btn-google btn-lg w-100"-->
+<!--                        >-->
+<!--                            <i class="bx bxl-google fs-xl me-2"></i>-->
+<!--                            Google-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                    <div class="col mb-3">-->
+<!--                        <a-->
+<!--                            href="#"-->
+<!--                            class="btn btn-icon btn-secondary btn-facebook btn-lg w-100"-->
+<!--                        >-->
+<!--                            <i class="bx bxl-facebook fs-xl me-2"></i>-->
+<!--                            Facebook-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
             <div class="w-100 align-self-end">
                 <p class="fs-xs text-center text-xl-start pb-2 mb-0">
-                    &copy; All rights reserved. Made by
-                    <a
-                        class="nav-link d-inline-block p-0"
-                        href="https://createx.studio/"
-                        target="_blank"
-                        rel="noopener"
-                        >Createx Studio</a
-                    >
+                    &copy; All rights reserved
+
                 </p>
             </div>
         </div>

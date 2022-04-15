@@ -7,7 +7,7 @@
             >
                 <img
                     :src="$store.state.General.general.logo"
-                    class="me-2"
+                    class=""
                     width="120"
                     alt="Logo"
                 />

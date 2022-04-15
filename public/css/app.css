@@ -92,10 +92,6 @@ main {
   transform: none !important;
 }
 
-::-webkit-scrollbar {
-  width: 0 !important;
-}
-
 .swiper-wrapper {
   height: auto !important;
 }
@@ -4624,7 +4620,6 @@ fieldset:disabled .btn {
 .navbar-brand {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  margin-right: 1rem;
   font-size: calc(1.2625rem + 0.15vw);
   text-decoration: none;
   white-space: nowrap;
@@ -14885,10 +14880,6 @@ hr.dropdown-divider {
   align-items: center;
   padding: 0.25rem 0;
   font-weight: 800;
-}
-
-.navbar-brand > img {
-  margin-right: 0.4375rem;
 }
 
 .navbar-toggler {

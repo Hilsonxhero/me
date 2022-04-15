@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,7 +23,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'hilsonxhero.me@gmail.com',
             'phone' => '09010105397',
             'is_superuser' => 1,
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => Hash::make("amir3090@%A")
         ])->markEmailAsVerified();
     }
 }

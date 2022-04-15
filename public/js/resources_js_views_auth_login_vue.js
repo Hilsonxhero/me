@@ -168,22 +168,21 @@ var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<a href=\"#\" class=\"btn btn-link btn-lg w-100\">Forgot your password?</a><hr class=\"my-4\"><h6 class=\"text-center mb-4\"> Or sign in with your social network </h6><div class=\"row row-cols-1 row-cols-sm-2\"><div class=\"col mb-3\"><a href=\"#\" class=\"btn btn-icon btn-secondary btn-google btn-lg w-100\"><i class=\"bx bxl-google fs-xl me-2\"></i> Google </a></div><div class=\"col mb-3\"><a href=\"#\" class=\"btn btn-icon btn-secondary btn-facebook btn-lg w-100\"><i class=\"bx bxl-facebook fs-xl me-2\"></i> Facebook </a></div></div>", 4);
-
-var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "w-100 align-self-end"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "fs-xs text-center text-xl-start pb-2 mb-0"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" © All rights reserved. Made by "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "nav-link d-inline-block p-0",
-  href: "https://createx.studio/",
-  target: "_blank",
-  rel: "noopener"
-}, "Createx Studio")])], -1
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", {
+  "class": "my-4"
+}, null, -1
 /* HOISTED */
 );
 
-var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "w-100 align-self-end"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  "class": "fs-xs text-center text-xl-start pb-2 mb-0"
+}, " © All rights reserved ")], -1
+/* HOISTED */
+);
+
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "position-absolute top-0 end-0 w-50 h-100 bg-position-center bg-repeat-0 bg-size-cover d-none d-xl-block",
   style: {
     "background-image": "url(/assets/img/account/signin-bg.jpg)"
@@ -230,7 +229,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: $setup.loginHandler,
     type: "button",
     "class": "btn btn-primary shadow-primary btn-lg w-100"
-  }, " Sign in ")]), _hoisted_18]), _hoisted_22]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Background "), _hoisted_23]);
+  }, " Sign in ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <a href=\"#\" class=\"btn btn-link btn-lg w-100\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    >Forgot your password?</a"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                >"), _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <h6 class=\"text-center mb-4\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    Or sign in with your social network"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                </h6>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"row row-cols-1 row-cols-sm-2\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <div class=\"col mb-3\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        <a"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            href=\"#\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            class=\"btn btn-icon btn-secondary btn-google btn-lg w-100\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        >"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            <i class=\"bx bxl-google fs-xl me-2\"></i>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            Google"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        </a>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <div class=\"col mb-3\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        <a"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            href=\"#\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            class=\"btn btn-icon btn-secondary btn-facebook btn-lg w-100\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        >"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            <i class=\"bx bxl-facebook fs-xl me-2\"></i>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            Facebook"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        </a>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                </div>")]), _hoisted_19]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Background "), _hoisted_20]);
 }
 
 /***/ }),
