@@ -233,7 +233,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* PROPS, DYNAMIC_SLOTS */
     , ["to"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       onClick: function onClick($event) {
-        return $setup.deleteHandler(_ctx.technology.id, index);
+        return $setup.deleteHandler(portfolio.id, index);
       },
       type: "button",
       "class": "btn btn-outline-danger px-3 px-xl-4"

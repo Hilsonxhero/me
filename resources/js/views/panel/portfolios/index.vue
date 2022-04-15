@@ -98,7 +98,7 @@
                                     </router-link>
                                     <button
                                         @click="
-                                            deleteHandler(technology.id, index)
+                                            deleteHandler(portfolio.id, index)
                                         "
                                         type="button"
                                         class="btn btn-outline-danger px-3 px-xl-4"

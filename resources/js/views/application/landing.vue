@@ -55,7 +55,8 @@
                             <router-link
                                 class="btn btn-primary shadow-primary btn-lg me-sm-3 me-xl-4 mb-3"
                                 :to="{ name: 'about' }"
-                                >About us</router-link
+                            >About us
+                            </router-link
                             >
                             <!-- <a
                                 href="#"
@@ -80,9 +81,9 @@
                             class="d-flex align-items-center justify-content-center justify-content-lg-start text-start pb-2 pt-lg-2 pb-xl-0 pt-xl-5 mt-xxl-5"
                         >
                             <span class="fs-sm"
-                                ><span class="text-primary fw-semibold"
-                                    >400+</span
-                                >
+                            ><span class="text-primary fw-semibold"
+                            >400+</span
+                            >
                                 attendees are already with us</span
                             >
                         </div>
@@ -120,7 +121,7 @@
                     <div
                         class="d-inline-block bg-secondary rounded-circle p-3 mb-4"
                     >
-                        <img src="assets/img/chat.svg" width="32" alt="Icon" />
+                        <img src="assets/img/chat.svg" width="32" alt="Icon"/>
                     </div>
                     <h3 class="h5 pb-1 mb-2">Task Comments</h3>
                     <p class="fs-sm">
@@ -152,7 +153,7 @@
                     <div
                         class="d-inline-block bg-secondary rounded-circle p-3 mb-4"
                     >
-                        <img src="assets/img/bell.svg" width="32" alt="Icon" />
+                        <img src="assets/img/bell.svg" width="32" alt="Icon"/>
                     </div>
                     <h3 class="h5 pb-1 mb-2">Notifications</h3>
                     <p class="fs-sm">
@@ -166,7 +167,7 @@
                     <div
                         class="d-inline-block bg-secondary rounded-circle p-3 mb-4"
                     >
-                        <img src="assets/img/tasks.svg" width="32" alt="Icon" />
+                        <img src="assets/img/tasks.svg" width="32" alt="Icon"/>
                     </div>
                     <h3 class="h5 pb-1 mb-2">Sections &amp; Subtasks</h3>
                     <p class="fs-sm">
@@ -249,242 +250,70 @@
             </div>
         </section>
 
-        <!-- Dashboard -->
-        <section
-            class="container pt-3 pt-md-4 pt-lg-5 pb-2 mt-lg-2 mt-xl-4 d-none"
-        >
-            <div class="row align-items-center">
-                <div
-                    class="col-md-7"
-                    data-jarallax-element="25"
-                    data-disable-parallax-down="lg"
-                >
-                    <img
-                        src="assets/img/dashboard.png"
-                        class="d-block mx-auto"
-                        width="746"
-                        alt="Image"
-                    />
-                </div>
-                <div
-                    class="col-md-5 col-xl-4 offset-xl-1 d-flex d-sm-block flex-column"
-                    data-jarallax-element="-25"
-                    data-disable-parallax-down="lg"
-                >
-                    <h2 class="pb-3 pt-2 pt-md-0">Manage Your Work</h2>
-                    <ul class="list-unstyled pb-2">
-                        <li class="d-flex align-items-center pb-1 mb-2">
-                            <i
-                                class="bx bx-check-circle text-primary fs-xl me-2"
-                            ></i>
-                            Powerful project management
-                        </li>
-                        <li class="d-flex align-items-center pb-1 mb-2">
-                            <i
-                                class="bx bx-check-circle text-primary fs-xl me-2"
-                            ></i>
-                            Transparent work management
-                        </li>
-                        <li class="d-flex align-items-center pb-1 mb-2">
-                            <i
-                                class="bx bx-check-circle text-primary fs-xl me-2"
-                            ></i>
-                            Manage work &amp; focus on the most important tasks
-                        </li>
-                        <li class="d-flex align-items-center pb-1 mb-2">
-                            <i
-                                class="bx bx-check-circle text-primary fs-xl me-2"
-                            ></i>
-                            Track your progress with interactive charts
-                        </li>
-                        <li class="d-flex align-items-center pb-1 mb-2">
-                            <i
-                                class="bx bx-check-circle text-primary fs-xl me-2"
-                            ></i>
-                            Easiest way to track time spent on tasks
-                        </li>
-                    </ul>
-                    <a href="#" class="btn btn-primary">
-                        Learn more
-                        <i class="bx bx-right-arrow-alt fs-xl ms-2"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
+        <section class="container mb-5 pt-md-4 m mt-5" v-if="portfolios">
+            <div class="d-flex flex-sm-row flex-column align-items-center justify-content-between mb-4 pb-1 pb-md-3">
+                <h2 class="h1 mb-sm-0">Latest Portfolios</h2>
+<!--                <a href="blog-grid-with-sidebar.html" class="btn btn-lg btn-outline-primary ms-4">-->
+<!--                    All podcasts-->
+<!--                    <i class="bx bx-right-arrow-alt ms-1 me-n1 lh-1 lead"></i>-->
+<!--                </a>-->
 
-        <section class="container mb-1 mb-md-3 mb-lg-4 d-none">
-            <div class="bg-secondary rounded-3 overflow-hidden">
-                <div class="row align-items-center">
-                    <div class="col-xl-4 col-md-5 offset-lg-1">
-                        <div
-                            class="pt-5 pb-3 pb-md-5 px-4 px-lg-0 text-center text-md-start"
-                        >
-                            <p class="lead mb-3">Ready to get started?</p>
-                            <h2 class="h1 pb-3 pb-sm-4">
-                                Take Your
-                                <span class="text-primary">Business</span>
-                                to&nbsp;the Next Level
-                            </h2>
-                            <a href="#" class="btn btn-primary btn-lg"
-                                >Work with us</a
-                            >
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-7 offset-xl-1">
-                        <div
-                            class="position-relative d-flex flex-column align-items-center justify-content-center h-100"
-                        >
-                            <svg
-                                class="d-none d-md-block position-absolute top-50 start-0 translate-middle-y"
-                                width="868"
-                                height="868"
-                                style="min-width: 868px"
-                                viewBox="0 0 868 868"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <circle
-                                    opacity="0.15"
-                                    cx="434"
-                                    cy="434"
-                                    r="434"
-                                    fill="#6366F1"
-                                ></circle>
-                            </svg>
-                            <img
-                                src="assets/img/about/cta.png"
-                                class="position-relative zindex-3 mb-2 my-lg-4"
-                                width="382"
-                                alt="Illustration"
-                            />
-                        </div>
-                    </div>
-                </div>
+                <router-link
+                    class="btn btn-lg btn-outline-primary ms-4"
+                    :to="{ name: 'portfolios index' }"
+                >
+                    All portfolios
+                    <i class="bx bx-right-arrow-alt ms-1 me-n1 lh-1 lead"></i>
+                </router-link
+                >
             </div>
-        </section>
 
-        <section class="container mb-5 py-lg-5" v-if="portfolios">
-            <h2 class="h1 mb-4 pb-3 text-center">Latest Portfolios</h2>
+
             <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4" v-for="(portfolio, index) in portfolios" :key="index">
+                    <article>
+                        <div class="d-block position-relative rounded-3 mb-3">
 
-                <div
-                    class="col-lg-6 d-none"
-                    v-for="(portfolio, index) in portfolios"
-                    :key="index"
-                >
-                    <!-- Article -->
-                    <article
-                        class="card border-0 shadow-sm overflow-hidden mb-4"
-                    >
-                        <div class="row g-0">
-                            <div
-                                class="col-sm-5 position-relative bg-position-center bg-repeat-0 bg-size-cover"
-                                style="min-height: 15rem"
-                                :style="`background-image: url(${portfolio.banner_src})`"
+
+                            <!--                            <span class="badge bg-dark position-absolute bottom-0 end-0 zindex-2 mb-3 me-3">0:25:43</span>-->
+<!--                            <a href=""-->
+<!--                               class="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-35 rounded-3"-->
+<!--                               aria-label="Listen podcast">-->
+
+<!--                            </a>-->
+
+                            <router-link
+                                class="position-absolute top-0 start-0 w-100 h-100  rounded-3"
+                                :to="{name: 'portfolios show',params: {id: portfolio.id,slug: portfolio.slug,}}"
                             >
-                                <router-link
-                                    class="position-absolute top-0 start-0 w-100 h-100"
-                                    :to="{
-                                        name: 'portfolios show',
-                                        params: {
-                                            id: portfolio.id,
-                                            slug: portfolio.slug,
-                                        },
-                                    }"
-                                >
-                                </router-link>
-                                <a
-                                    href="#"
-                                    class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3"
-                                    data-bs-toggle="tooltip"
-                                    data-bs-placement="left"
-                                    title=""
-                                    data-bs-original-title="Read later"
-                                >
-                                    <i class="bx bx-bookmark"></i>
-                                </a>
-                            </div>
-                            <div class="col-sm-7">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center mb-3">
-                                        <a
-                                            href="#"
-                                            class="badge fs-sm text-nav bg-secondary text-decoration-none"
-                                            >{{ portfolio.category.title }}</a
-                                        >
-                                        <span
-                                            class="fs-sm text-muted border-start ps-3 ms-3"
-                                            >{{ portfolio.created_at }}</span
-                                        >
-                                    </div>
-                                    <h3 class="h5">
-                                        <router-link
-                                            :to="{
-                                                name: 'portfolios show',
-                                                params: {
-                                                    id: portfolio.id,
-                                                    slug: portfolio.slug,
-                                                },
-                                            }"
-                                        >
-                                            {{ portfolio.title }}
-                                        </router-link>
-                                    </h3>
-                                    <hr class="my-4" />
-                                    <div
-                                        class="d-flex flex-wrap align-items-center"
-                                    >
-                                        <span
-                                            class="badge bg-primary mb-2 me-2"
-                                            v-for="(
-                                                technology, index
-                                            ) in portfolio.technologies"
-                                            :key="index"
-                                            >{{ technology.title }}</span
-                                        >
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+                            </router-link>
 
-                <div class="col-lg-6" v-for="(portfolio, index) in portfolios" :key="index">
-                    <div class="card shadow overflow-hidden p-2">
-                        <div class="row g-0">
-                            <div class="col-lg-6 overflow-hidden">
-                                <img loading="lazy" :src="portfolio.banner_src" class="portfolio-cover-ui" alt="Card image">
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center mb-3">
-                                        <a
-                                            href="#"
-                                            class="badge fs-sm text-nav bg-secondary text-decoration-none"
-                                        >{{ portfolio.category.title }}</a
-                                        >
-                                        <span
-                                            class="fs-sm text-muted border-start ps-3 ms-3"
-                                        >{{ portfolio.created_at }}</span
-                                        >
-                                    </div>
-                                    <h3 class="h5">
-                                        <router-link
-                                            :to="{
+
+
+                            <img :src="portfolio.banner_src" class="rounded-3" alt="Image">
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none">{{
+                                    portfolio.category.title
+                                }}</a>
+                            <span class="fs-sm text-muted border-start ps-3 ms-3">{{ portfolio.created_at }}</span>
+                        </div>
+                        <h3 class="h5">
+                            <router-link
+                                :to="{
                                                 name: 'portfolios show',
                                                 params: {
                                                     id: portfolio.id,
                                                     slug: portfolio.slug,
                                                 },
                                             }"
-                                        >
-                                            {{ portfolio.title }}
-                                        </router-link>
-                                    </h3>
-                                    <hr class="my-4" />
-                                    <div
-                                        class="d-flex flex-wrap align-items-center"
-                                    >
+                            >
+                                {{ portfolio.title }}
+                            </router-link>
+                        </h3>
+                        <div
+                            class="d-flex flex-wrap align-items-center"
+                        >
                                         <span
                                             class="badge bg-primary mb-2 me-2"
                                             v-for="(
@@ -493,22 +322,17 @@
                                             :key="index"
                                         >{{ technology.title }}</span
                                         >
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                    </div>
-                </div>
+<!--                        <a href="blog-podcast.html" class="btn btn-link px-0 mt-3">-->
+<!--                            <i class="bx bx-play-circle fs-lg me-2"></i>-->
+<!--                            Read now-->
+<!--                        </a>-->
 
 
-                <div class="col-12 mt-4 pt-lg-4 pt-3 text-center">
-                    <router-link
-                        class="btn btn-lg btn-outline-primary w-sm-auto w-100"
-                        :to="{ name: 'portfolios index' }"
-                        >More portfolios</router-link
-                    >
+                    </article>
                 </div>
             </div>
+
         </section>
 
         <!-- News slider -->
@@ -578,11 +402,11 @@
                                         <a
                                             href="#"
                                             class="badge fs-sm text-nav bg-secondary text-decoration-none position-relative zindex-2"
-                                            >{{ article.category.title }}</a
+                                        >{{ article.category.title }}</a
                                         >
                                         <span class="fs-sm text-muted">{{
-                                            article.created_at
-                                        }}</span>
+                                                article.created_at
+                                            }}</span>
                                     </div>
                                     <h3 class="h4">
                                         <router-link
@@ -635,7 +459,7 @@
         <!-- Back to top button -->
         <a href="#top" class="btn-scroll-top" data-scroll>
             <span class="btn-scroll-top-tooltip text-muted fs-sm me-2"
-                >Top</span
+            >Top</span
             >
             <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
         </a>
@@ -643,10 +467,9 @@
 </template>
 
 <script setup>
-import { onMounted, reactive, ref, computed } from "vue";
+import {onMounted, reactive, ref, computed} from "vue";
 
-import { useHead } from "@vueuse/head";
-
+import {useHead} from "@vueuse/head";
 
 
 import "swiper/css";
@@ -680,24 +503,26 @@ const www = computed((value) => "test");
 onMounted(() => {
     axios
         .get("/api/application/portfolios")
-        .then(({ data }) => {
+        .then(({data}) => {
             portfolios.value = data.data;
         })
-        .catch((error) => {});
+        .catch((error) => {
+        });
 
     axios
         .get("/api/application/articles")
-        .then(({ data }) => {
+        .then(({data}) => {
             articles.value = data.data;
         })
-        .catch((error) => {});
+        .catch((error) => {
+        });
 });
 </script>
 
 <style scoped>
-.portfolio-cover-ui{
+.portfolio-cover-ui {
     object-fit: cover;
-    object-position: left;
+    /*object-position: left;*/
     height: 100%;
     width: 100%;
 }
