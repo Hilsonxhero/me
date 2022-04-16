@@ -152,7 +152,7 @@
 
             <div class="row">
                 <div
-                    class="col-md-4 mb-4"
+                    class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3 mb-4"
                     v-for="(related_article, index) in related_articles"
                     :key="index"
                 >
@@ -249,10 +249,13 @@ onMounted(() => {
         });
 });
 </script>
-<style scoped>
+<style>
 .article__dec p {
     line-height: 2;
     word-break: break-all;
+}
+.article__dec p{
+    word-break: break-all !important;
 }
 
 .article__dec img {

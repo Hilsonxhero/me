@@ -265,25 +265,15 @@
             </div>
 
 
-            <div class="row">
-                <div class="col-md-6 col-lg-3 mb-4" v-for="(portfolio, index) in portfolios" :key="index">
+            <div class="row justify-content-center justify-content-md-start">
+                <div class="col-sm-10 col-md-6 col-lg-4 col-xl-3 mb-4" v-for="(portfolio, index) in portfolios" :key="index">
                     <article>
-                        <div class="d-block position-relative rounded-3 mb-3">
-
-
-                            <!--                            <span class="badge bg-dark position-absolute bottom-0 end-0 zindex-2 mb-3 me-3">0:25:43</span>-->
-                            <!--                            <a href=""-->
-                            <!--                               class="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-35 rounded-3"-->
-                            <!--                               aria-label="Listen podcast">-->
-
-                            <!--                            </a>-->
-
+                        <div class="d-block position-relative rounded-3 mb-3 portfolio-cover-image">
                             <router-link
                                 class="position-absolute top-0 start-0 w-100 h-100  rounded-3"
                                 :to="{name: 'portfolios show',params: {id: portfolio.id,slug: portfolio.slug,}}"
                             >
                             </router-link>
-
 
                             <img :src="portfolio.banner_src" class="rounded-3" alt="Image">
                         </div>
@@ -532,12 +522,48 @@ onMounted(() => {
 });
 </script>
 
-<style scoped>
+<style>
 .portfolio-cover-ui {
     object-fit: cover;
     /*object-position: left;*/
     height: 100%;
     width: 100%;
 }
+
+
+
+.portfolio-cover-image img {
+    height: 100%;
+    width: 100%;
+}
+.portfolio-cover-image {
+    height: 270px;
+}
+
+@media (min-width: 576px) {
+    .portfolio-cover-image {
+        height: 300px;
+    }
+}
+
+@media (min-width: 768px) {
+    .portfolio-cover-image {
+        height: 250px;
+    }
+}
+
+@media (min-width: 992px) {
+    .portfolio-cover-image {
+        height: 220px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .portfolio-cover-image {
+        height: 220px;
+    }
+}
+
+
 
 </style>
