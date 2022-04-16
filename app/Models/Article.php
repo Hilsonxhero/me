@@ -57,9 +57,6 @@ class Article extends Model
 
 
 
-
-
-
     /**
      * Return the sluggable configuration array for this model.
      *

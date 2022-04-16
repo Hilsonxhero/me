@@ -2,85 +2,71 @@
     <div>
         <section class="container mb-5 mt-5" v-if="portfolios">
             <div class="row">
-                <div
-                    class="col-lg-6"
-                    v-for="(portfolio, index) in portfolios"
-                    :key="index"
-                >
-                    <!-- Article -->
-                    <article
-                        class="card border-0 shadow-sm overflow-hidden mb-4"
-                    >
-                        <div class="row g-0">
-                            <div
-                                class="col-sm-5 position-relative bg-position-center bg-repeat-0 bg-size-cover"
-                                style="min-height: 15rem"
-                                :style="`background-image: url(${portfolio.banner_src})`"
+                <div class="col-md-6 col-lg-3 mb-4" v-for="(portfolio, index) in portfolios" :key="index">
+                    <article>
+                        <div class="d-block position-relative rounded-3 mb-3">
+
+
+                            <!--                            <span class="badge bg-dark position-absolute bottom-0 end-0 zindex-2 mb-3 me-3">0:25:43</span>-->
+                            <!--                            <a href=""-->
+                            <!--                               class="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-35 rounded-3"-->
+                            <!--                               aria-label="Listen podcast">-->
+
+                            <!--                            </a>-->
+
+                            <router-link
+                                class="position-absolute top-0 start-0 w-100 h-100  rounded-3"
+                                :to="{name: 'portfolios show',params: {id: portfolio.id,slug: portfolio.slug,}}"
                             >
-                                <router-link
-                                    class="position-absolute top-0 start-0 w-100 h-100"
-                                    :to="{
-                                        name: 'portfolios show',
-                                        params: {
-                                            id: portfolio.id,
-                                            slug: portfolio.slug,
-                                        },
-                                    }"
-                                >
-                                </router-link>
-                                <a
-                                    href="#"
-                                    class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3"
-                                    data-bs-toggle="tooltip"
-                                    data-bs-placement="left"
-                                    title=""
-                                    data-bs-original-title="Read later"
-                                >
-                                    <i class="bx bx-bookmark"></i>
-                                </a>
-                            </div>
-                            <div class="col-sm-7">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center mb-3">
-                                        <a
-                                            href="#"
-                                            class="badge fs-sm text-nav bg-secondary text-decoration-none"
-                                            >{{ portfolio.category.title }}</a
-                                        >
-                                        <span
-                                            class="fs-sm text-muted border-start ps-3 ms-3"
-                                            >{{ portfolio.created_at }}</span
-                                        >
-                                    </div>
-                                    <h3 class="h5">
-                                        <router-link
-                                            :to="{
+                            </router-link>
+
+
+                            <img :src="portfolio.banner_src" class="rounded-3" alt="Image">
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none">{{
+                                    portfolio.category.title
+                                }}</a>
+                            <span class="fs-sm text-muted border-start ps-3 ms-3">{{ portfolio.created_at }}</span>
+                        </div>
+                        <h3 class="h5">
+                            <router-link
+                                :to="{
                                                 name: 'portfolios show',
                                                 params: {
                                                     id: portfolio.id,
                                                     slug: portfolio.slug,
                                                 },
                                             }"
-                                        >
-                                            {{ portfolio.title }}
-                                        </router-link>
-                                    </h3>
-                                    <hr class="my-4" />
-                                    <div
-                                        class="d-flex flex-wrap align-items-center"
-                                    >
+                            >
+                                {{ portfolio.title }}
+                            </router-link>
+                        </h3>
+                        <div
+                            class="d-flex flex-wrap align-items-center"
+                        >
                                         <span
                                             class="badge bg-primary mb-2 me-2"
                                             v-for="(
                                                 technology, index
                                             ) in portfolio.technologies"
                                             :key="index"
-                                            >{{ technology.title }}</span
+                                            v-if="index < 3"
+
                                         >
-                                    </div>
-                                </div>
-                            </div>
+                                            <template v-if="index < 3">
+                                                {{ technology.title }}
+                                            </template>
+
+                                        </span
+                                        >
                         </div>
+                        <!--                        <a href="blog-podcast.html" class="btn btn-link px-0 mt-3">-->
+                        <!--                            <i class="bx bx-play-circle fs-lg me-2"></i>-->
+                        <!--                            Read now-->
+                        <!--                        </a>-->
+
+
                     </article>
                 </div>
             </div>

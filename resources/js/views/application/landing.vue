@@ -250,16 +250,12 @@
             </div>
         </section>
 
-        <section class="container mb-5 pt-md-4 m mt-5" v-if="portfolios">
-            <div class="d-flex flex-sm-row flex-column align-items-center justify-content-between mb-4 pb-1 pb-md-3">
+        <section class="container mb-5 pt-md-4 m mt-5" v-if="portfolios.length > 0">
+            <div class="d-flex flex-md-row flex-column align-items-center justify-content-between mb-4 pb-1 pb-md-3">
                 <h2 class="h1 mb-sm-0">Latest Portfolios</h2>
-<!--                <a href="blog-grid-with-sidebar.html" class="btn btn-lg btn-outline-primary ms-4">-->
-<!--                    All podcasts-->
-<!--                    <i class="bx bx-right-arrow-alt ms-1 me-n1 lh-1 lead"></i>-->
-<!--                </a>-->
 
                 <router-link
-                    class="btn btn-lg btn-outline-primary ms-4"
+                    class="btn btn-lg btn-outline-primary d-none d-md-flex  mt-3 mt-md-0"
                     :to="{ name: 'portfolios index' }"
                 >
                     All portfolios
@@ -276,18 +272,17 @@
 
 
                             <!--                            <span class="badge bg-dark position-absolute bottom-0 end-0 zindex-2 mb-3 me-3">0:25:43</span>-->
-<!--                            <a href=""-->
-<!--                               class="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-35 rounded-3"-->
-<!--                               aria-label="Listen podcast">-->
+                            <!--                            <a href=""-->
+                            <!--                               class="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-35 rounded-3"-->
+                            <!--                               aria-label="Listen podcast">-->
 
-<!--                            </a>-->
+                            <!--                            </a>-->
 
                             <router-link
                                 class="position-absolute top-0 start-0 w-100 h-100  rounded-3"
                                 :to="{name: 'portfolios show',params: {id: portfolio.id,slug: portfolio.slug,}}"
                             >
                             </router-link>
-
 
 
                             <img :src="portfolio.banner_src" class="rounded-3" alt="Image">
@@ -320,16 +315,34 @@
                                                 technology, index
                                             ) in portfolio.technologies"
                                             :key="index"
-                                        >{{ technology.title }}</span
+                                            v-if="index < 3"
+
+                                        >
+                                            <template v-if="index < 3">
+                                                {{ technology.title }}
+                                            </template>
+
+                                        </span
                                         >
                         </div>
-<!--                        <a href="blog-podcast.html" class="btn btn-link px-0 mt-3">-->
-<!--                            <i class="bx bx-play-circle fs-lg me-2"></i>-->
-<!--                            Read now-->
-<!--                        </a>-->
+                        <!--                        <a href="blog-podcast.html" class="btn btn-link px-0 mt-3">-->
+                        <!--                            <i class="bx bx-play-circle fs-lg me-2"></i>-->
+                        <!--                            Read now-->
+                        <!--                        </a>-->
 
 
                     </article>
+                </div>
+                <div class="col-12 flex justify-content-center">
+
+                    <router-link
+                        class="btn btn-lg btn-outline-primary d-flex d-md-none  mt-3 mt-md-0"
+                        :to="{ name: 'portfolios index' }"
+                    >
+                        All portfolios
+                        <i class="bx bx-right-arrow-alt ms-1 me-n1 lh-1 lead"></i>
+                    </router-link
+                    >
                 </div>
             </div>
 

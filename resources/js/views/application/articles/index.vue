@@ -2,84 +2,67 @@
     <section class="container mb-5 mt-5" v-if="articles">
         <div class="row">
             <div
-                class="col-lg-6"
+                class="col-lg-4 mb-4"
                 v-for="(article, index) in articles"
                 :key="index"
             >
                 <!-- Article -->
-                <article class="card border-0 shadow-sm overflow-hidden mb-4">
-                    <div class="row g-0">
+                <article
+                    class="card p-md-3 p-2 border-0 shadow-sm card-hover-primary h-100 mx-2"
+                >
+                    <div class="card-body pb-0">
                         <div
-                            class="col-sm-5 position-relative bg-position-center bg-repeat-0 bg-size-cover"
-                            style="min-height: 15rem"
-                            :style="`background-image: url(${article.banner_src})`"
+                            class="d-flex align-items-center justify-content-between mb-3"
                         >
-                            <router-link
-                                class="position-absolute top-0 start-0 w-100 h-100"
-                                :to="{
-                                    name: 'articles show',
-                                    params: {
-                                        id: article.id,
-                                        slug: article.slug,
-                                    },
-                                }"
-                            >
-                            </router-link>
                             <a
                                 href="#"
-                                class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3"
-                                data-bs-toggle="tooltip"
-                                data-bs-placement="left"
-                                title=""
-                                data-bs-original-title="Read later"
+                                class="badge fs-sm text-nav bg-secondary text-decoration-none position-relative zindex-2"
+                            >{{ article.category.title }}</a
                             >
-                                <i class="bx bx-bookmark"></i>
-                            </a>
+                            <span class="fs-sm text-muted">{{
+                                    article.created_at
+                                }}</span>
                         </div>
-                        <div class="col-sm-7">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center mb-3">
-                                    <a
-                                        href="#"
-                                        class="badge fs-sm text-nav bg-secondary text-decoration-none"
-                                        >{{ article.category.title }}</a
-                                    >
-                                    <span
-                                        class="fs-sm text-muted border-start ps-3 ms-3"
-                                        >{{ article.created_at }}</span
-                                    >
-                                </div>
-                                <h3 class="h5">
-                                    <router-link
-                                        :to="{
-                                            name: 'articles show',
-                                            params: {
-                                                id: article.id,
-                                                slug: article.slug,
-                                            },
-                                        }"
-                                    >
-                                        {{ article.title }}
-                                    </router-link>
-                                </h3>
-                                <hr class="my-4" />
-                                <div
-                                    class="d-flex flex-wrap align-items-center"
-                                >
-                                    <span
-                                        class="badge bg-primary mb-2 me-2"
-                                        v-for="(
-                                            tag, index
-                                        ) in article.tags"
-                                        :key="index"
-                                        >{{ tag.title }}</span
-                                    >
-                                </div>
-                            </div>
+                        <h3 class="h4">
+                            <router-link
+                                class="stretched-link"
+                                :to="{
+                                                name: 'articles show',
+                                                params: {
+                                                    id: article.id,
+                                                    slug: article.slug,
+                                                },
+                                            }"
+                            >
+                                {{ article.title }}
+                            </router-link>
+                        </h3>
+                        <p class="mb-0">
+                            {{ article.description }}
+                        </p>
+                    </div>
+                    <div
+                        class="card-footer d-flex align-items-center py-4 text-muted border-top-0 d-none"
+                    >
+                        <div class="d-flex align-items-center me-3">
+                            <i class="bx bx-like fs-lg me-1"></i>
+                            <span class="fs-sm">2</span>
+                        </div>
+                        <div class="d-flex align-items-center me-3">
+                            <i class="bx bx-comment fs-lg me-1"></i>
+                            <span class="fs-sm">0</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i
+                                class="bx bx-share-alt fs-lg me-1"
+                            ></i>
+                            <span class="fs-sm">3</span>
                         </div>
                     </div>
                 </article>
             </div>
+
+
         </div>
     </section>
 </template>

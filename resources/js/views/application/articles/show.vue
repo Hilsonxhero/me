@@ -34,7 +34,7 @@
                         <span
                             v-if="article.category"
                             class="badge bg-faded-primary text-primary fs-base"
-                            >{{ article.category.title }}</span
+                        >{{ article.category.title }}</span
                         >
                     </div>
                     <div class="fs-sm border-end pe-3 me-3 mb-2">
@@ -78,14 +78,14 @@
                 <div class="col-lg-9">
                     <div class="article__dec" v-html="article.content"></div>
                     <!-- Tags -->
-                    <hr class="mb-4" />
+                    <hr class="mb-4"/>
                     <div class="d-flex flex-sm-row flex-column pt-2">
                         <div class="d-flex flex-wrap align-items-center">
                             <span
                                 class="badge bg-primary mb-2 me-2"
                                 v-for="(tag, index) in article.tags"
                                 :key="index"
-                                >{{ tag.title }}</span
+                            >{{ tag.title }}</span
                             >
                         </div>
                     </div>
@@ -102,24 +102,28 @@
                         <div class="mb-4 pb-lg-3">
                             <a
                                 href="#"
+                                target="_blank"
                                 class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2"
                             >
                                 <i class="bx bxl-facebook-square"></i>
                             </a>
                             <a
-                                href="#"
+                                target="_blank"
+                                :href="`https://t.me/share/url?url=${path}&text=${article.title}`"
                                 class="btn btn-icon btn-secondary btn-facebook me-2 mb-2"
                             >
                                 <i class="bx bx-paper-plane"></i>
                             </a>
                             <a
-                                href="#"
+                                target="_blank"
+                                :href="'whatsapp://send?text=' + path"
                                 class="btn btn-icon btn-secondary btn-twitter me-2 mb-2"
                             >
                                 <i class="bx bxl-whatsapp"></i>
                             </a>
                             <a
-                                href="#"
+                                target="_blank"
+                                :href="`https://www.instagram.com/?url=${path}`"
                                 class="btn btn-icon btn-secondary btn-instagram me-2 mb-2"
                             >
                                 <i class="bx bxl-instagram"></i>
@@ -148,12 +152,12 @@
 
             <div class="row">
                 <div
-                    class="col-md-4"
+                    class="col-md-4 mb-4"
                     v-for="(related_article, index) in related_articles"
                     :key="index"
                 >
                     <article class="card border-0 shadow-sm h-100 mx-2">
-                        <div class="position-relative">
+                        <div class="position-relative portfolio-media-cover">
                             <router-link
                                 class="position-absolute top-0 start-0 w-100 h-100"
                                 :to="{
@@ -164,15 +168,7 @@
                                     },
                                 }"
                             ></router-link>
-                            <a
-                                href="#"
-                                class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3"
-                                data-bs-toggle="tooltip"
-                                data-bs-placement="left"
-                                title="Read later"
-                            >
-                                <i class="bx bx-bookmark"></i>
-                            </a>
+
                             <img
                                 :src="related_article.banner_src"
                                 class="card-img-top"
@@ -187,11 +183,11 @@
                                     v-if="related_article.category"
                                     href="#"
                                     class="badge fs-sm text-nav bg-secondary text-decoration-none"
-                                    >{{ related_article.category.title }}</a
+                                >{{ related_article.category.title }}</a
                                 >
                                 <span class="fs-sm text-muted">{{
-                                    related_article.created_at
-                                }}</span>
+                                        related_article.created_at
+                                    }}</span>
                             </div>
                             <h3 class="h5 mb-0">
                                 <router-link
@@ -215,9 +211,9 @@
     </div>
 </template>
 <script setup>
-import { onMounted, reactive, ref, computed } from "vue";
-import { useRoute } from "vue-router";
-import { useHead } from "@vueuse/head";
+import {onMounted, reactive, ref, computed} from "vue";
+import {useRoute} from "vue-router";
+import {useHead} from "@vueuse/head";
 
 const article = ref([]);
 const related_articles = ref([]);
@@ -236,26 +232,56 @@ useHead({
 });
 
 const id = ref(null);
+
+const path = ref(null)
+
 console.log("sss");
 onMounted(() => {
-    console.log("WWW");
-
+    path.value = window.location.href
     id.value = route.params.id;
     axios
         .get(`/api/application/articles/${id.value}`)
-        .then(({ data }) => {
+        .then(({data}) => {
             article.value = data.data;
             related_articles.value = data.related_articles;
         })
-        .catch((error) => {});
+        .catch((error) => {
+        });
 });
 </script>
-<style>
+<style scoped>
 .article__dec p {
     line-height: 2;
+    word-break: break-all;
 }
+
 .article__dec img {
     margin: 1.5rem 0;
     border-radius: 1.8rem;
 }
+
+.portfolio-media-cover img {
+    height: 100%;
+    width: 100%;
+}
+
+
+@media (min-width: 768px) {
+    .portfolio-media-cover {
+        height: 250px;
+    }
+}
+
+@media (min-width: 992px) {
+    .portfolio-media-cover {
+        height: 250px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .portfolio-media-cover {
+        height: 220px;
+    }
+}
+
 </style>

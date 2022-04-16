@@ -27,20 +27,20 @@
             <div>
                 <img :src="portfolio.banner_src" alt="portfolio image" class="portfolio-cover-header" loading="lazy">
             </div>
-<!--            <div-->
-<!--                class="jarallax-img bg-fixed"-->
-<!--                :style="`background-image: url(${portfolio.banner_src})`"-->
-<!--            ></div>-->
-<!--            <div class="d-none d-xxl-block" style="height: 800px"></div>-->
-<!--            <div-->
-<!--                class="d-none d-lg-block d-xxl-none"-->
-<!--                style="height: 600px"-->
-<!--            ></div>-->
-<!--            <div-->
-<!--                class="d-none d-md-block d-lg-none"-->
-<!--                style="height: 450px"-->
-<!--            ></div>-->
-<!--            <div class="d-md-none" style="height: 400px"></div>-->
+            <!--            <div-->
+            <!--                class="jarallax-img bg-fixed"-->
+            <!--                :style="`background-image: url(${portfolio.banner_src})`"-->
+            <!--            ></div>-->
+            <!--            <div class="d-none d-xxl-block" style="height: 800px"></div>-->
+            <!--            <div-->
+            <!--                class="d-none d-lg-block d-xxl-none"-->
+            <!--                style="height: 600px"-->
+            <!--            ></div>-->
+            <!--            <div-->
+            <!--                class="d-none d-md-block d-lg-none"-->
+            <!--                style="height: 450px"-->
+            <!--            ></div>-->
+            <!--            <div class="d-md-none" style="height: 400px"></div>-->
         </section>
 
         <!-- About project -->
@@ -85,7 +85,7 @@
                                     technology, index
                                 ) in portfolio.technologies"
                                 :key="index"
-                                >{{ technology.title }}</span
+                            >{{ technology.title }}</span
                             >
                         </div>
                     </div>
@@ -96,36 +96,31 @@
         <!-- Image grid (Parallax) -->
         <section class="container position-relative pt-1 pt-md-3">
             <div class="row">
-                <div
-                    class="col-lg-4"
-                    v-for="(media, index) in portfolio.galleries"
-                >
-                    <div class="card card-portfolio">
-                        <div class="card-img portfolio__media">
-                            <img :src="media.banner_src" loading="lazy" :alt="media.title" class="" />
+
+
+                <div class="col-md-6 col-lg-4 col-xl-3 mb-4" v-for="(media, index) in portfolio.galleries" :key="index">
+                    <article>
+                        <div class="d-block position-relative rounded-3 mb-3 portfolio-media-cover">
+
+                            <img :src="media.banner_src" class="rounded-3" alt="Image">
                         </div>
-                        <div class="card-body">
-                            <h3 class="h4 mb-2">
-                                <a class="stretched-link">{{ media.title }}</a>
-                            </h3>
-                            <!-- <div class="card-portfolio-meta">
-                                <span class="text-muted"
-                                    >Mobile App Desig / UI / UX</span
-                                >
-                            </div> -->
-                        </div>
-                    </div>
+
+                        <h3 class="h5">
+                            {{ media.title }}
+                        </h3>
+
+                    </article>
                 </div>
             </div>
         </section>
     </div>
 </template>
 <script setup>
-import { onMounted, reactive, ref,computed } from "vue";
+import {onMounted, reactive, ref, computed} from "vue";
 
-import { useRoute } from "vue-router";
+import {useRoute} from "vue-router";
 
-import { useHead } from "@vueuse/head";
+import {useHead} from "@vueuse/head";
 
 const portfolio = ref([]);
 
@@ -148,30 +143,61 @@ onMounted(() => {
     id.value = route.params.id;
     axios
         .get(`/api/application/portfolios/${id.value}`)
-        .then(({ data }) => {
+        .then(({data}) => {
             portfolio.value = data.data;
         })
-        .catch((error) => {});
+        .catch((error) => {
+        });
 });
 </script>
 <style scoped>
 .bg-fixed {
     background-attachment: fixed;
 }
+
 .portfolio__media {
     /*height: 280px;*/
     object-fit: cover;
 }
+
 .portfolio__media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.portfolio-cover-header{
+
+.portfolio-cover-header {
     object-fit: cover;
 }
 
 .card-portfolio .card-img {
     border-radius: 0.1rem !important;
 }
+
+
+
+.portfolio-media-cover img {
+    height: 100%;
+    width: 100%;
+}
+
+
+@media (min-width: 768px) {
+    .portfolio-media-cover {
+        height: 250px;
+    }
+}
+
+@media (min-width: 992px) {
+    .portfolio-media-cover {
+        height: 250px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .portfolio-media-cover {
+        height: 200px;
+    }
+}
+
 </style>

@@ -200,23 +200,11 @@ var _hoisted_27 = {
   "class": "row"
 };
 var _hoisted_28 = {
-  "class": "col-lg-4"
+  "class": "d-block position-relative rounded-3 mb-3 portfolio-media-cover"
 };
-var _hoisted_29 = {
-  "class": "card card-portfolio"
-};
+var _hoisted_29 = ["src"];
 var _hoisted_30 = {
-  "class": "card-img portfolio__media"
-};
-var _hoisted_31 = ["src", "alt"];
-var _hoisted_32 = {
-  "class": "card-body"
-};
-var _hoisted_33 = {
-  "class": "h4 mb-2"
-};
-var _hoisted_34 = {
-  "class": "stretched-link"
+  "class": "h5"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
@@ -270,18 +258,20 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }), 128
   /* KEYED_FRAGMENT */
   ))])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Image grid (Parallax) "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.portfolio.galleries, function (media, index) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+      "class": "col-md-6 col-lg-4 col-xl-3 mb-4",
+      key: index
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
       src: media.banner_src,
-      loading: "lazy",
-      alt: media.title,
-      "class": ""
+      "class": "rounded-3",
+      alt: "Image"
     }, null, 8
     /* PROPS */
-    , _hoisted_31)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(media.title), 1
+    , _hoisted_29)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(media.title), 1
     /* TEXT */
-    )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"card-portfolio-meta\">\n                                <span class=\"text-muted\"\n                                    >Mobile App Desig / UI / UX</span\n                                >\n                            </div> ")])])]);
-  }), 256
-  /* UNKEYED_FRAGMENT */
+    )])]);
+  }), 128
+  /* KEYED_FRAGMENT */
   ))])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true);
 }
 
@@ -303,7 +293,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.bg-fixed[data-v-f7b27f1a] {\n    background-attachment: fixed;\n}\n.portfolio__media[data-v-f7b27f1a] {\n    /*height: 280px;*/\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.portfolio__media img[data-v-f7b27f1a] {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.portfolio-cover-header[data-v-f7b27f1a]{\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.card-portfolio .card-img[data-v-f7b27f1a] {\n    border-radius: 0.1rem !important;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.bg-fixed[data-v-f7b27f1a] {\n    background-attachment: fixed;\n}\n.portfolio__media[data-v-f7b27f1a] {\n    /*height: 280px;*/\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.portfolio__media img[data-v-f7b27f1a] {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.portfolio-cover-header[data-v-f7b27f1a] {\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.card-portfolio .card-img[data-v-f7b27f1a] {\n    border-radius: 0.1rem !important;\n}\n.portfolio-media-cover img[data-v-f7b27f1a] {\n    height: 100%;\n    width: 100%;\n}\n@media (min-width: 768px) {\n.portfolio-media-cover[data-v-f7b27f1a] {\n        height: 250px;\n}\n}\n@media (min-width: 992px) {\n.portfolio-media-cover[data-v-f7b27f1a] {\n        height: 250px;\n}\n}\n@media (min-width: 1200px) {\n.portfolio-media-cover[data-v-f7b27f1a] {\n        height: 200px;\n}\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
