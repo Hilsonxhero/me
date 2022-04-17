@@ -666,7 +666,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.portfolio-cover-ui {\n    -o-object-fit: cover;\n       object-fit: cover;\n    /*object-position: left;*/\n    height: 100%;\n    width: 100%;\n}\n.portfolio-cover-image img {\n    height: 100%;\n    width: 100%;\n}\n.portfolio-cover-image {\n    height: 270px;\n}\n@media (min-width: 576px) {\n.portfolio-cover-image {\n        height: 300px;\n}\n}\n@media (min-width: 768px) {\n.portfolio-cover-image {\n        height: 250px;\n}\n}\n@media (min-width: 992px) {\n.portfolio-cover-image {\n        height: 220px;\n}\n}\n@media (min-width: 1200px) {\n.portfolio-cover-image {\n        height: 220px;\n}\n}\n\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.portfolio-cover-ui {\n    -o-object-fit: cover;\n       object-fit: cover;\n    /*object-position: left;*/\n    height: 100%;\n    width: 100%;\n}\n.portfolio-cover-image img {\n    height: 100%;\n    width: 100%;\n}\n.portfolio-cover-image {\n    height: 270px;\n}\n@media (min-width: 576px) {\n.portfolio-cover-image {\n        height: 300px;\n}\n}\n@media (min-width: 768px) {\n.portfolio-cover-image {\n        height: 250px;\n}\n}\n@media (min-width: 992px) {\n.portfolio-cover-image {\n        height: 220px;\n}\n}\n@media (min-width: 1200px) {\n.portfolio-cover-image {\n        height: 200px;\n}\n}\n\n\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

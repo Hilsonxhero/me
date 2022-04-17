@@ -560,7 +560,7 @@ onMounted(() => {
 
 @media (min-width: 1200px) {
     .portfolio-cover-image {
-        height: 220px;
+        height: 200px;
     }
 }
 

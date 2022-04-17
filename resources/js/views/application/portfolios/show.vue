@@ -168,6 +168,7 @@ onMounted(() => {
 
 .portfolio-cover-header {
     object-fit: cover;
+    width: 100%;
 }
 
 .card-portfolio .card-img {
