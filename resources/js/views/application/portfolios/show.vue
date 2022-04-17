@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-5" v-if="portfolio">
+    <div class="mt-5" v-if="portfolio.banner_src">
         <!-- Page title -->
         <section class="container pb-4 mb-2 mb-lg-3">
             <h1>{{ portfolio.title }}</h1>
@@ -24,7 +24,7 @@
 
         <!-- Hero image (Parallax) -->
         <section class="jarallax" data-jarallax data-speed="0.5">
-            <div>
+            <div class="portfolio-cover-header-main">
                 <img :src="portfolio.banner_src" alt="portfolio image" class="portfolio-cover-header" loading="lazy">
             </div>
             <!--            <div-->
@@ -95,14 +95,13 @@
 
         <!-- Image grid (Parallax) -->
         <section class="container position-relative pt-1 pt-md-3">
-            <div class="row">
+            <div class="row justify-content-center justify-content-md-start">
 
-
-                <div class="col-md-6 col-lg-4 col-xl-3 mb-4" v-for="(media, index) in portfolio.galleries" :key="index">
+                <div class="col-sm-10 col-md-6 col-lg-4 col-xl-3 mb-4" v-for="(media, index) in portfolio.galleries" :key="index">
                     <article>
                         <div class="d-block position-relative rounded-3 mb-3 portfolio-media-cover">
 
-                            <img :src="media.banner_src" class="rounded-3" alt="Image">
+                            <img :src="media.thumb_src" class="rounded-3" alt="Image">
                         </div>
 
                         <h3 class="h5">
@@ -169,6 +168,7 @@ onMounted(() => {
 .portfolio-cover-header {
     object-fit: cover;
     width: 100%;
+    height: 100%;
 }
 
 .card-portfolio .card-img {
@@ -176,12 +176,32 @@ onMounted(() => {
 }
 
 
-
 .portfolio-media-cover img {
     height: 100%;
     width: 100%;
 }
 
+
+.portfolio-cover-header-main{
+    height: 450px;
+}
+
+@media (min-width: 1200px) {
+    .portfolio-cover-header-main{
+        height: 650px;
+    }
+
+}
+
+.portfolio-media-cover {
+    height: 240px;
+}
+
+@media (min-width: 576px) {
+    .portfolio-media-cover {
+        height: 300px;
+    }
+}
 
 @media (min-width: 768px) {
     .portfolio-media-cover {
@@ -191,7 +211,7 @@ onMounted(() => {
 
 @media (min-width: 992px) {
     .portfolio-media-cover {
-        height: 250px;
+        height: 220px;
     }
 }
 

@@ -36,6 +36,10 @@ class Media extends Model
     {
         return MediaFileService::thumb($this);
     }
+    public function original()
+    {
+        return MediaFileService::original($this);
+    }
     protected static function booted()
     {
         static::deleting(function ($media) {

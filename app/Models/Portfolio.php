@@ -18,7 +18,7 @@ class Portfolio extends Model
     ];
     protected $with = ['category'];
 
-    protected $appends = ['banner_src','created_at'];
+    protected $appends = ['banner_src','thumb_src','created_at'];
 
     public function category()
     {
@@ -41,6 +41,13 @@ class Portfolio extends Model
     }
 
     public function getBannerSrcAttribute()
+    {
+        if (!is_null($this->media)) return $this->media->original();
+
+        return "";
+    }
+
+    public function getThumbSrcAttribute()
     {
         if (!is_null($this->media)) return $this->media->thumb();
 

@@ -13,7 +13,7 @@ class PortfolioGallery extends Model
         'media_id', 'portfolio_id', 'title', 'status'
     ];
 
-    protected $appends = ['banner_src'];
+    protected $appends = ['banner_src','thumb_src'];
 
     public function portfolio()
     {
@@ -26,6 +26,13 @@ class PortfolioGallery extends Model
     }
 
     public function getBannerSrcAttribute()
+    {
+        if (!is_null($this->media)) return $this->media->thumb();
+
+        return "";
+    }
+
+    public function getThumbSrcAttribute()
     {
         if (!is_null($this->media)) return $this->media->thumb();
 

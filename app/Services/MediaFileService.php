@@ -78,6 +78,16 @@ class MediaFileService
         }
     }
 
+    public static function original(Media $media)
+    {
+
+        foreach (config('media.MediaTypeServices') as $type => $service) {
+            if ($media->type == $type) {
+                return $service['handler']::original($media);
+            }
+        }
+    }
+
     public static function stream(Media $media)
     {
 

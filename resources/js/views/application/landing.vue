@@ -266,7 +266,8 @@
 
 
             <div class="row justify-content-center justify-content-md-start">
-                <div class="col-sm-10 col-md-6 col-lg-4 col-xl-3 mb-4" v-for="(portfolio, index) in portfolios" :key="index">
+                <div class="col-sm-10 col-md-6 col-lg-4 col-xl-3 mb-4" v-for="(portfolio, index) in portfolios"
+                     :key="index">
                     <article>
                         <div class="d-block position-relative rounded-3 mb-3 portfolio-cover-image">
                             <router-link
@@ -275,7 +276,7 @@
                             >
                             </router-link>
 
-                            <img :src="portfolio.banner_src" class="rounded-3" alt="Image">
+                            <img :src="portfolio.thumb_src" class="rounded-3" alt="Image">
                         </div>
                         <div class="d-flex align-items-center mb-2">
                             <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none">{{
@@ -531,11 +532,12 @@ onMounted(() => {
 }
 
 
-
 .portfolio-cover-image img {
     height: 100%;
     width: 100%;
+    object-fit: cover;
 }
+
 .portfolio-cover-image {
     height: 270px;
 }
@@ -563,7 +565,6 @@ onMounted(() => {
         height: 200px;
     }
 }
-
 
 
 </style>
