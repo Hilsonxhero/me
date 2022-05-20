@@ -2,7 +2,7 @@
     <div class="">
         <section class="container-fluid position-relative px-0">
             <div class="row g-0">
-                <div class="col-xl-7 col-lg-6 pe-lg-5">
+                <div class="col-xl-7 col-lg-6 pe-lg-5 d-none d-lg-block">
                     <div class="d-flex h-100 pe-xl-4">
                         <video
                             class="w-100"
@@ -10,7 +10,7 @@
                             muted=""
                             loop=""
                             style="object-fit: cover"
-                            __idm_id__="2588673"
+                            preload="false"
                         >
                             <source
                                 src="assets/videos/hero-video.mp4"
@@ -25,6 +25,7 @@
                         class="position-absolute top-50 translate-middle-y ms-lg-n4"
                         width="866"
                         alt="Background shapes"
+                        loading="lazy"
                     />
                     <div
                         class="position-relative zindex-5 text-center text-lg-start px-3 px-lg-0 py-xl-4 py-xxl-5 mt-lg-3 mx-auto mx-lg-0"
@@ -55,9 +56,8 @@
                             <router-link
                                 class="btn btn-primary shadow-primary btn-lg me-sm-3 me-xl-4 mb-3"
                                 :to="{ name: 'about' }"
-                            >About us
-                            </router-link
-                            >
+                                >About us
+                            </router-link>
                             <!-- <a
                                 href="#"
                                 class="btn btn-outline-primary btn-lg mb-3"
@@ -81,9 +81,9 @@
                             class="d-flex align-items-center justify-content-center justify-content-lg-start text-start pb-2 pt-lg-2 pb-xl-0 pt-xl-5 mt-xxl-5"
                         >
                             <span class="fs-sm"
-                            ><span class="text-primary fw-semibold"
-                            >400+</span
-                            >
+                                ><span class="text-primary fw-semibold"
+                                    >400+</span
+                                >
                                 attendees are already with us</span
                             >
                         </div>
@@ -121,7 +121,12 @@
                     <div
                         class="d-inline-block bg-secondary rounded-circle p-3 mb-4"
                     >
-                        <img src="assets/img/chat.svg" width="32" alt="Icon"/>
+                        <img
+                            src="assets/img/chat.svg"
+                            width="32"
+                            alt="Icon"
+                            loading="lazy"
+                        />
                     </div>
                     <h3 class="h5 pb-1 mb-2">Task Comments</h3>
                     <p class="fs-sm">
@@ -139,6 +144,7 @@
                             src="assets/img/analytics.svg"
                             width="32"
                             alt="Icon"
+                            loading="lazy"
                         />
                     </div>
                     <h3 class="h5 pb-1 mb-2">Tasks Analytics</h3>
@@ -153,7 +159,12 @@
                     <div
                         class="d-inline-block bg-secondary rounded-circle p-3 mb-4"
                     >
-                        <img src="assets/img/bell.svg" width="32" alt="Icon"/>
+                        <img
+                            src="assets/img/bell.svg"
+                            width="32"
+                            alt="Icon"
+                            loading="lazy"
+                        />
                     </div>
                     <h3 class="h5 pb-1 mb-2">Notifications</h3>
                     <p class="fs-sm">
@@ -167,7 +178,12 @@
                     <div
                         class="d-inline-block bg-secondary rounded-circle p-3 mb-4"
                     >
-                        <img src="assets/img/tasks.svg" width="32" alt="Icon"/>
+                        <img
+                            src="assets/img/tasks.svg"
+                            width="32"
+                            alt="Icon"
+                            loading="lazy"
+                        />
                     </div>
                     <h3 class="h5 pb-1 mb-2">Sections &amp; Subtasks</h3>
                     <p class="fs-sm">
@@ -185,6 +201,7 @@
                             src="assets/img/calendar.svg"
                             width="32"
                             alt="Icon"
+                            loading="lazy"
                         />
                     </div>
                     <h3 class="h5 pb-1 mb-2">Progress Tracking</h3>
@@ -203,6 +220,7 @@
                             src="assets/img/add-group.svg"
                             width="32"
                             alt="Icon"
+                            loading="lazy"
                         />
                     </div>
                     <h3 class="h5 pb-1 mb-2">Multiple Assignees</h3>
@@ -221,6 +239,7 @@
                             src="assets/img/headset.svg"
                             width="32"
                             alt="Icon"
+                            loading="lazy"
                         />
                     </div>
                     <h3 class="h5 pb-1 mb-2">Support 24/7</h3>
@@ -239,6 +258,7 @@
                             src="assets/img/shield.svg"
                             width="32"
                             alt="Icon"
+                            loading="lazy"
                         />
                     </div>
                     <h3 class="h5 pb-1 mb-2">Data Security</h3>
@@ -250,93 +270,110 @@
             </div>
         </section>
 
-        <section class="container mb-5 pt-md-4 m mt-5" v-if="portfolios.length > 0">
-            <div class="d-flex flex-md-row flex-column align-items-center justify-content-between mb-4 pb-1 pb-md-3">
+        <section
+            class="container mb-5 pt-md-4 m mt-5"
+            v-if="portfolios.length > 0"
+        >
+            <div
+                class="d-flex flex-md-row flex-column align-items-center justify-content-between mb-4 pb-1 pb-md-3"
+            >
                 <h2 class="h1 mb-sm-0">Latest Portfolios</h2>
 
                 <router-link
-                    class="btn btn-lg btn-outline-primary d-none d-md-flex  mt-3 mt-md-0"
+                    class="btn btn-lg btn-outline-primary d-none d-md-flex mt-3 mt-md-0"
                     :to="{ name: 'portfolios index' }"
                 >
                     All portfolios
                     <i class="bx bx-right-arrow-alt ms-1 me-n1 lh-1 lead"></i>
-                </router-link
-                >
+                </router-link>
             </div>
 
-
             <div class="row justify-content-center justify-content-md-start">
-                <div class="col-sm-10 col-md-6 col-lg-4 col-xl-3 mb-4" v-for="(portfolio, index) in portfolios"
-                     :key="index">
+                <div
+                    class="col-sm-10 col-md-6 col-lg-4 col-xl-3 mb-4"
+                    v-for="(portfolio, index) in portfolios"
+                    :key="index"
+                >
                     <article>
-                        <div class="d-block position-relative rounded-3 mb-3 portfolio-cover-image">
+                        <div
+                            class="d-block position-relative rounded-3 mb-3 portfolio-cover-image"
+                        >
                             <router-link
-                                class="position-absolute top-0 start-0 w-100 h-100  rounded-3"
-                                :to="{name: 'portfolios show',params: {id: portfolio.id,slug: portfolio.slug,}}"
+                                class="position-absolute top-0 start-0 w-100 h-100 rounded-3"
+                                :to="{
+                                    name: 'portfolios show',
+                                    params: {
+                                        id: portfolio.id,
+                                        slug: portfolio.slug,
+                                    },
+                                }"
                             >
                             </router-link>
 
-                            <img :src="portfolio.thumb_src" class="rounded-3" alt="Image">
+                            <img
+                                :src="portfolio.banner_src"
+                                class="rounded-3"
+                                alt="Image"
+                                loading="lazy"
+                            />
                         </div>
                         <div class="d-flex align-items-center mb-2">
-                            <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none">{{
-                                    portfolio.category.title
-                                }}</a>
-                            <span class="fs-sm text-muted border-start ps-3 ms-3">{{ portfolio.created_at }}</span>
+                            <a
+                                href="#"
+                                class="badge fs-sm text-nav bg-secondary text-decoration-none"
+                                >{{ portfolio.category.title }}</a
+                            >
+                            <span
+                                class="fs-sm text-muted border-start ps-3 ms-3"
+                                >{{ portfolio.created_at }}</span
+                            >
                         </div>
                         <h3 class="h5">
                             <router-link
                                 :to="{
-                                                name: 'portfolios show',
-                                                params: {
-                                                    id: portfolio.id,
-                                                    slug: portfolio.slug,
-                                                },
-                                            }"
+                                    name: 'portfolios show',
+                                    params: {
+                                        id: portfolio.id,
+                                        slug: portfolio.slug,
+                                    },
+                                }"
                             >
                                 {{ portfolio.title }}
                             </router-link>
                         </h3>
-                        <div
-                            class="d-flex flex-wrap align-items-center"
-                        >
-                                        <span
-                                            class="badge bg-primary mb-2 me-2"
-                                            v-for="(
-                                                technology, index
-                                            ) in portfolio.technologies"
-                                            :key="index"
-                                            v-if="index < 3"
-
-                                        >
-                                            <template v-if="index < 3">
-                                                {{ technology.title }}
-                                            </template>
-
-                                        </span
-                                        >
+                        <div class="d-flex flex-wrap align-items-center">
+                            <template
+                                v-for="(
+                                    technology, index
+                                ) in portfolio.technologies"
+                                :key="index"
+                            >
+                                <span
+                                    class="badge bg-primary mb-2 me-2"
+                                    v-if="index <= 3"
+                                >
+                                    {{ technology.title }}
+                                </span>
+                            </template>
                         </div>
                         <!--                        <a href="blog-podcast.html" class="btn btn-link px-0 mt-3">-->
                         <!--                            <i class="bx bx-play-circle fs-lg me-2"></i>-->
                         <!--                            Read now-->
                         <!--                        </a>-->
-
-
                     </article>
                 </div>
                 <div class="col-12 flex justify-content-center">
-
                     <router-link
-                        class="btn btn-lg btn-outline-primary d-flex d-md-none  mt-3 mt-md-0"
+                        class="btn btn-lg btn-outline-primary d-flex d-md-none mt-3 mt-md-0"
                         :to="{ name: 'portfolios index' }"
                     >
                         All portfolios
-                        <i class="bx bx-right-arrow-alt ms-1 me-n1 lh-1 lead"></i>
-                    </router-link
-                    >
+                        <i
+                            class="bx bx-right-arrow-alt ms-1 me-n1 lh-1 lead"
+                        ></i>
+                    </router-link>
                 </div>
             </div>
-
         </section>
 
         <!-- News slider -->
@@ -406,11 +443,11 @@
                                         <a
                                             href="#"
                                             class="badge fs-sm text-nav bg-secondary text-decoration-none position-relative zindex-2"
-                                        >{{ article.category.title }}</a
+                                            >{{ article.category.title }}</a
                                         >
                                         <span class="fs-sm text-muted">{{
-                                                article.created_at
-                                            }}</span>
+                                            article.created_at
+                                        }}</span>
                                     </div>
                                     <h3 class="h4">
                                         <router-link
@@ -463,7 +500,7 @@
         <!-- Back to top button -->
         <a href="#top" class="btn-scroll-top" data-scroll>
             <span class="btn-scroll-top-tooltip text-muted fs-sm me-2"
-            >Top</span
+                >Top</span
             >
             <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
         </a>
@@ -471,10 +508,9 @@
 </template>
 
 <script setup>
-import {onMounted, reactive, ref, computed} from "vue";
+import { onMounted, reactive, ref, computed } from "vue";
 
-import {useHead} from "@vueuse/head";
-
+import { useHead } from "@vueuse/head";
 
 import "swiper/css";
 import Carousel from "@/components/carousel";
@@ -507,19 +543,17 @@ const www = computed((value) => "test");
 onMounted(() => {
     axios
         .get("/api/application/portfolios")
-        .then(({data}) => {
+        .then(({ data }) => {
             portfolios.value = data.data;
         })
-        .catch((error) => {
-        });
+        .catch((error) => {});
 
     axios
         .get("/api/application/articles")
-        .then(({data}) => {
+        .then(({ data }) => {
             articles.value = data.data;
         })
-        .catch((error) => {
-        });
+        .catch((error) => {});
 });
 </script>
 
@@ -530,7 +564,6 @@ onMounted(() => {
     height: 100%;
     width: 100%;
 }
-
 
 .portfolio-cover-image img {
     height: 100%;
@@ -565,6 +598,4 @@ onMounted(() => {
         height: 200px;
     }
 }
-
-
 </style>

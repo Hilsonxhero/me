@@ -20,8 +20,6 @@ class SettingController extends Controller
 
         $setting = Setting::all();
 
-
-
         $setting = collect($setting)->map(function ($item) {
             return [
                 'title' => $item->title,
@@ -126,9 +124,6 @@ class SettingController extends Controller
                 ['value' => $request->subtitle]
             );
         }
-
-
-
 
 
         if ($request->file('file')) {

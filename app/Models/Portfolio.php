@@ -30,6 +30,7 @@ class Portfolio extends Model
         return $this->belongsToMany(Technology::class, 'portfolio_technologies');
     }
 
+
     public function galleries()
     {
         return $this->hasMany(PortfolioGallery::class);

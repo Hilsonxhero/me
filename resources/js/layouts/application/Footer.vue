@@ -40,7 +40,7 @@
                 </li>
                 <li class="nav-item">
                     <router-link class="nav-link" :to="{ name: 'about' }"
-                        >About us</router-link
+                        >About me</router-link
                     >
                 </li>
             </ul>

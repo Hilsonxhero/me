@@ -14,7 +14,11 @@
     <meta property="og:brand" content="" />
     <meta property="og:locale" content="en" />
 
-    <link rel="stylesheet" media="screen" href="{{asset('assets/css/vendor/boxicons/css/boxicons.min.css')}}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" media="screen" href="{{ asset('assets/css/vendor/boxicons/css/boxicons.min.css') }}" />
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <title>hilsonxhero</title>
 </head>
@@ -25,15 +29,15 @@
     </div>
 
     @auth
-    <script>
-        window.user = {
-                id: '{{auth('sanctum')->user()->id}}',
-                username: '{{auth('sanctum')->user()->username}}',
-                email: '{{auth('sanctum')->user()->email}}',
-                isVerified: {{auth('sanctum')->user()->email_verified_at == null ? 1 :2}},
-                isAdmin: {{auth('sanctum')->user()->is_superuser}}
+        <script>
+            window.user = {
+                id: '{{ auth('sanctum')->user()->id }}',
+                username: '{{ auth('sanctum')->user()->username }}',
+                email: '{{ auth('sanctum')->user()->email }}',
+                isVerified: {{ auth('sanctum')->user()->email_verified_at == null ? 1 : 2 }},
+                isAdmin: {{ auth('sanctum')->user()->is_superuser }}
             }
-    </script>
+        </script>
     @endauth
 
     <script src="{{ mix('js/app.js') }}"></script>

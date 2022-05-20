@@ -81,7 +81,7 @@
             >
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <template v-if="!isLoggedIn">
+            <!-- <template v-if="!isLoggedIn">
                 <router-link
                     class="btn btn-primary btn-sm fs-sm rounded d-none d-lg-inline-flex"
                     :to="{ name: 'login' }"
@@ -89,8 +89,8 @@
                     <i class="bx bx-user-circle fs-5 lh-1 me-1"></i>
                     &nbsp;Sign in
                 </router-link>
-            </template>
-            <template v-else>
+            </template> -->
+            <template v-if="isLoggedIn">
                 <router-link
                     class="btn btn-primary btn-sm fs-sm rounded d-none d-lg-inline-flex"
                     :to="{ name: 'panel admin dashboard' }"
@@ -120,8 +120,8 @@ export default {
                 { title: "Home", route: "home" },
                 { title: "Portfolios", route: "portfolios index" },
                 { title: "Articles", route: "articles index" },
-                { title: "About us", route: "about" },
-                { title: "Contact us", route: "contact" },
+                { title: "About me", route: "about" },
+                { title: "Contact me", route: "contact" },
             ],
         };
     },

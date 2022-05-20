@@ -265,8 +265,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       "class": "col-sm-10 col-md-6 col-lg-4 col-xl-3 mb-4",
       key: index
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-      src: media.thumb_src,
-      "class": "rounded-3",
+      src: media.banner_src,
+      "class": "rounded-3 object-cover",
       alt: "Image"
     }, null, 8
     /* PROPS */

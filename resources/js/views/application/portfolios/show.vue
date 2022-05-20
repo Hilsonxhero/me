@@ -101,7 +101,7 @@
                     <article>
                         <div class="d-block position-relative rounded-3 mb-3 portfolio-media-cover">
 
-                            <img :src="media.thumb_src" class="rounded-3" alt="Image">
+                            <img :src="media.banner_src" class="rounded-3 object-cover" alt="Image">
                         </div>
 
                         <h3 class="h5">

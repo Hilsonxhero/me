@@ -4,7 +4,7 @@
 
 @import "custom.scss";
 
-@import"https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap";
+
 
 .text-gradient-primary {
     background: linear-gradient(to right, #6366f1, #8B5CF6, #D946EF);
@@ -74,7 +74,6 @@
 
 body {
     // margin: 0;
-    font-family: var(--bs-body-font-family);
     font-size: var(--bs-body-font-size);
     font-weight: var(--bs-body-font-weight);
     // line-height: var(--bs-body-line-height);
