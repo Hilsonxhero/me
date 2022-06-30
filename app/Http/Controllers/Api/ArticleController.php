@@ -36,6 +36,16 @@ class ArticleController extends Controller
         ApiService::_success($articles);
     }
 
+
+    public function sample()
+    {
+        $articles = Article::query()->where('is_published', 0)
+            ->with('tags')
+            ->get();
+
+        ApiService::_success($articles);
+    }
+
     /**
      * Display the specified resource.
      *

@@ -60,11 +60,17 @@ Route::prefix('application')->group(function () {
     Route::get('portfolios/all/index', [ApiPortfolioController::class, 'all']);
 
 
+
+
     // articles
     Route::get('articles', [ApiArticleController::class, 'index']);
 
     // articles all
     Route::get('articles/all/index', [ApiArticleController::class, 'all']);
+
+    // articles sample
+    Route::get('articles/sample', [ApiArticleController::class, 'sample']);
+
 
     // articles show
     Route::get('articles/{id}', [ApiArticleController::class, 'show']);
