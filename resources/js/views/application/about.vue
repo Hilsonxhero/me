@@ -131,7 +131,7 @@ const tools = ref([
 }
 .about-text{
     line-height: 2;
-    color: red !important;
+    color: #fff !important;
     text-align: justify;
 }
 </style>
