@@ -150,7 +150,7 @@ var _hoisted_16 = {
 var _hoisted_17 = ["src"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("figure", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("blockquote", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-    "class": "fs-lg mb-0",
+    "class": "fs-lg mb-0 about-text",
     innerHTML: _ctx.$store.state.General.general.about
   }, null, 8
   /* PROPS */
@@ -190,7 +190,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.tools_item {\n    width: auto;\n    display: flex;\n    margin: 1rem 0;\n}\n.tools_img {\n    width: 140px;\n    height: 140px;\n    position: relative;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n.tools_img img {\n    width: auto;\n    position: relative;\n    max-height: 70px;\n    max-width: 90%;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.tools_item {\n    width: auto;\n    display: flex;\n    margin: 1rem 0;\n}\n.tools_img {\n    width: 140px;\n    height: 140px;\n    position: relative;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n.tools_img img {\n    width: auto;\n    position: relative;\n    max-height: 70px;\n    max-width: 90%;\n}\n.about-text{\n    line-height: 2;\n    color: #fff !important;\n    text-align: justify;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

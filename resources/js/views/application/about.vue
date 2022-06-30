@@ -35,7 +35,7 @@
                             >
                                 <blockquote class="card-body p-0 mb-0">
                                     <p
-                                        class="fs-lg mb-0"
+                                        class="fs-lg mb-0 about-text"
                                         v-html="
                                             $store.state.General.general.about
                                         "
@@ -128,5 +128,10 @@ const tools = ref([
     position: relative;
     max-height: 70px;
     max-width: 90%;
+}
+.about-text{
+    line-height: 2;
+    color: #fff !important;
+    text-align: justify;
 }
 </style>

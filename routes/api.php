@@ -33,7 +33,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::prefix('application')->group(function () {
 
-
     Route::prefix('auth')->group(function () {
         Route::post('/register', [App\Http\Controllers\Auth\RegisteredUserController::class, 'store'])
             ->middleware('guest');
@@ -45,10 +44,20 @@ Route::prefix('application')->group(function () {
             ->name('logout');
     });
 
+    Route::prefix('oauth')->group(function () {
+        Route::post('/register', [App\Http\Controllers\Auth\RegisteredUserController::class, 'store'])
+            ->middleware('guest');
+
+        Route::post('/login', [App\Http\Controllers\Api\Auth\AuthController::class, 'login'])
+            ->middleware('guest');
+
+        Route::post('/logout', [App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'destroy'])
+            ->name('logout');
+    });
+
 
     // general
     Route::get('general', [GeneralController::class, 'index']);
-
 
     // portfolios
     Route::get('portfolios', [ApiPortfolioController::class, 'index']);
@@ -58,9 +67,6 @@ Route::prefix('application')->group(function () {
 
     // portfolios all
     Route::get('portfolios/all/index', [ApiPortfolioController::class, 'all']);
-
-
-
 
     // articles
     Route::get('articles', [ApiArticleController::class, 'index']);
