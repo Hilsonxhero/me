@@ -39,7 +39,7 @@ class Article extends Model
 
     public function getBannerSrcAttribute()
     {
-        if (!is_null($this->media)) return $this->media->thumb();
+        if (!is_null($this->media)) return asset($this->media->original());
 
         return "";
     }
