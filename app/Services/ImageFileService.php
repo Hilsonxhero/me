@@ -19,23 +19,23 @@ class ImageFileService extends DefaultFileService implements FileServiceContract
 
         $path =  $filename . '.' . $ex;
 
-        $file->storeAs($dir, $filename . '.' . $ex);
+        $file->storeAs($dir, $filename . '.' . $ex, 'local');
 
         // Storage::put('test', $file);
 
-         return self::resize($file,storage_path($path), $filename, $dir, $ex);
+        return self::resize($file, storage_path($path), $filename, $dir, $ex);
 
-//        return ['original' => $path];
+        //        return ['original' => $path];
     }
 
-    private static function resize($file,$img, $filename, $dir, $ex)
+    private static function resize($file, $img, $filename, $dir, $ex)
     {
 
-//        $img = Image::make($img);
+        //        $img = Image::make($img);
         $img = Image::make($file->getRealPath());
-//        dd("here");
+        //        dd("here");
         $imgs['original'] = $filename . '.' . $ex;
-//        $imgs = array();
+        //        $imgs = array();
         foreach (self::$sizes as $size) {
             $imgs[$size] = $filename . '_' . $size . '.' . $ex;
             $img->resize($size, null, function ($aspect) {

@@ -56,7 +56,7 @@
                             <router-link
                                 class="btn btn-primary shadow-primary btn-lg me-sm-3 me-xl-4 mb-3"
                                 :to="{ name: 'about' }"
-                                >About us
+                                >About me
                             </router-link>
                             <!-- <a
                                 href="#"
@@ -82,9 +82,9 @@
                         >
                             <span class="fs-sm"
                                 ><span class="text-primary fw-semibold"
-                                    >400+</span
+                                    >200+</span
                                 >
-                                attendees are already with us</span
+                                attendees are already with me</span
                             >
                         </div>
                     </div>
@@ -130,8 +130,7 @@
                     </div>
                     <h3 class="h5 pb-1 mb-2">Task Comments</h3>
                     <p class="fs-sm">
-                        Id mollis consectetur congue egestas egestas suspendisse
-                        blandit justo.
+
                     </p>
                 </div>
                 <div
@@ -149,8 +148,7 @@
                     </div>
                     <h3 class="h5 pb-1 mb-2">Tasks Analytics</h3>
                     <p class="fs-sm">
-                        Augue pulvinar justo, fermentum fames aliquamant
-                        accumsan vestibulum.
+
                     </p>
                 </div>
                 <div
@@ -168,8 +166,7 @@
                     </div>
                     <h3 class="h5 pb-1 mb-2">Notifications</h3>
                     <p class="fs-sm">
-                        Mattis urna ultricies non amet, purus in auctor non.
-                        Odio vulputate ac nibh.
+
                     </p>
                 </div>
                 <div
@@ -187,8 +184,7 @@
                     </div>
                     <h3 class="h5 pb-1 mb-2">Sections &amp; Subtasks</h3>
                     <p class="fs-sm">
-                        A elementum, imperdiet enim, pretium etiam facilisi in
-                        aenean quam mauris.
+
                     </p>
                 </div>
                 <div
@@ -206,8 +202,7 @@
                     </div>
                     <h3 class="h5 pb-1 mb-2">Progress Tracking</h3>
                     <p class="fs-sm">
-                        Sit facilisis dolor arcu, fermentum vestibulum arcu
-                        elementum imperdiet eleifend.
+
                     </p>
                 </div>
                 <div
@@ -225,8 +220,7 @@
                     </div>
                     <h3 class="h5 pb-1 mb-2">Multiple Assignees</h3>
                     <p class="fs-sm">
-                        Faucibus cursus maecenas lorem cursus nibh. Sociis sit
-                        risus id. Sit facilisis dolor arcu.
+
                     </p>
                 </div>
                 <div
@@ -244,8 +238,7 @@
                     </div>
                     <h3 class="h5 pb-1 mb-2">Support 24/7</h3>
                     <p class="fs-sm">
-                        Sapien sed massa sit erat pellentesque pellentesque
-                        nisl, elementum.
+
                     </p>
                 </div>
                 <div
@@ -263,8 +256,7 @@
                     </div>
                     <h3 class="h5 pb-1 mb-2">Data Security</h3>
                     <p class="fs-sm">
-                        Aliquet felis facilisi sem nunc. Sapien fermentum,
-                        fringilla molestie lorem nec.
+
                     </p>
                 </div>
             </div>

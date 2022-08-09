@@ -129,9 +129,13 @@ const tools = ref([
     max-height: 70px;
     max-width: 90%;
 }
+
 .about-text{
-    line-height: 2;
-    color: #fff !important;
     text-align: justify;
+    line-height: 2;
 }
+.dark-mode .about-text{
+    color: #fff !important;
+}
+
 </style>

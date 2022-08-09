@@ -34,7 +34,6 @@ class ArticleController extends Controller
 
 
         if ($request->file('file')) {
-
             $request->merge(['media_id' => MediaFileService::publicUpload($request->file)->id]);
         }
 

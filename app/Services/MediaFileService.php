@@ -91,13 +91,11 @@ class MediaFileService
     public static function stream(Media $media)
     {
 
-//        dd($media);
+        //        dd($media);
         foreach (config('media.MediaTypeServices') as $type => $service) {
             if ($media->type == $type) {
                 return $service['handler']::stream($media);
             }
         }
-
     }
-
 }
