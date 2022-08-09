@@ -17,7 +17,7 @@ class PortfolioController extends Controller
     public function index()
     {
         $portfolios = Portfolio::query()->where('status', 1)
-            ->take(6)
+            ->take(12)
             ->orderByDesc('created_at')
             ->with('technologies')
             ->get();
