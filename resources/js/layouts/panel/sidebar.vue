@@ -60,6 +60,30 @@
                     <router-link
                         exact
                         class="list-group-item list-group-item-action d-flex align-items-center"
+                        :to="{ name: 'panel admin experiences work index' }"
+                    >
+                        <i
+                            class="bx bx-credit-card-front fs-xl opacity-60 me-2"
+                        ></i>
+                        Work experience
+                    </router-link>
+
+                    <router-link
+                        exact
+                        class="list-group-item list-group-item-action d-flex align-items-center"
+                        :to="{
+                            name: 'panel admin experiences educational index',
+                        }"
+                    >
+                        <i
+                            class="bx bx-credit-card-front fs-xl opacity-60 me-2"
+                        ></i>
+                        Educational experience
+                    </router-link>
+
+                    <router-link
+                        exact
+                        class="list-group-item list-group-item-action d-flex align-items-center"
                         :to="{ name: 'panel admin articles' }"
                     >
                         <i class="bx bx-file fs-xl opacity-60 me-2"></i>

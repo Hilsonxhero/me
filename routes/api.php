@@ -3,12 +3,14 @@
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\EditorUploadController;
+use App\Http\Controllers\Admin\EducationalExperienceController;
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\PortfolioGalleryController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\TechnologyController;
+use App\Http\Controllers\Admin\WorkExperienceController;
 use App\Http\Controllers\Api\ArticleController as ApiArticleController;
 use App\Http\Controllers\Api\GeneralController;
 use App\Http\Controllers\Api\MessageController as ApiMessageController;
@@ -71,6 +73,7 @@ Route::prefix('application')->group(function () {
     // articles
     Route::get('articles', [ApiArticleController::class, 'index']);
 
+
     // articles all
     Route::get('articles/all/index', [ApiArticleController::class, 'all']);
 
@@ -99,6 +102,13 @@ Route::prefix('admin')->middleware(['auth:sanctum', 'auth.admin'])->group(functi
     // articles
     Route::apiResource('articles', ArticleController::class)->except('update');
     Route::post("articles/update", [ArticleController::class, 'update']);
+
+    // work experience
+    Route::resource('experiences/work', WorkExperienceController::class);
+
+    // educational experience
+    Route::resource('experiences/educational', EducationalExperienceController::class);
+
 
     // portfolios
     Route::apiResource('portfolios', PortfolioController::class)->except('update');

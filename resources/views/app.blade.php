@@ -14,11 +14,11 @@
     <meta property="og:site_name" content="hilsonxhero" />
     <meta property="og:brand" content="hilsonxhero" />
     <meta property="og:locale" content="en" />
-
+{{-- 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Roboto+Condensed&family=Water+Brush&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> --}}
+    {{-- <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Roboto+Condensed&family=Water+Brush&display=swap"
+        rel="stylesheet"> --}}
     <link rel="stylesheet" media="screen" href="{{ asset('assets/css/vendor/boxicons/css/boxicons.min.css') }}" />
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <title>hilsonxhero - امیر حسین وطن دوست</title>
@@ -44,7 +44,7 @@
     <script src="{{ mix('js/app.js') }}"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1Q2LFGBXPJ"></script>
+    {{-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-1Q2LFGBXPJ"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -55,7 +55,7 @@
         gtag('js', new Date());
 
         gtag('config', 'G-1Q2LFGBXPJ');
-    </script>
+    </script> --}}
 </body>
 
 </html>

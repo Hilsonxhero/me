@@ -18,8 +18,6 @@ class ArticleController extends Controller
     public function index()
     {
         $categories = Article::query()->orderByDesc('created_at')->get();
-
-
         ApiService::_success($categories);
     }
 

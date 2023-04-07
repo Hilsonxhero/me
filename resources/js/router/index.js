@@ -226,6 +226,47 @@ const routes = [
                 name: "panel admin setting",
                 component: () => import("../views/panel/setting/index"),
             },
+
+            {
+                path: "experiences/work",
+                name: "panel admin experiences work index",
+                component: () =>
+                    import("../views/panel/experiences/work/index"),
+            },
+
+            {
+                path: "experiences/work/create",
+                name: "panel admin experiences work create",
+                component: () =>
+                    import("../views/panel/experiences/work/create"),
+            },
+
+            {
+                path: "experiences/work/edit/:id",
+                name: "panel admin experiences work edit",
+                component: () => import("../views/panel/experiences/work/edit"),
+            },
+
+            {
+                path: "experiences/educational",
+                name: "panel admin experiences educational index",
+                component: () =>
+                    import("../views/panel/experiences/educational/index"),
+            },
+
+            {
+                path: "experiences/educational/create",
+                name: "panel admin experiences educational create",
+                component: () =>
+                    import("../views/panel/experiences/educational/create"),
+            },
+
+            {
+                path: "experiences/educational/edit/:id",
+                name: "panel admin experiences educational edit",
+                component: () =>
+                    import("../views/panel/experiences/educational/edit"),
+            },
         ],
     },
 ];

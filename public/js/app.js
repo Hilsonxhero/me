@@ -29641,6 +29641,42 @@ var routes = [{
     component: function component() {
       return __webpack_require__.e(/*! import() */ "resources_js_views_panel_setting_index_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/panel/setting/index */ "./resources/js/views/panel/setting/index.vue"));
     }
+  }, {
+    path: "experiences/work",
+    name: "panel admin experiences work index",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_panel_experiences_work_index_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/panel/experiences/work/index */ "./resources/js/views/panel/experiences/work/index.vue"));
+    }
+  }, {
+    path: "experiences/work/create",
+    name: "panel admin experiences work create",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_panel_experiences_work_create_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/panel/experiences/work/create */ "./resources/js/views/panel/experiences/work/create.vue"));
+    }
+  }, {
+    path: "experiences/work/edit/:id",
+    name: "panel admin experiences work edit",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_panel_experiences_work_edit_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/panel/experiences/work/edit */ "./resources/js/views/panel/experiences/work/edit.vue"));
+    }
+  }, {
+    path: "experiences/educational",
+    name: "panel admin experiences educational index",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_panel_experiences_educational_index_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/panel/experiences/educational/index */ "./resources/js/views/panel/experiences/educational/index.vue"));
+    }
+  }, {
+    path: "experiences/educational/create",
+    name: "panel admin experiences educational create",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_panel_experiences_educational_create_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/panel/experiences/educational/create */ "./resources/js/views/panel/experiences/educational/create.vue"));
+    }
+  }, {
+    path: "experiences/educational/edit/:id",
+    name: "panel admin experiences educational edit",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_panel_experiences_educational_edit_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/panel/experiences/educational/edit */ "./resources/js/views/panel/experiences/educational/edit.vue"));
+    }
   }]
 }];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createRouter)({
@@ -100897,6 +100933,36 @@ var h=!1,o,s,f,u,d,D,l,p,m,w,N,E,x,A,M;function a(){if(!h){h=!0;var e=navigator.
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/create fake namespace object */
+/******/ 	(() => {
+/******/ 		var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
+/******/ 		var leafPrototypes;
+/******/ 		// create a fake namespace object
+/******/ 		// mode & 1: value is a module id, require it
+/******/ 		// mode & 2: merge all properties of value into the ns
+/******/ 		// mode & 4: return value when already ns object
+/******/ 		// mode & 16: return value when it's Promise-like
+/******/ 		// mode & 8|1: behave like require
+/******/ 		__webpack_require__.t = function(value, mode) {
+/******/ 			if(mode & 1) value = this(value);
+/******/ 			if(mode & 8) return value;
+/******/ 			if(typeof value === 'object' && value) {
+/******/ 				if((mode & 4) && value.__esModule) return value;
+/******/ 				if((mode & 16) && typeof value.then === 'function') return value;
+/******/ 			}
+/******/ 			var ns = Object.create(null);
+/******/ 			__webpack_require__.r(ns);
+/******/ 			var def = {};
+/******/ 			leafPrototypes = leafPrototypes || [null, getProto({}), getProto([]), getProto(getProto)];
+/******/ 			for(var current = mode & 2 && value; typeof current == 'object' && !~leafPrototypes.indexOf(current); current = getProto(current)) {
+/******/ 				Object.getOwnPropertyNames(current).forEach((key) => (def[key] = () => (value[key])));
+/******/ 			}
+/******/ 			def['default'] = () => (value);
+/******/ 			__webpack_require__.d(ns, def);
+/******/ 			return ns;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -100927,7 +100993,7 @@ var h=!1,o,s,f,u,d,D,l,p,m,w,N,E,x,A,M;function a(){if(!h){h=!0;var e=navigator.
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_layouts_auth_app_vue":1,"resources_js_views_auth_register_vue":1,"resources_js_views_auth_login_vue":1,"resources_js_views_utility_404_vue":1,"resources_js_views_utility_500_vue":1,"resources_js_layouts_application_app_vue":1,"resources_js_views_application_landing_vue":1,"resources_js_views_application_about_vue":1,"resources_js_views_application_contact_vue":1,"resources_js_views_application_portfolios_index_vue":1,"resources_js_views_application_portfolios_show_vue":1,"resources_js_views_application_articles_index_vue":1,"resources_js_views_application_articles_show_vue":1,"resources_js_layouts_panel_app_vue":1,"resources_js_views_panel_dashboard_vue":1,"resources_js_views_panel_categories_index_vue":1,"resources_js_views_panel_categories_create_vue":1,"resources_js_views_panel_categories_edit_vue":1,"resources_js_views_panel_tags_index_vue":1,"resources_js_views_panel_tags_create_vue":1,"resources_js_views_panel_tags_edit_vue":1,"resources_js_views_panel_technologies_index_vue":1,"resources_js_views_panel_technologies_create_vue":1,"resources_js_views_panel_technologies_edit_vue":1,"resources_js_views_panel_portfolios_index_vue":1,"resources_js_views_panel_portfolios_create_vue":1,"resources_js_views_panel_portfolios_edit_vue":1,"resources_js_views_panel_portfolios_gallery_index_vue":1,"resources_js_views_panel_portfolios_gallery_edit_vue":1,"resources_js_views_panel_articles_index_vue":1,"resources_js_views_panel_articles_create_vue":1,"resources_js_views_panel_articles_edit_vue":1,"resources_js_views_panel_messages_index_vue":1,"resources_js_views_panel_messages_edit_vue":1,"resources_js_views_panel_setting_index_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_layouts_auth_app_vue":1,"resources_js_views_auth_register_vue":1,"resources_js_views_auth_login_vue":1,"resources_js_views_utility_404_vue":1,"resources_js_views_utility_500_vue":1,"resources_js_layouts_application_app_vue":1,"resources_js_views_application_landing_vue":1,"resources_js_views_application_about_vue":1,"resources_js_views_application_contact_vue":1,"resources_js_views_application_portfolios_index_vue":1,"resources_js_views_application_portfolios_show_vue":1,"resources_js_views_application_articles_index_vue":1,"resources_js_views_application_articles_show_vue":1,"resources_js_layouts_panel_app_vue":1,"resources_js_views_panel_dashboard_vue":1,"resources_js_views_panel_categories_index_vue":1,"resources_js_views_panel_categories_create_vue":1,"resources_js_views_panel_categories_edit_vue":1,"resources_js_views_panel_tags_index_vue":1,"resources_js_views_panel_tags_create_vue":1,"resources_js_views_panel_tags_edit_vue":1,"resources_js_views_panel_technologies_index_vue":1,"resources_js_views_panel_technologies_create_vue":1,"resources_js_views_panel_technologies_edit_vue":1,"resources_js_views_panel_portfolios_index_vue":1,"resources_js_views_panel_portfolios_create_vue":1,"resources_js_views_panel_portfolios_edit_vue":1,"resources_js_views_panel_portfolios_gallery_index_vue":1,"resources_js_views_panel_portfolios_gallery_edit_vue":1,"resources_js_views_panel_articles_index_vue":1,"resources_js_views_panel_articles_create_vue":1,"resources_js_views_panel_articles_edit_vue":1,"resources_js_views_panel_messages_index_vue":1,"resources_js_views_panel_messages_edit_vue":1,"resources_js_views_panel_setting_index_vue":1,"resources_js_views_panel_experiences_work_index_vue":1,"resources_js_views_panel_experiences_work_create_vue":1,"resources_js_views_panel_experiences_work_edit_vue":1,"resources_js_views_panel_experiences_educational_index_vue":1,"resources_js_views_panel_experiences_educational_create_vue":1,"resources_js_views_panel_experiences_educational_edit_vue":1,"node_modules_dompurify_dist_purify_js":1,"node_modules_canvg_lib_index_es_js":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

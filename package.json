@@ -33,6 +33,7 @@
         "@vueuse/head": "^0.7.5",
         "css-loader": "^6.7.1",
         "element-plus": "1.1.0-beta.24",
+        "html2pdf.js": "^0.10.1",
         "remixicon": "^2.5.0",
         "sass": "^1.49.9",
         "sass-loader": "^12.6.0",
