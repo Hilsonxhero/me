@@ -59,6 +59,8 @@ __webpack_require__.r(__webpack_exports__);
     }, {
       img: "/assets/img/langs/redis.svg"
     }, {
+      img: "/assets/img/langs/docker-base.svg"
+    }, {
       img: "/assets/img/langs/elastic-search.svg"
     }]);
     var cvRef = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(null);

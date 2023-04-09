@@ -226,6 +226,7 @@ const tools = ref([
     { img: "/assets/img/langs/laravel.svg" },
     { img: "/assets/img/langs/mysql.svg" },
     { img: "/assets/img/langs/redis.svg" },
+    { img: "/assets/img/langs/docker-base.svg" },
     { img: "/assets/img/langs/elastic-search.svg" },
 ]);
 
