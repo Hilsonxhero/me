@@ -110,7 +110,11 @@ Route::prefix('admin')->middleware(['auth:sanctum', 'auth.admin'])->group(functi
     Route::post("articles/update", [ArticleController::class, 'update']);
 
 
+    // work experience
+    Route::resource('experiences/work', WorkExperienceController::class);
 
+    // educational experience
+    Route::resource('experiences/educational', EducationalExperienceController::class);
 
     // portfolios
     Route::apiResource('portfolios', PortfolioController::class)->except('update');
