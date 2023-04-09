@@ -2,7 +2,7 @@
     <div class="">
         <section class="container-fluid position-relative px-0">
             <div class="row g-0">
-                <div class="col-xl-7 col-lg-6 pe-lg-5 d-none d-lg-block">
+                <div class="col-xl-7 col-lg-6 pe-lg-5 d-lg-block">
                     <div class="d-flex h-100 pe-xl-4">
                         <video
                             class="w-100"
@@ -110,7 +110,6 @@
         </section>
 
         <!-- Features (Icon + Text) -->
-
 
         <section
             class="container mb-5 pt-md-4 m mt-5"

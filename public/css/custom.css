@@ -96,3 +96,60 @@ main {
   -o-object-fit: cover;
      object-fit: cover;
 }
+
+.cv-container .card {
+  padding: 0.5rem !important;
+}
+.cv-container p {
+  font-size: 12px !important;
+}
+.cv-container h4 {
+  font-size: 0.9rem !important;
+}
+.cv-container h5 {
+  font-size: 0.8rem !important;
+}
+.cv-container div.h5 {
+  font-size: 0.7rem !important;
+}
+.cv-container .tools_item {
+  margin: 0.4rem 0;
+}
+.cv-container .tools_item > a {
+  box-shadow: none !important;
+  border: 1px solid #e2e5f1 !important;
+}
+.cv-container .tools_item .tools_img {
+  width: 80px !important;
+  height: 80px !important;
+}
+
+.cv-container-pdf .download-cv-btn {
+  display: none !important;
+}
+.cv-container-pdf .card {
+  padding: 0.5rem !important;
+}
+.cv-container-pdf p {
+  font-size: 12px !important;
+}
+.cv-container-pdf h4 {
+  font-size: 0.9rem !important;
+}
+.cv-container-pdf h5 {
+  font-size: 0.8rem !important;
+}
+.cv-container-pdf div.h5 {
+  font-size: 0.7rem !important;
+}
+.cv-container-pdf .tools_item {
+  margin: 0.4rem 0;
+}
+.cv-container-pdf .tools_item > a {
+  box-shadow: none !important;
+  border: 1px solid #e2e5f1 !important;
+}
+.cv-container-pdf .tools_item .tools_img {
+  width: 80px !important;
+  height: 80px !important;
+}

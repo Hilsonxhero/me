@@ -2,9 +2,9 @@
     <div class="col-md-8 offset-lg-1 pb-5 mb-2 mb-lg-4 pt-md-5 mt-n3 mt-md-0">
         <div class="ps-md-3 ps-lg-0 mt-md-2 pt-md-4 pb-md-2">
             <div
-                class="d-flex align-items-center justify-content-between pt-xl-1 mb-3 pb-2 pb-lg-3"
+                class="d-flex flex-wrap align-items-center justify-content-between pt-xl-1 mb-3 pb-2 pb-lg-3"
             >
-                <h1 class="h2 m-0">work experiences</h1>
+                <h1 class="fs-sm mb-2">work experiences</h1>
 
                 <router-link
                     class="btn btn-outline-primary ps-4"

@@ -61,6 +61,12 @@ Route::prefix('application')->group(function () {
     // general
     Route::get('general', [GeneralController::class, 'index']);
 
+    // work experience
+    Route::resource('experiences/work', WorkExperienceController::class);
+
+    // educational experience
+    Route::resource('experiences/educational', EducationalExperienceController::class);
+
     // portfolios
     Route::get('portfolios', [ApiPortfolioController::class, 'index']);
 
@@ -103,11 +109,7 @@ Route::prefix('admin')->middleware(['auth:sanctum', 'auth.admin'])->group(functi
     Route::apiResource('articles', ArticleController::class)->except('update');
     Route::post("articles/update", [ArticleController::class, 'update']);
 
-    // work experience
-    Route::resource('experiences/work', WorkExperienceController::class);
 
-    // educational experience
-    Route::resource('experiences/educational', EducationalExperienceController::class);
 
 
     // portfolios

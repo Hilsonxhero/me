@@ -26,7 +26,7 @@
                 <button
                     type="button"
                     class="btn btn-secondary w-100 d-md-none mt-n2 mb-3"
-                    data-bs-toggle="collapse"
+                    data-bs-toggle=""
                     data-bs-target="#account-menu"
                 >
                     <i class="bx bxs-user-detail fs-xl me-2"></i>
@@ -35,11 +35,11 @@
                 </button>
                 <div
                     id="account-menu"
-                    class="list-group list-group-flush collapse d-md-block"
+                    class="list-group list-group-flush d-md-block"
                 >
                     <router-link
                         exact
-                        class="list-group-item list-group-item-action d-flex align-items-center"
+                        class="list-group-item list-group-item-action d-flex align-items-center fs-sm"
                         :to="{ name: 'panel admin categories' }"
                     >
                         <i class="bx bx-collection fs-xl opacity-60 me-2"></i>
@@ -48,7 +48,7 @@
 
                     <router-link
                         exact
-                        class="list-group-item list-group-item-action d-flex align-items-center"
+                        class="list-group-item list-group-item-action d-flex align-items-center fs-sm"
                         :to="{ name: 'panel admin portfolios' }"
                     >
                         <i
@@ -59,7 +59,7 @@
 
                     <router-link
                         exact
-                        class="list-group-item list-group-item-action d-flex align-items-center"
+                        class="list-group-item list-group-item-action d-flex align-items-center fs-sm"
                         :to="{ name: 'panel admin experiences work index' }"
                     >
                         <i
@@ -70,7 +70,7 @@
 
                     <router-link
                         exact
-                        class="list-group-item list-group-item-action d-flex align-items-center"
+                        class="list-group-item list-group-item-action d-flex align-items-center fs-sm"
                         :to="{
                             name: 'panel admin experiences educational index',
                         }"
@@ -83,7 +83,7 @@
 
                     <router-link
                         exact
-                        class="list-group-item list-group-item-action d-flex align-items-center"
+                        class="list-group-item list-group-item-action d-flex align-items-center fs-sm"
                         :to="{ name: 'panel admin articles' }"
                     >
                         <i class="bx bx-file fs-xl opacity-60 me-2"></i>
@@ -92,7 +92,7 @@
 
                     <router-link
                         exact
-                        class="list-group-item list-group-item-action d-flex align-items-center"
+                        class="list-group-item list-group-item-action d-flex align-items-center fs-sm"
                         :to="{ name: 'panel admin messages' }"
                     >
                         <i class="bx bx-chat fs-xl opacity-60 me-2"></i>
@@ -101,7 +101,7 @@
 
                     <router-link
                         exact
-                        class="list-group-item list-group-item-action d-flex align-items-center"
+                        class="list-group-item list-group-item-action d-flex align-items-center fs-sm"
                         :to="{ name: 'panel admin technologies' }"
                     >
                         <i class="bx bxs-zap fs-xl opacity-60 me-2"></i>
@@ -110,7 +110,7 @@
 
                     <router-link
                         exact
-                        class="list-group-item list-group-item-action d-flex align-items-center"
+                        class="list-group-item list-group-item-action d-flex align-items-center fs-sm"
                         :to="{ name: 'panel admin tags' }"
                     >
                         <i class="bx bx-layer fs-xl opacity-60 me-2"></i>
@@ -119,7 +119,7 @@
 
                     <a
                         href="account-security.html"
-                        class="list-group-item list-group-item-action d-flex align-items-center"
+                        class="list-group-item list-group-item-action d-flex align-items-center fs-sm"
                     >
                         <i class="bx bx-lock-alt fs-xl opacity-60 me-2"></i>
                         Security
@@ -127,7 +127,7 @@
 
                     <router-link
                         exact
-                        class="list-group-item list-group-item-action d-flex align-items-center"
+                        class="list-group-item list-group-item-action d-flex align-items-center fs-sm"
                         :to="{ name: 'panel admin setting' }"
                     >
                         <i class="bx bx-cog fs-xl opacity-60 me-2"></i>
@@ -136,7 +136,7 @@
 
                     <a
                         @click="logoutUser"
-                        class="list-group-item list-group-item-action d-flex align-items-center"
+                        class="list-group-item list-group-item-action d-flex align-items-center fs-sm"
                     >
                         <i class="bx bx-log-out fs-xl opacity-60 me-2"></i>
                         Sign Out

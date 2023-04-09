@@ -75,11 +75,11 @@ var _hoisted_2 = {
   "class": "ps-md-3 ps-lg-0 mt-md-2 pt-md-4 pb-md-2"
 };
 var _hoisted_3 = {
-  "class": "d-flex align-items-center justify-content-between pt-xl-1 mb-3 pb-2 pb-lg-3"
+  "class": "d-flex flex-wrap align-items-center justify-content-between pt-xl-1 mb-3 pb-2 pb-lg-3"
 };
 
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
-  "class": "h2 m-0"
+  "class": "fs-sm mb-2"
 }, "educational experiences", -1
 /* HOISTED */
 );

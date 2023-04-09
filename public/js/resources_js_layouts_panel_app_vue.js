@@ -606,7 +606,7 @@ var _hoisted_6 = {
 var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   type: "button",
   "class": "btn btn-secondary w-100 d-md-none mt-n2 mb-3",
-  "data-bs-toggle": "collapse",
+  "data-bs-toggle": "",
   "data-bs-target": "#account-menu"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "bx bxs-user-detail fs-xl me-2"
@@ -618,7 +618,7 @@ var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 
 var _hoisted_8 = {
   id: "account-menu",
-  "class": "list-group list-group-flush collapse d-md-block"
+  "class": "list-group list-group-flush d-md-block"
 };
 
 var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
@@ -687,7 +687,7 @@ var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNo
 
 var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: "account-security.html",
-  "class": "list-group-item list-group-item-action d-flex align-items-center"
+  "class": "list-group-item list-group-item-action d-flex align-items-center fs-sm"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "bx bx-lock-alt fs-xl opacity-60 me-2"
 }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Security ")], -1
@@ -720,7 +720,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     exact: "",
-    "class": "list-group-item list-group-item-action d-flex align-items-center",
+    "class": "list-group-item list-group-item-action d-flex align-items-center fs-sm",
     to: {
       name: 'panel admin categories'
     }
@@ -733,7 +733,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     exact: "",
-    "class": "list-group-item list-group-item-action d-flex align-items-center",
+    "class": "list-group-item list-group-item-action d-flex align-items-center fs-sm",
     to: {
       name: 'panel admin portfolios'
     }
@@ -746,7 +746,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     exact: "",
-    "class": "list-group-item list-group-item-action d-flex align-items-center",
+    "class": "list-group-item list-group-item-action d-flex align-items-center fs-sm",
     to: {
       name: 'panel admin experiences work index'
     }
@@ -759,7 +759,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     exact: "",
-    "class": "list-group-item list-group-item-action d-flex align-items-center",
+    "class": "list-group-item list-group-item-action d-flex align-items-center fs-sm",
     to: {
       name: 'panel admin experiences educational index'
     }
@@ -772,7 +772,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     exact: "",
-    "class": "list-group-item list-group-item-action d-flex align-items-center",
+    "class": "list-group-item list-group-item-action d-flex align-items-center fs-sm",
     to: {
       name: 'panel admin articles'
     }
@@ -785,7 +785,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     exact: "",
-    "class": "list-group-item list-group-item-action d-flex align-items-center",
+    "class": "list-group-item list-group-item-action d-flex align-items-center fs-sm",
     to: {
       name: 'panel admin messages'
     }
@@ -798,7 +798,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     exact: "",
-    "class": "list-group-item list-group-item-action d-flex align-items-center",
+    "class": "list-group-item list-group-item-action d-flex align-items-center fs-sm",
     to: {
       name: 'panel admin technologies'
     }
@@ -811,7 +811,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     exact: "",
-    "class": "list-group-item list-group-item-action d-flex align-items-center",
+    "class": "list-group-item list-group-item-action d-flex align-items-center fs-sm",
     to: {
       name: 'panel admin tags'
     }
@@ -824,7 +824,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }), _hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     exact: "",
-    "class": "list-group-item list-group-item-action d-flex align-items-center",
+    "class": "list-group-item list-group-item-action d-flex align-items-center fs-sm",
     to: {
       name: 'panel admin setting'
     }
@@ -839,7 +839,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[0] || (_cache[0] = function () {
       return $options.logoutUser && $options.logoutUser.apply($options, arguments);
     }),
-    "class": "list-group-item list-group-item-action d-flex align-items-center"
+    "class": "list-group-item list-group-item-action d-flex align-items-center fs-sm"
   }, _hoisted_30)])])])]);
 }
 
